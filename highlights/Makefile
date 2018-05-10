@@ -1,6 +1,6 @@
-manuscript = msbr-reproc
+manuscript = highlights
 references = $(wildcard *.bib)
-latexopt   = -halt-on-error -shell-escape -file-line-error
+latexopt   = -halt-on-error -file-line-error
 
 all: all-via-pdf
 

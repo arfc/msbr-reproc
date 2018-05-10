@@ -1,0 +1,96 @@
+\documentclass[review]{elsarticle}
+
+\usepackage{lineno}
+\usepackage{xspace}
+\modulolinenumbers[5]
+
+\journal{Annals of Nuclear Energy}
+
+%% `Elsevier LaTeX' style
+\bibliographystyle{elsarticle-num}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%% packages and definitions (optional)
+\usepackage{placeins}
+\usepackage{booktabs} % nice rules (thick lines) for tables
+\usepackage{microtype} % improves typography for PDF
+\usepackage{hhline}
+\usepackage{amsmath}
+
+%\usepackage[demo]{graphicx}
+%\usepackage{caption}
+%\usepackage{subcaption}
+
+\usepackage{booktabs}
+\usepackage{threeparttable, tablefootnote}
+
+\usepackage{tabularx}
+\newcolumntype{b}{>{\hsize=1.0\hsize}X}
+\newcolumntype{s}{>{\hsize=.5\hsize}X}
+\newcolumntype{m}{>{\hsize=.75\hsize}X}
+\newcolumntype{x}{>{\hsize=.25\hsize}X}
+
+\graphicspath{ {figures/} }
+
+% tikz %
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows, decorations, shapes}
+
+\usetikzlibrary{shapes.geometric,arrows}
+\tikzstyle{process} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=blue!30]
+\tikzstyle{object} = [ellipse, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=green!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+% hyperref %
+\usepackage[hidelinks]{hyperref}
+% after hyperref %
+\usepackage{cleveref}
+\usepackage{datatool}
+\usepackage[acronym,toc]{glossaries}
+\include{acros}
+
+\makeglossaries
+
+\begin{document}
+\begin{frontmatter}
+\title{Modeling and Simulation of Online Reprocessing in the Thorium-Fuelled Molten Salt Breeder Reactor}
+
+\date{}                     %% if you don't need date to appear
+
+%% Authors
+\input{authors}
+
+% Institutes of the authors
+\input{institutions}
+
+\begin{keyword}
+molten salt reactor \sep
+python \sep 
+depletion \sep 
+reprocessing \sep 
+nuclear fuel cycle \sep
+\end{keyword}
+
+\input{abstract}
+\end{frontmatter}
+\glsresetall
+
+\linenumbers
+
+\input{introduction}
+\FloatBarrier
+\input{methods}
+\FloatBarrier
+\input{results}
+\FloatBarrier
+\input{discussion}
+\FloatBarrier
+\input{conclusion}
+\FloatBarrier
+\input{acks}
+\FloatBarrier
+
+\nocite{robertson_conceptual_1971} % placeholder until citations appear
+\bibliography{2018-msbr-reproc}
+
+\end{document}
