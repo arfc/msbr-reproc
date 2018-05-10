@@ -1,0 +1,19 @@
+\documentclass[lettersize,oneside,11pt]{book}
+\usepackage{graphicx}
+\usepackage{blindtext} % for dummy text
+\usepackage[left=1in,right=1in,top=0.25in,bottom=0in]{geometry}
+\makeatletter
+    \setlength\@fptop{0\p@}
+\makeatother
+
+\begin{document}
+\pagenumbering{gobble}% Remove page numbers (and reset to 1)
+\thispagestyle{empty}
+\begin{figure}[t!]
+        \begin{center}
+\includegraphics[height=0.1\textheight]{./illinois.png}
+\label{fig:figure xx}
+\end{center}
+\end{figure}
+
+\end{document}

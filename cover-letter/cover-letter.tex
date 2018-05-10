@@ -1,0 +1,102 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Plain Cover Letter
+% LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+% Original author:
+% Rensselaer Polytechnic Institute (http://www.rpi.edu/dept/arc/training/latex/resumes/)
+% It was modified by Katy Huff
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%    PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt]{letter} % Default font size of the document, change to 10pt to fit more text
+\usepackage{graphicx}
+%\usepackage{newcent} % Default font is the New Century Schoolbook PostScript font
+%\usepackage{helvet} % Uncomment this (while commenting the above line) to use the Helvetica font
+
+% Margins
+\usepackage[left=1.25in,right=1.25in,top=1in,bottom=1in]{geometry}
+%\let\raggedleft\raggedright % Pushes the date (at the top) to the left, comment this line to have the date on the right
+
+\usepackage{eso-pic,graphicx}
+
+
+%--------------------------------------------------------------------------------------
+%--------INPUT DATA
+%--------------------------------------------------------------------------------------
+\usepackage{xspace}
+\newcommand{\StudentFirstName}{Andrei\xspace}
+\newcommand{\StudentLastName}{Rykhlevskii\xspace}
+\newcommand{\RecipientName}{Profs. Ghiaasiaan, Pazsit, and Pozzi\xspace}
+\newcommand{\RecipientAddress}{Executive Editors\\Annals of Nuclear Energy}
+%\newcommand{\<++>}{<++>\xspace}
+
+\begin{document}
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{background.pdf}}
+
+
+%----------------------------------------------------------------------------------------
+%    ADDRESSEE SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{letter}{\RecipientName\\
+        \RecipientAddress\xspace}
+
+%-------------------------------------------------------------------------------
+%    YOUR NAME & ADDRESS SECTION
+%-------------------------------------------------------------------------------
+\address{Kathryn D. Huff\\
+kdhuff@illinois.edu\\
+118 Talbot Laboratory\\
+104 Wright Street\\
+MC-234\\
+Urbana, IL 61801}
+
+%-------------------------------------------------------------------------------
+%    LETTER CONTENT SECTION
+%-------------------------------------------------------------------------------
+
+\opening{To \RecipientName,}
+
+Please find enclosed a manuscript entitled: ``Modeling and Simulation of Online
+Reprocessing in the Thorium-Fuelled Molten Salt Breeder Reactor'' which Mr. 
+Andrei Rykhlevskii and I are submitting for exclusive consideration of 
+publication as a research article in Annals of Nuclear Energy.
+
+This manuscript describes and demonstrates a computational modeling capability
+for Molten Salt Reactor (MSR) online reprocessing analysis.  A Python package,
+SaltProc, has been developed to simulate MSR online reprocessing by modeling
+the changing isotopic composition of an irradiated fuel salt. The simulation
+workflow additionally leverages the SERPENT 2 Monte Carlo software for neutron
+transport and depletion calculations. An introduction to SaltProc capabilities
+is followed by demonstration in the context of online reprocessing in the
+Molten Salt Breeder Reactor (MSBR).  
+
+Thank you for your consideration of our work.  I expect it will be of interest
+to a broad readership concerned with multi-physics simulation of next generation
+reactors.  Please address all correspondence concerning this manuscript to me at the University of Illinois.
+
+
+
+\closing{Sincere regards,
+\includegraphics[height=2cm]{signature}\\
+        \fromsig{Kathryn Huff\\
+Assistant Professor\\
+Nuclear, Plasma, \& Radiological Eng.\\
+U. Illinois at Urbana-Champaign}
+}
+
+%-------------------------------------------------------------------------------
+
+\end{letter}
+
+\end{document}
+
+
+
