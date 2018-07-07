@@ -51,4 +51,6 @@ Thumbs.db
 *.lot
 *.out
 *.toc
+*.spl
+*.pdf
 *eps-converted-to.pdf
