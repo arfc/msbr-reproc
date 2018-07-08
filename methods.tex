@@ -4,28 +4,59 @@
 
 \subsection{The SaltProc modeling and simulation code}
 
-The SaltProc tool is designed to expand SERPENT 2 depletion capabilities for modeling liquid-fueld \gls{MSR} for continuous reprocessing.
+The SaltProc tool \cite{andrei_rykhlevskii_arfc/saltproc:_201*} is designed to expand SERPENT 2
+ depletion capabilities for modeling liquid-fueled \gls{MSR} for continuous reprocessing.
 The Python package uses HDF5 \cite{the_hdf_group_hierarchial_1997} to store data, and the Nuclear Engineering Toolkit PyNE \cite{scopatz_pyne:_2012}
 for SEPRENT output file parsing and nuclide naming. It is an open-source tool that uses a semi-continuous approach to 
-simulate continuous feeds and removals in the \gls{MSR}.
+simulate continuous feeds and removals in the \gls{MSR}. 
 
-The tool structure and capabilities of SaltProc are similar to ChemTriton tool for SCALE developed in \gls{ORNL} \cite{powers_new_2013}.
-SaltProc is coupled with Monte Carlo SERPENT 2 software which allows to simulate online reprocessing for irregular full-core geometry with high level of fidelity.  The primary function of SaltProc is to manage material streams while SERPENT 2 performs most of the computationally heavy work, namely neutron transport and depletion calculations. Each material stream represents a fluid in the core design and has specific parameters (e.g. isotopic composition, reprocessing interval, mass rate, removal efficacy, etc). In addition, SaltProc provides a set of functions for each stream: read and write isotopic data in/from database, separate out specific isotopes from stream with defined efficiency, feed in specific isotopes to stream, and maintain constant number density of specific nuclide in the core. These attributes and functions are crucial to simulate the operation of a complex, multi-zone, multi-fluid \gls{MSR} and are universal for myriad reactor systems.
+The tool structure and capabilities of SaltProc are similar to ChemTriton tool for SCALE
+developed in \gls{ORNL} \cite{powers_new_2013}. SaltProc is coupled with Monte Carlo SERPENT 2
+software which allows to simulate online reprocessing for irregular full-core geometry with 
+high level of fidelity.  The primary function of SaltProc is to manage material streams while
+SERPENT 2 performs most of the computationally heavy work, namely neutron transport and depletion
+calculations. Saltproc is defined as a 
+python class, where each material stream is defined as a isotopic atomic density
+vector variable. This allows tracking of time-sensitive material streams such as the
+Pa-233 tank in the \gls{MSBR}. The user can define the reprocessing parameters, such as the 
+reprocessing interval and removal efficiency.  In addition, SaltProc provides a set of functions 
+for each stream: read and write isotopic data in/from database, separate out specific isotopes 
+from stream with defined efficiency, feed in specific isotopes to stream, and maintain constant 
+number density of specific nuclide in the core. These attributes and functions are crucial to 
+simulate the operation of a complex, multi-zone, multi-fluid \gls{MSR} and are universal for 
+myriad reactor systems.
 
-Figure~\ref{fig:saltproc_flow} illustrates the  online reprocessing simulation algorithm the coupled SaltProc and SERPENT 2. To perform a depletion step,
-SaltProc reads an external SERPENT 2 template file which is defined by the user. This file contains input cards with parameters such as geometry,
-moderator and construction materials isotopic composition, neutron population, criticality cycles, total heating power, and boundary conditions.
-After the depletion calculation, SaltProc reads the depleted fuel composition file (\texttt{.bumat1}) and stores the depleted
-composition isotopic vector in an HDF5 database. SaltProc only stores and edits the isotopic composition of the fuel stream,
-which makes SaltProc a flexible tool to model any geometry: an infinite medium, a unit cell, a multi-zone simplified assembly, or a full core.
-This flexibiliity allows the user to perform simulations of varying fidelity and computational intensity.
+Saltproc is currently in active development in Github, and has unit tests and
+Travis continuous integration for sustainable development. There is also documentation
+generated through Sphinx document generator for ease of use. We plan to implement
+user-defined reprocessing scheme definition, two-region \gls{MSR} modeling capabilities,
+and decay modeling in future releases.
 
-SaltProc can manage as many material streams as desired. It also may work with multiple depletion materials. At the end of a each depletion
-step, SaltProc reads the depleted compositions and tracks each material stream individually. Following this, it applies chemical
-separation functions to fuel stream vectors. These vectors then form a matrix (isotopics x timesteps) which SaltProc stores in an HDF5 database
+Figure~\ref{fig:saltproc_flow} illustrates the  online reprocessing simulation algorithm the 
+coupled SaltProc and SERPENT 2. To perform a depletion step,
+SaltProc reads an external SERPENT 2 template file which is defined by the user. This file 
+contains input cards with parameters such as geometry,
+moderator and construction materials isotopic composition, neutron population, criticality 
+cycles, total heating power, and boundary conditions.
+After the depletion calculation, SaltProc reads the depleted fuel composition file (\texttt{
+.bumat1}) and stores the depleted
+composition isotopic vector in an HDF5 database. SaltProc only stores and edits the isotopic 
+composition of the fuel stream,
+which makes SaltProc a flexible tool to model any geometry: an infinite medium, a unit cell, a 
+multi-zone simplified assembly, or a full core.
+This flexibiliity allows the user to perform simulations of varying fidelity and computational 
+intensity.
+
+SaltProc can manage as many material streams as desired. It also may work with multiple depletion 
+materials. At the end of a each depletion
+step, SaltProc reads the depleted compositions and tracks each material stream individually. 
+Following this, it applies chemical
+separation functions to fuel stream vectors. These vectors then form a matrix (isotopics x 
+timesteps) which SaltProc stores in an HDF5 database
 and prints into the SERPENT 2 composition file for the next depletion calculation.
 
-Saltproc datasets are timseries, meaning that every value is recorded every timestep. The datasets SaltProc produces are listed below,
+Saltproc datasets are timseries, meaning that every value is recorded every timestep. The 
+datasets SaltProc produces are listed below,
 where the values inside the parenthesis are the dataset sizes:
 
 \begin{itemize}
