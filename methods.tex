@@ -64,23 +64,23 @@ For cross section generation, JEFF-3.1.2 neutron library was employed \cite{oecd
         \caption{Summary of principal data for MSBR \cite{robertson_conceptual_1971}.}
         \begin{tabularx}{\textwidth}{ s  s}
         \hline
-                Thermal capacity of reactor           & 2250 MW(t)
+                Thermal capacity of reactor           		& 2250 MW(t)
                 \\ 
-                Net electrical output                 & 1000 MW(e) 
+                Net electrical output                 		& 1000 MW(e) 
                 \\  
-                Net thermal efficiency        & 44.4\%
+                Net thermal efficiency        				& 44.4\%
                 \\  
-                Salt volume fraction in central core zone     & 0.13
+                Salt volume fraction in central zone I		& 0.13
                 \\ 
-                Salt volume fraction in outer core zone       & 0.37
+                Salt volume fraction in outer zone II       & 0.37
                 \\ 
-                Fuel salt inventory (Zone I)                  & 8.2 m$^3$	
+                Fuel salt inventory (Zone I)                & 8.2 m$^3$	
                 \\ 
-                Fuel salt inventory (Zone II)                 & 10.8 m$^3$	
+                Fuel salt inventory (Zone II)               & 10.8 m$^3$	
                 \\ 
-                Fuel salt inventory (annulus)                 & 3.8 m$^3$	
+                Fuel salt inventory (annulus)               & 3.8 m$^3$	
                 \\  
-                Total fuel salt inventory                     & 48.7 m$^3$	
+                Total fuel salt inventory                   & 48.7 m$^3$	
                 \\ 
                 Fissile mass in fuel salt                   & 1303.7 kg	
                 \\ 
@@ -99,6 +99,41 @@ For cross section generation, JEFF-3.1.2 neutron library was employed \cite{oecd
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Online reprocessing method}
-Removing specific chemical elements from a molten salt is a complicated task that requires intelligent design (e.g., chemical separations equipment design, fuel salt flows to equipment) and has a considerable economic cost. 
+Removing specific chemical elements from a molten salt is a complicated task that requires intelligent design (e.g., chemical separations equipment design, fuel salt flows to equipment) and has a considerable economic cost. All liquid-fueled \gls{MSR} designs involve varying levels of online fuel processing. Minimally, volatile gaseous fission products (e.g. Kr, Xe) escape from the fuel salt during routine reactor operation and must be captured. Additional systems might be used to enhance removal of those elements. Most designs also call for the removal of noble and rare earth metals from the core since these metals act as neutron poisons. Some designs suggest a more complex list of elements to process (figure ~\ref{fig:periodic_tab}), including the temporary removal of protactinium from the salt or other regulation of the actinide inventory in the fuel salt \cite{ahmad_neutronics_2015}.
 
-\textbf{Online reprocessing method. Advantages and disadvantages of batch-wise approach. SaltProc capabilities description.}
+In the single-fluid \gls{MSBR} considered in this work, thorium, uranium, protactinium, and fission products are all mixed together in a single fluoride salt (FLiBe). Separation of thorium from lanthanide (atomic numbers 57 through 71) fission products is rather challenging because of their chemical similarities. 
+
+\begin{figure}[htp!] % replace 't' with 'b' to 
+  \centering
+  \includegraphics[width=\textwidth]{periodic_map.png}
+  \caption{Processing options for \gls{MSR} fuels \cite{ahmad_neutronics_2015}.}
+  \label{fig:periodic_tab}
+\end{figure}
+
+\subsubsection{Fuel material flows}
+The $^{232}$Th in the fuel absorbs thermal neutrons and produces $^{233}$Pa which then decays into the fissile $^{233}$U. Furthermore, the \gls{MSBR} design requires online reprocessing to remove all poisons (e.g. $^{135}$Xe), noble metals, and gases (e.g. $^{75}$Se, $^{85}$Kr) every 20 seconds. Protactinium presents a challenge, since it has a large absorption cross section in the thermal energy spectrum. Accordingly, $^{233}$Pa is continuously removed from the fuel salt into a protactinium decay tank to allow $^{233}$Pa to decay to $^{233}$U without poisoning the reactor. The reactor reprocessing system is designed to separate $^{233}$Pa from the molten-salt fuel over 3 days, hold it while $^{233}$Pa decays into $^{233}$U, and return it back to the primary loop. This feature allows the reactor to avoid neutron losses to protactinium, keeps fission products to a very low level, and increases the efficiency of $^{233}$U breeding. Table~\ref{tab:reprocessing_list} summarizes full list of nuclides and the cycle times used for modeling salt treatment and separations \cite{robertson_conceptual_1971}. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[ht!]
+        \centering
+        \caption{The effective cycle times for protactinium and fission products removal (reproduced from \cite{robertson_conceptual_1971}).}
+        \begin{tabularx}{\textwidth}{ x | s | x }
+        \hline 
+        Processing group & \qquad\qquad\qquad Nuclides & Cycle time (at full power) \\ \hline 
+        Rare earths & Y, La, Ce, Pr, Nd, Pm, Sm, Gd & 50 days \\ 
+        \qquad & Eu & 500 days \\ 
+        Noble metals & Se, Nb, Mo, Tc, Ru, Rh, Pd, Ag, Sb, Te & 20 sec \\
+        Seminoble metals & Zr, Cd, In, Sn & 200 days \\
+        Gases & Kr, Xe & 20 sec \\ 
+        Volatile fluorides & Br, I & 60 days \\
+        Discard & Rb, Sr, Cs, Ba & 3435 days \\ 
+        Salt discard & Th, Li, Be, F & 3435 days \\ 
+        Protactinium & $^{233}$Pa & 3 days \\ 
+        Higher nuclides & $^{237}$Np, $^{242}$Pu & 16 years \\ 
+        \end{tabularx}
+        %\footnotetext{Chemical processing plant and gas separation system removing chemical elements (not isotopes) only. Isotopes instead of elements listed because other isotopes are short-lived and might be ignored.}
+        \label{tab:reprocessing_list}
+\end{table}
+Th removal rates vary among nuclides in this reactor concept which dictate the necessary resolution of depletion calculations. If the depletion time intervals are very short, an enormous number of depletion steps are required to obtain the equilibrium composition. On the other hand, if the depletion  calculation time interval is too long, the impact of short-lived fission products is not captured. To compromise, the time interval for depletion calculations in this model was selected as 3 days to correlate with the removal interval of $^{233}$Pa and $^{232}$Th was continuously added to maintain the initial mass fraction of $^{232}$Th.
+
+\subsubsection{The SaltProc modeling and simulation code}
