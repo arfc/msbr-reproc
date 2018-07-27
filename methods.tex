@@ -176,21 +176,14 @@ which makes SaltProc a flexible tool to model any geometry: an infinite medium, 
 multi-zone simplified assembly, or a full core.
 This flexibiliity allows the user to perform simulations of varying fidelity and computational 
 intensity.
-
-\begin{figure}[htp!] % replace 't' with 'b' to 
+\begin{figure}[ht!] % replace 't' with 'b' to 
   \centering
   \includegraphics[width=0.75\textwidth]{saltproc_flowchart.pdf}
   \caption{Flow chart for the Saltproc python-based tools.}
   \label{fig:saltproc_flow}
 \end{figure}
-
 SaltProc can manage as many material streams as desired. It also may work with multiple depletion 
-materials. At the end of a each depletion
-step, SaltProc reads the depleted compositions and tracks each material stream individually. 
-Following this, it applies chemical
-separation functions to fuel stream vectors. These vectors then form a matrix (isotopics x 
-timesteps) which SaltProc stores in an HDF5 database
-and prints into the SERPENT 2 composition file for the next depletion calculation.
+materials. At the end of a each depletion step, SaltProc reads the depleted compositions and tracks each material stream individually. Following this, it applies chemical separation functions to fuel stream vectors. These vectors then form a matrix (isotopics x timesteps) which SaltProc stores in an HDF5 database and prints into the SERPENT 2 composition file for the next depletion calculation.
 
 Saltproc datasets are timseries, meaning that every value is recorded every timestep. The 
 datasets SaltProc produces are listed below,
