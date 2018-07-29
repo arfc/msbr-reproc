@@ -4,7 +4,7 @@ The SaltProc online reprocessing simulation code is demonstrated in four applica
 The neutron population per cycle and the number of active/inactive cycles were chosen to obtain balance between reasonable uncertainty for a transport problem ($\leq$ 15 pcm\footnote{ 1 pcm = 10$^{-5}\Delta k_{eff}/k_{eff}$} for effective multiplication factor) and computational time. The \gls{MSBR} depletion and safety parameter computations were performed on 64 Blue Waters XK7 nodes (two AMD 6276 Interlagos CPU per node, 16 floating-point Bulldozer core units per node or 32 ``integer" cores per node, nominal clock speed is 2.45 GHz). The total computational time for achieving equilibrium composition was approximately 9,900 node-hours (18 core-years.)
 
 \subsection{Effective multiplication factor}
-Figure~\ref{fig:keff} demonstrates the effective multiplication factors obtained using SaltProc and SERPENT 2. The effective multiplication factors are calculated after removing fission products listed in Table~\ref{tab:reprocessing_list} and adding the fertile material at the end of ``cycle time"\footnote{The \gls{MSBR} program defined a ``cycle time" as the amount of time required to remove 100\% of a target nuclide from a fuel salt.} which was fixed at 3 days for this work. The effective multiplication factor fluctuates significantly as a result of the batch-wise nature of this online reprocessing strategy. 
+Figure~\ref{fig:keff} demonstrates the effective multiplication factors obtained using SaltProc and SERPENT 2. The effective multiplication factors are calculated after removing fission products listed in Table~\ref{tab:reprocessing_list} and adding the fertile material at the end of ``cycle time"\footnote{ The \gls{MSBR} program defined a ``cycle time" as the amount of time required to remove 100\% of a target nuclide from a fuel salt.} which was fixed at 3 days for this work. The effective multiplication factor fluctuates significantly as a result of the batch-wise nature of this online reprocessing strategy. 
 
 First, SERPENT calculates the effective multiplication factor for the beginning of cycle time (fresh fuel composition for the first step). Next, it computes the new fuel salt composition for the end of a 3-day depletion step. The corresponding effective multiplication factor is much smaller than the previous one. Finally, SERPENT calculates $k_{eff}$ for the depleted composition after applying feeds and removals, and this increases accordingly since major reactor poisons (e.g. Xe, Kr) are removed, while fresh fissile material ($^{233}$U) from the protactinium decay tank is added. 
 \begin{figure}[ht!] % replace 't' with 'b' to 
@@ -15,6 +15,7 @@ First, SERPENT calculates the effective multiplication factor for the beginning 
 \end{figure}
 Additionally, the presence of rubidium, strontium, cesium, and barium in the core are disadvantageous to reactor physics. In fact, removal of these elements every 3435 days causes the multiplication factor to jump by approximately 450 pcm, and limits using the batch approach for online reprocessing simulation. Overall, the effective multiplication factor gradually decreases from 1.075 to $k_{eff} \approx 1.02$ at equilibrium after approximately 6 years of irradiation. 
 
+\subsection{Fuel salt composition dynamics}
 The analysis of the fuel salt composition evolution provides more comprehensive information about the equilibrium state. Figure~\ref{fig:adens_eq} shows major nuclides which have a strong influence on the reactor core physics normalized separately for each isotope by average atomic density, at the beginning of each depletion time step. Concentration of $^{233}$U, $^{232}$Th, $^{233}$Pa, and $^{232}$Pa in fuel salt change insignificantly after approximately 2500 days of operation. Particularly, $^{233}$U number density fluctuates less than 0.8\% in the time interval from 16 to 20 years of operation, hence,a quasi-equilibrium state was achieved after 16 years of reactor operation.
 \begin{figure}[ht!] % replace 't' with 'b' to 
   \centering
@@ -41,16 +42,16 @@ Figure~\ref{fig:spectrum} shows the normalized neutron flux spectrum for the ful
 Figure~\ref{fig:spectrum_zones} shows that zone I produced much more thermal neutrons than zone II, indicating that the majority of fissions occured in the central part of the core. In the undermoderated zone II, the neutron energy spectrum is harder which leads to more capture of neutrons by $^{232}$Th and helps a achieve relatively high breeding ratio. Moreover, the (n,$\gamma$) resonance energy range in $^{232}$Th is from 10$^{-4}$ to 10$^{-2}$ MeV. Therefore, the moderator-to-fuel ratio for zone II was chosen to shift the neutron energy spectrum in this range. Furthermore, in the central core region (zone I), the neutron energy spectrum shifts to a harder spectrum over 20 years of reactor operation. In contrast, in the outer core region (zone II) a similar spectral shift takes place at a reduced scale. This resuls is in a good agreement with original ORNL report \cite{robertson_conceptual_1971} and most recent whole-core steady-state study \cite{park_whole_2015}.
 
 It is important to obtain the epithermal and thermal spectra to produce $^{233}$U from $^{232}$Th because the radiative capture cross section of thorium decreases monotonically from $10^{-10}$ MeV to $10^{-5}$ MeV. Hardening the spectrum tends to significantly increase resonance absorption in thorium and decrease the absorptions in fissile and construction materials. Thus, a significant amount fissile material will be needed to make the reactor critical. 
-
-\subsection{Neutron flux}
-Figure~\ref{fig:radial_flux} shows the radial distribution of fast and thermal neutron flux for both initial and equilibrium composition. The neutron flux has the same shape for both compositions but the equilibrium case has a harder spectrum. A significant spectral shift was observed for the central region of the core (zone I) when for the outer region (zone II) it is negligible for fast but notable for thermal neutrons. This neutron flux radial distribution is in a good agreement with original ORNL report \cite{robertson_conceptual_1971}. Overall, spectrum hardening during \gls{MSBR} operation should be carefully studied for designing the reactivity control system.
 \begin{figure}[ht!] % replace 't' with 'b' to force it to 
   \centering
   \includegraphics[width=\textwidth]{spectrum_zones.png} 
   \caption{Neutron flux energy spectrum in different core regions normalized by unit lethargy for the initial and equilibrium fuel salt composition.}
   \label{fig:spectrum_zones}
 \end{figure}
-\begin{figure}[hb!] % replace 't' with 'b' to force it to 
+
+\subsection{Neutron flux}
+Figure~\ref{fig:radial_flux} shows the radial distribution of fast and thermal neutron flux for both initial and equilibrium composition. The neutron flux has the same shape for both compositions but the equilibrium case has a harder spectrum. A significant spectral shift was observed for the central region of the core (zone I) when for the outer region (zone II) it is negligible for fast but notable for thermal neutrons. This neutron flux radial distribution is in a good agreement with original ORNL report \cite{robertson_conceptual_1971}. Overall, spectrum hardening during \gls{MSBR} operation should be carefully studied for designing the reactivity control system.
+\begin{figure}[ht!] % replace 't' with 'b' to force it to 
   \centering
   \includegraphics[width=\textwidth]{radial_flux.png} 
   \caption{Radial neutron flux distribution for initial and equilibrium fuel salt composition.}
@@ -59,7 +60,7 @@ Figure~\ref{fig:radial_flux} shows the radial distribution of fast and thermal n
 \subsection{Power and breeding distribution}
 Table~\ref{tab:powgen_fraction} shows the power fraction in each zone for initial and equilibrium fuel composition. Figure~\ref{fig:pow_den} reflects the normalized power distribution of the \gls{MSBR} quarter core which is the same at both states. For both the initial and equilibrium compositions, fission primarily occurs in the center of the core, namely zone I. The spectral shift during reactor operation results in different power fractions at startup and equilibrium, but most of the power is still generated in zone I. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{table}[hb!]
+\begin{table}[ht!]
   \centering
   \caption{Power generation fraction in each zone for initial and equilibrium state.}
 \begin{tabularx}{\textwidth}{ m | s | s } \hline
@@ -71,7 +72,7 @@ Zone II          & 2.09\%       & 1.88\%   \\ \hline
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Figure~\ref{fig:breeding_den} shows the neutron capture reaction rate distribution for $^{232}$Th normalized by the total neutron flux for initial and equilibrium states. The distribution reflects the spatial distribution of $^{233}$Th production in the core. The thorium-232 then $\beta$-decays to $^{233}$Pa which is the precursor for $^{233}$U production. Accordingly, this characteristic represents the breeding distribution in the \gls{MSBR} core. Spectral shift does not cause significant changes in power nor in breeding distribution. Even after 20 years of operation, most of the power still is generated in zone I though the majority of $^{233}$Th is produced in zone II.
-\begin{figure}[hb!] % replace 't' with 'b' to force it to 
+\begin{figure}[ht!] % replace 't' with 'b' to force it to 
   \centering
   \includegraphics[width=\textwidth]{power_distribution_eq.png} 
   \caption{Normalized power density for both initial and equilibrium fuel salt composition.}
