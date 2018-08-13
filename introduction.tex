@@ -96,52 +96,52 @@ Most of these methods are also applicable to thermal spectrum \glspl{MSR}.
 Additional tools developed specifically for thermal \gls{MSR} applications are 
 also listed in table~\ref{tab:fs_codes}.
 
-Methods (1, 3, 4) provide some form of reactivity control, and methods (1, 4, 
+Methods (1, 3, 4) simulate some form of reactivity control, and methods (1, 4, 
 5, 6, 8, 9) use a set of all nuclides in depletion calculations. 
 
-Liquid-fueled \gls{MSR} designs have online separations and/or feeds, where 
-material is moved to or from the core at all times (continuous) or at specific 
+Many liquid-fueled \gls{MSR} designs rely on online fuel processing in which 
+material moves to and from the core at all times (continuous) or at specific 
 time steps (batch). To account for batch discharge, a depletion tool must 
 remove some or all material at specified intervals. This requires the burn-up 
 simulation to stop at a given time and restart with a new liquid fuel 
 composition (after removal of discarded materials and addition of 
-fissile/fertile materials). Accounting for a continuous removal or addition is 
-more difficult because it requires adding a term to the Bateman equations. In 
-SCALE \cite{bowman_scale_2011}, ORIGEN \cite{gauld_isotopic_2011} solves a set 
-of Bateman equations using spectrum-averaged fluxes and cross sections 
-generated from a deterministic transport calculation. Methods (1, 4, 8) model 
-true continuous feeds and removals, while other methods employ a batch-wise 
-approach. \gls{ORNL} researchers have developed ChemTriton, a Python-based 
-script for SCALE/TRITON which uses a semi-continuous batch process to simulate 
-a continuous reprocessing. This tool models salt treatment, separations, 
-discharge, and refill using a unit-cell \gls{MSR} SCALE/TRITON model over small 
-time steps to simulate continuous reprocessing and deplete the fuel salt 
-\cite{powers_new_2013}.
+fissile/fertile materials). Accounting for continuous removal or addition  
+presents a greater challenge since it requires adding a term to the Bateman 
+equations. In SCALE \cite{bowman_scale_2011}, ORIGEN \cite{gauld_isotopic_2011} 
+solves a set of Bateman equations using spectrum-averaged fluxes and cross 
+sections generated from a deterministic transport calculation. Methods (1, 4, 
+8) model true continuous feeds and removals, while other methods employ a 
+batch-wise approach. \gls{ORNL} researchers have developed ChemTriton, a 
+Python-based script for SCALE/TRITON which uses a semi-continuous batch process 
+to simulate a continuous reprocessing. ChemTriton models salt treatment, 
+separations, discharge, and refill using a unit-cell \gls{MSR} SCALE/TRITON 
+model over small time steps to simulate continuous reprocessing and deplete the 
+fuel salt \cite{powers_new_2013}.
 
 Thorium-fueled \gls{MSBR}-like reactors similar to the one in this work are 
 described in (6, 7, 8, 9). Nevertheless, most of these efforts considered only 
 simplified unit-cell geometry because depletion computations for a many-year 
-fuel cycle are computationally expesive even for simple models. 
+fuel cycle are computationally expensive even for simple models. 
 
-Nuttin \emph{et al.} broke up reactor core geometry into tree \gls{MCNP} cells: 
-one for salt channels, one for two salt plena above and below the core and the 
-last cell for the annulus, consequently, two-region reactor core was 
+Nuttin \emph{et al.} broke up reactor core geometry into three \gls{MCNP} cells: 
+one for salt channels, one for the salt plena above and below the core and the 
+last cell for the annulus, consequently, the two-region reactor core was 
 approximated by one region with averaged fuel/moderator ratio 
 \cite{nuttin_potential_2005}.  A similar approach was used by Powers \emph{et 
 al.}, Betzler \emph{et al.}, and Jeong \emph{et al.} 
 \cite{powers_new_2013,powers_inventory_2014,betzler_modeling_2016, 
-betzler_molten_2017, jeong_development_2014, jeong_equilibrium_2016} and 
+betzler_molten_2017, jeong_development_2014, jeong_equilibrium_2016}. This 
 clearly misrepresent the two-region breeder reactor concept. The unit-cell or 
 one-region models may produce reliable results for homogeneous reactor cores 
 (i.e. \gls{MSFR}, \gls{MOSART}) or for one-region single-fluid reactor designs 
-(i.e. \gls{MSRE}). A two-region \gls{MSBR} must be simulated using a whole-core 
-model to represent different neutron transport in the inner and outer regions 
-of the core, because most fissions happens in the inner region while breeding 
-occurs in the outer zone.  
+(i.e. \gls{MSRE}). However, a two-region \gls{MSBR} must be simulated using a whole-core 
+model to capture different neutron transport characteristics in the inner and 
+outer regions of the core. In particular, most fissions happens in the inner 
+region while breeding occurs in the outer zone.  
 
 Aufiero \emph{et al.} extended the Monte Carlo burnup code SERPENT 2 and 
 employed it to study the material isotopic evolution of the \gls{MSFR}. The 
-developed extension directly takes into account the effects of online fuel 
+developed extension directly accounts for the effects of online fuel 
 reprocessing on depletion calculations and features a reactivity control 
 algorithm. The extended version of SERPENT 2 was assessed against a dedicated 
 version of the deterministic ERANOS-based EQL3D procedure 
@@ -155,20 +155,18 @@ The present work introduces the online reprocessing simulation code, SaltProc,
 which expands the capability of the continuous-energy Monte Carlo Burnup 
 calculation code, SERPENT 2 \cite{leppanen_serpent_2015-1}, for simulation 
 liquid-fueled \gls{MSR} operation 
-\cite{andrei_rykhlevskii_arfc/saltproc:_2018}. It is also reports the 
-application of the coupled SaltProc-SERPENT 2 system to the \gls{MSBR}, which 
-represents the continuation of the work presented in 
-\cite{rykhlevskii_full-core_2017, rykhlevskii_online_2017}. The major objective 
-of the work herein is to analyze \gls{MSBR} neutronics and fuel cycle to find 
-the equilibrium core composition and core depletion. The additional objective 
+\cite{andrei_rykhlevskii_arfc/saltproc:_2018}. It also reports the 
+application of the coupled SaltProc-SERPENT 2 system to the \gls{MSBR}, an 
+extension of the work presented in 
+\cite{rykhlevskii_full-core_2017, rykhlevskii_online_2017}. In this work, we 
+analyze \gls{MSBR} neutronics and fuel cycle to find 
+the equilibrium core composition. The additional objective 
 is to compare predicted operational and safety parameters of the \gls{MSBR} at 
 both the initial and equilibrium states. Finally, $^{232}$Th feed rate will be 
 determined and \gls{MSBR} fuel cycle performance will be analyzed.
 
-The \gls{MSBR} complex geometry is hard to describe in software input, and, 
+The complex \gls{MSBR} geometry is challenging to describe in software input, and, 
 usually, researchers make significant geometric simplifications to model it 
-\cite{park_whole_2015}. Note that this study leverages extensive computational 
-resources to avoid these geometric approximations and accurately capture 
-breeding behavior. This article only discusses liquid-fueled \glspl{MSR}. 
-Another challenge of the \glspl{MSR}, its delayed neutron precursor drift 
-related to circulating liquid fuel, is not treated here.
+\cite{park_whole_2015}. This study leverages extensive computational 
+resources to avoid these geometric approximations in order to accurately capture 
+breeding behavior. 
