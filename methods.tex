@@ -270,12 +270,12 @@ that uses a semi-continuous approach to simulate continuous feeds and removals
 in \glspl{MSR}. 
 
 The tool structure and capabilities of SaltProc are similar to the ChemTriton tool 
-developed in \gls{ORNL} for SCALE \cite{powers_new_2013}. SaltProc is coupled with Monte 
-Carlo SERPENT 2
-software which allows to simulate online reprocessing for irregular full-core 
-geometry with high level of fidelity.  The primary function of SaltProc is to 
+developed in \gls{ORNL} for SCALE \cite{powers_new_2013}. SaltProc is coupled 
+with the Monte Carlo SERPENT 2
+software to simulate online reprocessing for irregular full-core 
+geometry with high fidelity.  The primary function of SaltProc is to 
 manage material streams while
-SERPENT 2 performs most of the computationally heavy work, namely neutron 
+SERPENT 2 performs the computationally heavy work, namely neutron 
 transport and depletion
 calculations. Saltproc is defined as a python class, where each material stream 
 is defined as a isotopic atomic density
@@ -287,36 +287,37 @@ addition, SaltProc provides a set of functions for each stream: read and write
 isotopic data in/from database, separate out specific isotopes from stream with 
 defined efficiency, feed in specific isotopes to stream, and maintain constant 
 number density of specific nuclide in the core. These attributes and functions 
-are crucial to simulate the operation of a complex, multi-zone, multi-fluid 
-\gls{MSR} and are universal for myriad reactor systems.
+are crucial to simulating the operation of a complex, multi-zone, multi-fluid 
+\gls{MSR} and sufficiently general to represent myriad reactor systems.
 
-Saltproc is currently in active development in Github (https://github.com/ 
-arfc/saltproc), and has unit tests and Travis continuous integration for 
+SaltProc, currently in active development in Github (https://github.com/ 
+arfc/saltproc), leverages unit tests and continuous integration for 
 sustainable development. There is also documentation
-generated through Sphinx document generator for ease of use. We plan to 
+generated through Sphinx document generator for ease of use. In future 
+releases, we plan to 
 implement
-user-defined reprocessing scheme definition, two-region \gls{MSR} modeling 
+support for entirely user-customized reprocessing strategies, two-region \gls{MSR} modeling 
 capabilities,
-and decay modeling in future releases.
+and decay modeling.
 
 Figure~\ref{fig:saltproc_flow} illustrates the  online reprocessing simulation 
-algorithm the coupled SaltProc and SERPENT 2. To perform a depletion step,
-SaltProc reads an external SERPENT 2 template file which is defined by the 
-user. This file contains input cards with parameters such as geometry,
-moderator and construction materials isotopic composition, neutron population, 
-criticality cycles, total heating power, and boundary conditions.
+algorithm coupling SaltProc and SERPENT 2. To perform a depletion step, 
+SaltProc reads a user-defined SERPENT 2 template file. This file contains input 
+cards with parameters such as geometry, material, isotopic composition, neutron 
+population, criticality cycles, total heating power, and boundary conditions.  
 After the depletion calculation, SaltProc reads the depleted fuel composition 
-file (\texttt{
-.bumat1}) and stores the depleted
-composition isotopic vector in an HDF5 database. SaltProc only stores and edits 
-the isotopic composition of the fuel stream,
-which makes SaltProc a flexible tool to model any geometry: an infinite medium, 
-a unit cell, a multi-zone simplified assembly, or a full core.
+file (\texttt{ .bumat1}) and stores the depleted composition isotopic vector in 
+an HDF5 database. 
+
+SaltProc only stores and edits the isotopic composition of 
+the fuel stream, which makes SaltProc a flexible tool to model any geometry: an 
+infinite medium, a unit cell, a multi-zone simplified assembly, or a full core.
 This flexibiliity allows the user to perform simulations of varying fidelity 
 and computational intensity.
+
 \begin{figure}[ht!] % replace 't' with 'b' to \centering
   \includegraphics[width=0.75\textwidth]{saltproc_flowchart.pdf}
-  \caption{Flow chart for the Saltproc python-based tools.}
+  \caption{Flow chart for the Saltproc python package.}
   \label{fig:saltproc_flow}
 \end{figure}
 SaltProc can manage as many material streams as desired. It also may work with 
@@ -356,9 +357,9 @@ product removal rates, and corresponding core safety parameters are constant in
 time.
 
 In addition, SaltProc is able to define time-dependent material feed and 
-removal rates to investigate the their impacts. These rates need not be 
+removal rates to investigate their impacts. These rates need not be 
 constant in SaltProc. They can be defined as piecewise functions or set to 
-respond conditions in the core. For instance, SaltProc might increase the 
+respond to conditions in the core. For instance, SaltProc might increase the 
 fissile material feeding rate if the effective multiplication factor, 
 $k_{eff}$, falls below a specific limit (e.g., 1.002).
 These capabilities allow SaltProc to analyze fuel cycle of a generic 
