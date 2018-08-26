@@ -11,7 +11,7 @@ and physical protection" \cite{doe_technology_2002}. To achieve the goals
 formulated by the GIF, \glspl{MSR} attempt to simplify the reactor core and 
 improve inherent safety by using liquid fuel.
 
- In the thermal spectrum \gls{MSR}, fluorides of fissile and/or fertile 
+In the thermal spectrum \gls{MSR}, fluorides of fissile and/or fertile 
 materials (i.e. UF$_4$, ThF$_4$,  PuF$_3$, TRU\footnote{ Transuranic 
 elements}F$_3$) combine with carrier salts to form a liquid fuel that 
 circulates in a loop-type primary circuit \cite{haubenreich_experience_1970}. 
@@ -103,9 +103,9 @@ jeong_equilibrium_2016,rykhlevskii_online_2017,nuttin_potential_2005} use a set
 of all nuclides in depletion calculations. 
 
 Many liquid-fueled \gls{MSR} designs rely on online fuel processing in which  
-material moves to and from the core at specific time steps (batch) or 
-continuously. In batch-wise approach the burn-up simulation stops at a given 
-time and restart with a new liquid fuel composition (after removal of discarded 
+material moves to and from the core continuously or at specific time steps 
+(batch-wise). In the batch-wise approach, the burn-up simulation stops at a given 
+time and restarts with a new liquid fuel composition (after removal of discarded 
 materials and addition of fissile/fertile materials). \gls{ORNL} researchers 
 have developed ChemTriton, a Python-based script for SCALE/TRITON which uses the 
 batch-wise approach to simulate a continuous reprocessing. ChemTriton models salt 
@@ -114,13 +114,13 @@ SCALE/TRITON depletion simulation over small time steps to simulate continuous
 reprocessing and deplete the fuel salt \cite{powers_new_2013}. Methods listed in 
 references \cite{fiorina_investigation_2013,sheu_depletion_2013,park_whole_2015, 
 jeong_equilibrium_2016,powers_inventory_2014,betzler_molten_2017,rykhlevskii_online_2017} 
-and current work employ a batch-wise approach.
+as well as the current work employ a batch-wise approach.
 
 Accounting for continuous removal or addition presents a greater challenge since it 
 requires adding a term to the Bateman equations. In SCALE 
 \cite{bowman_scale_2011}, ORIGEN \cite{gauld_isotopic_2011} solves a set of 
 Bateman equations using spectrum-averaged fluxes and cross sections generated 
-from a deterministic transport calculation. Approaches listed in references 
+from a deterministic transport calculation. Meanwhile, approaches listed in references 
 \cite{doligez_coupled_2014,heuer_towards_2014,aufiero_extended_2013,nuttin_potential_2005} 
 model true continuous feeds and removals. 
 
@@ -140,7 +140,7 @@ approximated by one region with averaged fuel/moderator ratio
 al.}, Betzler \emph{et al.}, and Jeong \emph{et al.} 
 \cite{powers_new_2013,powers_inventory_2014,betzler_modeling_2016, 
 betzler_molten_2017, jeong_development_2014, jeong_equilibrium_2016}. This approach 
-misrepresent the two-region breeder reactor concept. The unit-cell or one-region 
+misrepresents the two-region breeder reactor concept. The unit-cell or one-region 
 models may produce reliable results for homogeneous reactor cores (i.e. 
 \gls{MSFR}, \gls{MOSART}) or for one-region single-fluid reactor designs (i.e. 
 \gls{MSRE}). However, a two-region \gls{MSBR} must be simulated using a whole-core 
