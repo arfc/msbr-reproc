@@ -102,18 +102,8 @@ Only the batch-wise online reprocessing approach has been treated in this
 work. However, the SERPENT 2 Monte Carlo code was recently extended for 
 continuous online fuel reprocessing simulation \cite{aufiero_extended_2013}. 
 This extension must be verified against existing SaltProc/SERPENT or 
-ChemTriton/SCALE packages, and could be employed for simulating immediate removal of 
+ChemTriton/SCALE packages, and could be employed for immediate removal of 
 fission product gases (e.g., Xe, Kr) which have a strong negative impact on 
 core lifetime and breeding efficiency. Finally, using the built-in SERPENT 2 
 Monte Carlo code online reprocessing \& refueling material burnup routine would 
 significantly speed up computer-intensive full-core depletion simulations.
-
-Lastly, this work enables accident safety analysis such as multi-physics 
-simulation of the \gls{MSBR} with the coupled 
-neutronics/thermal-hydraulics code, Moltres \cite{lindsay_introduction_2018}. 
-The existing full-core SERPENT 2 model and equilibrium fuel material 
-composition would be employed to generate problem-oriented nuclear data 
-libraries for further usage in accident transient analysis. The final goal of 
-this effort is to develop a fast-running computational model which could study 
-the dynamic behavior of generic \glspl{MSR}, performing detailed safety 
-analysis and design optimization for a variety of reactor concepts.

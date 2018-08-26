@@ -33,8 +33,7 @@ online reprocessing strategy.
   \centering
   \includegraphics[width=\textwidth]{keff.png}
   \caption{Effective multiplication factor dynamics for full-core \gls{MSBR} 
-  model for a 60-year reactor operation. The confidence interval 
-  $\sigma=\pm15pcm$ is shaded.}
+  model for a 60-year reactor operation.}
   \label{fig:keff}
 \end{figure}
 
@@ -57,15 +56,15 @@ irradiation.
 
 \subsection{Fuel salt composition dynamics}
 The analysis of the fuel salt composition evolution provides more comprehensive 
-information about the equilibrium state. Figure~\ref{fig:adens_eq} shows major 
-nuclides which have a strong influence on the reactor core physics normalized 
-separately for each isotope by average atomic density, at the beginning of each 
-depletion time step. The concentrations of $^{233}$U, $^{232}$Th, $^{233}$Pa, and 
-$^{232}$Pa in fuel salt change insignificantly after approximately 2500 days of 
-operation. Particularly, $^{233}$U number density fluctuates less than 0.8\% in 
-the time interval from 16 to 20 years of operation. Hence, a quasi-equilibrium 
-state was achieved after 16 years of reactor operation.
-\begin{figure}[ht!] % replace 't' with 'b' to \centering
+information about the equilibrium state. Figure~\ref{fig:adens_eq} shows number 
+density of major nuclides which have a strong influence on the reactor core 
+physics. The concentration of $^{233}$U, $^{232}$Th, $^{233}$Pa, and $^{232}$Pa in 
+the fuel salt change insignificantly after approximately 2500 days of operation. 
+Particularly, the $^{233}$U number density fluctuates less than 0.8\% in the time 
+interval from 16 to 20 years of operation. Hence, a quasi-equilibrium state was 
+achieved after 16 years of reactor operation.
+\begin{figure}[ht!] % replace 't' with 'b' to 
+  \centering
   \includegraphics[width=\textwidth]{major_isotopes_adens.png}
   \caption{Number density of major nuclides during 60 years of reactor 
   operation.}
@@ -82,7 +81,8 @@ isotope $^{233}$U was approximately 7.97$\times10^{-5}$ atom/b-cm. Thus,
 production of new fissile materials in the core as well as $^{233}$U breeding 
 make it possible to compensate for negative effects of strong absorber 
 accumulation and keep the reactor critical.
-\begin{figure}[htp!] % replace 't' with 'b' to \centering
+\begin{figure}[htp!] % replace 't' with 'b' to 
+  \centering
   \includegraphics[width=\textwidth]{fissile_short.png}
   \caption{Number density of fissile in epithermal spectrum nuclides 
   accumulation during the reactor operation.}
@@ -94,36 +94,38 @@ Figure~\ref{fig:spectrum} shows the normalized neutron flux spectrum for the
 full-core \gls{MSBR} model in the energy range from $10^{-8}$ to $10$ MeV. The 
 neutron energy spectrum at equilibrium is harder than at startup due to 
 $^{238}$Pu, $^{239}$Pu, $^{240}$Pu, $^{241}$Pu, and $^{242}$Pu accumulation in 
-the core during reactor operation.  \begin{figure}[ht!] % replace 't' with 'b' 
-        to force it to \centering
+the core during reactor operation.  
+\begin{figure}[ht!] % replace 't' with 'b'         to force it to 
+  \centering
   \includegraphics[width=\textwidth]{spectrum.png} \caption{Neutron flux energy 
   spectrum normalized by unit lethargy for initial and equilibrium fuel salt 
   composition.}
   \label{fig:spectrum}
 \end{figure}
-Figure~\ref{fig:spectrum_zones} shows that zone I produced much more thermal 
-neutrons than zone II, indicating that the majority of fissions occured in the 
-central part of the core. In the undermoderated zone II, the neutron energy 
-spectrum is harder which leads to more capture of neutrons by $^{232}$Th and 
-helps a achieve relatively high breeding ratio. Moreover, the (n,$\gamma$) 
-resonance energy range in $^{232}$Th is from 10$^{-4}$ to 10$^{-2}$ MeV. 
-Furthermore, in the central core region 
-(zone I), the neutron energy spectrum shifts to a harder spectrum over 20 years 
-of reactor operation. Meanwhile, in the outer core region (zone II) a similar 
-spectral shift takes place at a reduced scale. This results is in a good 
-agreement with original ORNL report \cite{robertson_conceptual_1971} and most 
-recent whole-core steady-state study \cite{park_whole_2015}.
 
-It is important to obtain the epithermal and thermal spectra to produce 
-$^{233}$U from $^{232}$Th because the radiative capture cross section of 
-thorium decreases monotonically from $10^{-10}$ MeV to $10^{-5}$ MeV. Hardening 
-the spectrum tends to significantly increase resonance absorption in thorium 
-and decrease the absorptions in fissile and construction materials. Thus, a 
-significant amount fissile material will be needed to make the reactor 
-critical.  \begin{figure}[ht!] % replace 't' with 'b' to force it to \centering
-  \includegraphics[width=\textwidth]{spectrum_zones.png} \caption{Neutron flux 
-  energy spectrum in different core regions normalized by unit lethargy for the 
-  initial and equilibrium fuel salt composition.}
+Figure~\ref{fig:spectrum_zones} shows that zone I produced more thermal neutrons 
+than zone II, corresponding to a majority of fissions occuring in the central part 
+of the core. In the undermoderated zone II, the neutron energy spectrum is harder 
+which leads to more capture of neutrons by $^{232}$Th and helps a achieve relatively 
+high breeding ratio. Moreover, the (n,$\gamma$) resonance energy range in $^{232}$Th 
+is from 10$^{-4}$ to 10$^{-2}$ MeV. Therefore, the moderator-to-fuel ratio for zone 
+II was chosen to shift the neutron energy spectrum in this range. Furthermore, in the 
+central core region (zone I), the neutron energy spectrum shifts to a harder spectrum 
+over 20 years of reactor operation. Meanwhile, in the outer core region (zone II) a 
+similar spectral shift takes place at a reduced scale. This results is in a good 
+agreement with original ORNL report \cite{robertson_conceptual_1971} and most recent 
+whole-core steady-state study \cite{park_whole_2015}.
+
+It is important to obtain the epithermal and thermal spectra to produce $^{233}$U from 
+$^{232}$Th because the radiative capture cross section of thorium decreases monotonically 
+from $10^{-10}$ MeV to $10^{-5}$ MeV. Hardening the spectrum tends to significantly 
+increase resonance absorption in thorium and decrease the absorptions in fissile and 
+construction materials. 
+\begin{figure}[ht!] % replace 't' with 'b' to force it to 
+  \centering
+  \includegraphics[width=\textwidth]{spectrum_zones.png} 
+  \caption{Neutron flux energy spectrum in different core regions normalized by 
+unit lethargy for the initial and equilibrium fuel salt composition.}
   \label{fig:spectrum_zones}
 \end{figure}
 
@@ -358,12 +360,13 @@ the reactivity decreases to the subcritical state after approximately 500 and
 1300 days of operation for cases with no removal and volatile gases \& noble 
 metals removal, respectively. The time when the simulated core reaches 
 subcriticality ($k_{eff}<$1.0) for full-core model) called the core lifetime. 
-Therefore, removing fission products provides with significant neutronic 
-benefit because allows achieve longer core lifetime.
-\begin{figure}[ht!] % replace 't' with 'b' to force it to \centering
-  \includegraphics[width=\textwidth]{keff_rem_cases.png} \caption{Calculated 
-  effective multiplication factor for full-core \gls{MSBR} model with removal 
-  of various fission product groups over 10 years of operation. The 
-  confidence interval $\pm\sigma	$ is shaded.}
+Therefore, removing fission products provides with significant neutronic benefit 
+and enables a longer core lifetime.
+\begin{figure}[ht!] % replace 't' with 'b' to force it to 
+  \centering
+  \includegraphics[width=\textwidth]{keff_rem_cases.png} 
+  \caption{Calculated effective multiplication factor for full-core \gls{MSBR} 
+model with removal of various fission product groups over 10 years of 
+operation.}
   \label{fig:fp_removal}
 \end{figure}

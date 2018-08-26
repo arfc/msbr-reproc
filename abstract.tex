@@ -1,24 +1,20 @@
 \begin{abstract}
 
-Current interest in advanced nuclear energy and \gls{MSR} concepts has enhanced 
-demand for tools to analyze these systems. This paper introduces a Python 
-package, SaltProc, which simulates \gls{MSR} online reprocessing by modeling the 
-changing isotopic composition of an irradiated fuel salt. SaltProc couples with 
-the Monte Carlo neutron transport software, SERPENT 2, for neutron transport and depletion 
-calculations. SaltProc capabilities was illuminated for full-core depletion in 
-the \gls{MSBR} which demonstrated that (1) equilibrium fuel composition could 
-be achieved after 16 years and (2) the multiplication factor stabilizes after 6 
-years of operation. Fuel salt irradiation with online reprocessing causes 
-considerable neutron energy spectrum hardening; this spectral shift has a 
-problematic impact on safety parameters (e.g., temperature reactivity feedback, 
-reactivity control system worth). Volatile gases and noble metals removal has 
-positive effect on the core performance approximately 7500 pcm over 10-years 
-timeframe; rare earth elements removal has slower rate and less impact on 
-reactivity (5500 pcm). Finally, the average $^{232}$Th feed rate throughout 60 
-years of operation is 100 g/GWh$_e$ which is a good agreement with other recent 
-research. Problematic effects of neutron energy spectrum hardening during 
-\gls{MSBR} operation should be taken into account for neutronics, 
-multi-physics, and fuel cycle performance analysis.
+Today climate change pushes humankind in search new ways to generate 
+carbon-free, reliable base load power. Thus,
+interest in advanced nuclear energy and particularly \glspl{MSR} has resurged, 
+with multiple new companies pursuing commercialization of \gls{MSR} 
+designs (e.g. Transatomic, Terrapower, Terrestrial, Moltex Energy, Thorcon). To further 
+develop these \gls{MSR} concepts, researchers need simulation tools for analyzing liquid 
+fueled molten salt reactor depletion and fuel processing. However, most 
+contemporary nuclear reactor physics software is unable to perform high-fidelity 
+full-core depletion calculations in an online reprocessing regime. This paper 
+introduces a Python package, SaltProc, which couples with the Monte Carlo code, 
+SERPENT2, and simulates \gls{MSR} online reprocessing by modeling the changing 
+isotopic composition of \gls{MSR} fuel salt. SaltProc capabilities were 
+demonstrated for full-core high-fidelity model of the commercial \gls{MSBR} 
+concept and compared well to previous results from lower fidelity analyses.
 
 \end{abstract}
+
 

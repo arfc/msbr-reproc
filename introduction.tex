@@ -1,92 +1,90 @@
 \section{Introduction}
 % State the objectives of the work and provide an adequate background, avoiding
 % a detailed literature survey or a summary of the results.
-The \gls{MSR} is an advanced nuclear reactor developed at \gls{ORNL} 
-in the 1950s and operated in the 1960s. More recently, the \gls{GIF} included 
-\glspl{MSR} among the six advanced reactor concepts promising for further 
-research and development.
+The \gls{MSR} is an advanced nuclear reactor which was developed at \gls{ORNL} 
+in the 1950s and was operated in the 1960s. More recently, the \gls{GIF}  
+included \glspl{MSR} among the six advanced reactor concepts promising for 
+further research and development. 
 \glspl{MSR} offer significant improvements ``in the four broad areas of 
 sustainability, economics, safety and reliability, and proliferation resistance 
 and physical protection" \cite{doe_technology_2002}. To achieve the goals 
 formulated by the GIF, \glspl{MSR} attempt to simplify the reactor core and 
 improve inherent safety by using liquid fuel.
 
- In the thermal spectrum \gls{MSR}, fluorides of fissile and/or fertile 
- materials (i.e. UF$_4$, ThF$_4$,  PuF$_3$, TRU\footnote{ Transuranic 
- elements}F$_3$) combine with carrier salts to form a liquid fuel that 
- circulates in a loop-type primary circuit \cite{haubenreich_experience_1970}.  
- Immediate advantages over traditional, solid-fueled, reactors include 
- near-atmospheric pressure in the primary loop, 
- relatively high coolant temperature, outstanding neutron economy, improved 
- safety parameters, reduced fuel preprocessing, and the ability to 
- continuously remove fission products and add fissile and/or fertile elements 
- \cite{leblanc_molten_2010}. The thorium-fueled \gls{MSBR} was developed in the 
- early 1970s by \gls{ORNL} to explore the promise of the thorium 
- fuel cycle, which uses natural thorium instead of enriched uranium. With 
- continuous fuel reprocessing, the \gls{MSBR}
- realizes the advantages of the thorium fuel cycle because the $^{233}$U bred from 
- $^{232}$Th is almost instantly \footnote{\space $^{232}$Th transmutes into 
- $^{233}$Th after capturing a neutron. Next, this isotope decays to $^{233}$Pa 
- ($\tau_{1/2}$=21.83m), which finally decays to $^{233}$U 
- ($\tau_{1/2}$=26.967d).} recycled back to the core 
- \cite{betzler_modeling_2016}. The chosen fuel salt, 
- LiF-BeF$_2$-ThF$_4$-UF$_4$, has a $499^\circ$C melting point, a low vapor 
- pressure at operating temperatures, 
- and good flow and heat transfer properties \cite{robertson_conceptual_1971}. 
- In the matter of nuclear fuel cycle, the thorium cycle produces a reduced 
- quantity of plutonium and \glspl{MA} compared to the traditional uranium fuel 
- cycle. Finally, the \gls{MSR} also could be employed as a converter reactor 
- for transmutation of spent fuel from current \glspl{LWR}.
+In the thermal spectrum \gls{MSR}, fluorides of fissile and/or fertile 
+materials (i.e. UF$_4$, ThF$_4$,  PuF$_3$, TRU\footnote{ Transuranic 
+elements}F$_3$) combine with carrier salts to form a liquid fuel that 
+circulates in a loop-type primary circuit \cite{haubenreich_experience_1970}. 
+Immediate advantages over traditional, solid-fueled, reactors include 
+near-atmospheric pressure in the primary loop, 
+relatively high coolant temperature, outstanding neutron economy, improved 
+safety parameters, reduced fuel preprocessing, and the ability to continuously 
+remove fission products and add fissile and/or fertile elements 
+\cite{leblanc_molten_2010}. The thorium-fueled \gls{MSBR} was developed in the 
+early 1970s by \gls{ORNL} specifically to explore the promise of the thorium 
+fuel cycle, which uses natural thorium instead of enriched uranium. With 
+continuous fuel reprocessing, the \gls{MSBR} realizes the advantages of the 
+thorium fuel cycle because the $^{233}$U bred from 
+$^{232}$Th is almost instantly \footnote{\space $^{232}$Th transmutes into 
+$^{233}$Th after capturing a neutron. Next, this isotope decays to $^{233}$Pa 
+($\tau_{1/2}$=21.83m), which finally decays to $^{233}$U 
+($\tau_{1/2}$=26.967d).} recycled back to the core 
+\cite{betzler_modeling_2016}. The chosen fuel salt, LiF-BeF$_2$-ThF$_4$-UF$_4$, has a 
+melting point of $499^\circ$C, a low vapor pressure at operating temperatures, 
+and good flow and heat transfer properties \cite{robertson_conceptual_1971}. In 
+the matter of nuclear fuel cycle, the thorium cycle produces a reduced quantity 
+of plutonium and \glspl{MA} compared to the traditional uranium fuel cycle. 
+Finally, the \gls{MSR} also could be employed as a converter reactor for 
+transmutation of spent fuel from current \glspl{LWR}.
 
-Liquid-fueled systems present a challenge to existing neutron transport and 
-depletion tools which are typically designed to simulate solid-fueled reactors.  
+Liquid-fueled systems present a challenge to existing neutron transport and
+depletion tools which are typically designed to simulate solid-fueled reactors. 
 To handle the material flows and potential online removal and feed of 
 liquid-fueled systems, early \gls{MSR} simulation methods at \gls{ORNL} 
 integrated neutronics and fuel cycle codes (i.e., \gls{ROD} 
-\cite{bauman_rod:_1971}) into operational plant tools (i.e., \gls{MRPP} 
+\cite{bauman_rod:_1971}) into operational plant tools (i.e., \gls{MRPP}
 \cite{kee_mrpp:_1976}) for \gls{MSR} and reprocessing system design.  Based on 
-this approach, recent tools from universities and research institutions can 
+this approach, recent tools from universities and research institutions can
 approximate online refueling \cite{serp_molten_2014}.  Recent research efforts 
-in Europe and Asia mainly focus on fast spectrum reactor fuel cycle analysis. 
-These  couple external tools to neutron transport while depletion codes take into 
-account continuous feeds and removals in \glspl{MSR}. A summary of recent 
+in Europe and Asia mainly focus on fast spectrum reactor fuel cycle analysis.
+These  couple external tools to neutron transport while depletion codes take into
+account continuous feeds and removals in \glspl{MSR}. A summary of recent
 efforts are listed in table~\ref{tab:fs_codes}.
 
 \begin{table}[ht!]
 \caption{Tools and methods for fast spectrum system fuel cycle analysis.}
-\begin{tabularx}{\textwidth}{ x | s | s | m | x } \hline & Neutronic code  & 
-Depletion code    & \qquad Authors & Spectra   \\
+\begin{tabularx}{\textwidth}{ m | b | x } 
+\hline Neutronic code    & \qquad Authors & Spectra   \\
 \hline
-1 & \gls{MCNP} \cite{noauthor_mcnp_2004}      & REM 
-\cite{heuer_simulation_2010}  & Doligez \emph{et al.}, 2014; Heuer \emph{et 
-al.}, 2014  \cite{doligez_coupled_2014,heuer_towards_2014}    & fast \\
+\gls{MCNP}/REM \cite{noauthor_mcnp_2004,heuer_simulation_2010}  & Doligez 
+\emph{et al.}, 2014; Heuer \emph{et al.}, 2014  
+\cite{doligez_coupled_2014,heuer_towards_2014}    & fast \\
 \hline
-2 & ERANOS \cite{ruggieri_eranos_2006}      & ERANOS     & Fiorina \emph{et 
-al.}, 2013 \cite{fiorina_investigation_2013}            & fast \\
+ERANOS \cite{ruggieri_eranos_2006}  & Fiorina \emph{et al.}, 2013 
+\cite{fiorina_investigation_2013}            & fast \\
 \hline
-3 & KENO-IV \cite{goluoglu_monte_2011}     & ORIGEN \cite{gauld_isotopic_2011}     
-& Sheu \emph{et al.}, 2013 \cite{sheu_depletion_2013} & fast \\
+KENO-IV/ORIGEN \cite{goluoglu_monte_2011,gauld_isotopic_2011}     & Sheu 
+\emph{et al.}, 2013 \cite{sheu_depletion_2013} & fast \\
 \hline
-4 & SERPENT 2 \cite{leppanen_serpent_2015-1}   & SERPENT 2  & Aufiero \emph{et 
-al.}, 2013 \cite{aufiero_extended_2013} & fast \\
+SERPENT 2 \cite{leppanen_serpent_2015-1}  & Aufiero \emph{et al.}, 2013 
+\cite{aufiero_extended_2013} & fast \\
 \hline
-5 & MCODE \cite{xu_mcode_2008}      & ORIGEN2 \cite{croff_users_1980}      & 
-Ahmad \emph{et al.}, 2015 \cite{ahmad_neutronics_2015}   & thermal  \\
+MCODE/ORIGEN2 \cite{xu_mcode_2008,croff_users_1980}      & Ahmad \emph{et al.}, 
+2015 \cite{ahmad_neutronics_2015}   & thermal  \\
 \hline
-6 & \gls{MCNP}6     & CINDER90 \cite{goorley_mcnp6_2013}     & Park \emph{et 
-al.}, 2015; Jeong \emph{et al.}, 2016 \cite{park_whole_2015, 
-jeong_equilibrium_2016}& thermal\\
-\hline
-7 & SCALE \cite{bowman_scale_2011}      & SCALE/ ChemTriton 
-\cite{powers_new_2013}    & Powers \emph{et al.}, 2014; Betzler \emph{et al.}, 
-2017 \cite{powers_new_2013,powers_inventory_2014,betzler_molten_2017}& 
+\gls{MCNP}6/CINDER90 \cite{goorley_mcnp6_2013}     & Park \emph{et al.}, 2015; 
+Jeong \emph{et al.}, 2016 \cite{park_whole_2015, jeong_equilibrium_2016}& 
 thermal\\
 \hline
-8 & SERPENT 2      & SERPENT 2     & Rykhlevskii \emph{et al.}, 2017 
-\cite{rykhlevskii_online_2017} & thermal\\
+SCALE/TRITON \cite{bowman_scale_2011,powers_new_2013}    & Powers \emph{et al.}, 
+2014; Betzler \emph{et al.}, 2017 
+\cite{powers_new_2013,powers_inventory_2014,betzler_molten_2017}& thermal\\
 \hline
-9 & \gls{MCNP}      & REM  & Nuttin \emph{et al.} 
-\cite{nuttin_potential_2005}&thermal  \\ \hline
+SERPENT 2     & Rykhlevskii \emph{et al.}, 2017 \cite{rykhlevskii_online_2017} & 
+thermal\\
+\hline
+\gls{MCNP}/REM  & Nuttin \emph{et al.} \cite{nuttin_potential_2005}&thermal  \\ 
+\hline
 \end{tabularx}
   \label{tab:fs_codes}
 \end{table}
@@ -96,32 +94,43 @@ Most of these methods are also applicable to thermal spectrum \glspl{MSR}.
 Additional tools developed specifically for thermal \gls{MSR} applications are 
 also listed in table~\ref{tab:fs_codes}.
 
-Methods (1, 3, 4) simulate some form of reactivity control, and methods (1, 4, 
-5, 6, 8, 9) use a set of all nuclides in depletion calculations. 
+References 
+\cite{doligez_coupled_2014,heuer_towards_2014,sheu_depletion_2013,aufiero_extended_2013} 
+simulate some form of reactivity control, and methods 
+\cite{doligez_coupled_2014,heuer_towards_2014,aufiero_extended_2013,ahmad_neutronics_2015, 
+park_whole_2015, 
+jeong_equilibrium_2016,rykhlevskii_online_2017,nuttin_potential_2005} use a set 
+of all nuclides in depletion calculations. 
 
-Many liquid-fueled \gls{MSR} designs rely on online fuel processing in which 
-material moves to and from the core at all times (continuous) or at specific 
-time steps (batch). To account for batch discharge, a depletion tool must 
-remove some or all material at specified intervals. This requires the burn-up 
-simulation to stop at a given time and restart with a new liquid fuel 
-composition (after removal of discarded materials and addition of 
-fissile/fertile materials). Accounting for continuous removal or addition  
-presents a greater challenge since it requires adding a term to the Bateman 
-equations. In SCALE \cite{bowman_scale_2011}, ORIGEN \cite{gauld_isotopic_2011} 
-solves a set of Bateman equations using spectrum-averaged fluxes and cross 
-sections generated from a deterministic transport calculation. Methods (1, 4, 
-8) model true continuous feeds and removals, while other methods employ a 
-batch-wise approach. \gls{ORNL} researchers have developed ChemTriton, a 
-Python-based script for SCALE/TRITON which uses a semi-continuous batch process 
-to simulate a continuous reprocessing. ChemTriton models salt treatment, 
-separations, discharge, and refill using a unit-cell \gls{MSR} SCALE/TRITON 
-model over small time steps to simulate continuous reprocessing and deplete the 
-fuel salt \cite{powers_new_2013}.
+Many liquid-fueled \gls{MSR} designs rely on online fuel processing in which  
+material moves to and from the core continuously or at specific time steps 
+(batch-wise). In the batch-wise approach, the burn-up simulation stops at a given 
+time and restarts with a new liquid fuel composition (after removal of discarded 
+materials and addition of fissile/fertile materials). \gls{ORNL} researchers 
+have developed ChemTriton, a Python-based script for SCALE/TRITON which uses the 
+batch-wise approach to simulate a continuous reprocessing. ChemTriton models salt 
+treatment, separations, discharge, and refill using a unit-cell \gls{MSR} 
+SCALE/TRITON depletion simulation over small time steps to simulate continuous 
+reprocessing and deplete the fuel salt \cite{powers_new_2013}. Methods listed in 
+references \cite{fiorina_investigation_2013,sheu_depletion_2013,park_whole_2015, 
+jeong_equilibrium_2016,powers_inventory_2014,betzler_molten_2017,rykhlevskii_online_2017} 
+as well as the current work employ a batch-wise approach.
+
+Accounting for continuous removal or addition presents a greater challenge since it 
+requires adding a term to the Bateman equations. In SCALE 
+\cite{bowman_scale_2011}, ORIGEN \cite{gauld_isotopic_2011} solves a set of 
+Bateman equations using spectrum-averaged fluxes and cross sections generated 
+from a deterministic transport calculation. Meanwhile, approaches listed in references 
+\cite{doligez_coupled_2014,heuer_towards_2014,aufiero_extended_2013,nuttin_potential_2005} 
+model true continuous feeds and removals. 
 
 Thorium-fueled \gls{MSBR}-like reactors similar to the one in this work are 
-described in (6, 7, 8, 9). Nevertheless, most of these efforts considered only 
-simplified unit-cell geometry because depletion computations for a many-year 
-fuel cycle are computationally expensive even for simple models. 
+described in \cite{park_whole_2015, 
+jeong_equilibrium_2016,powers_new_2013,powers_inventory_2014, 
+betzler_molten_2017,rykhlevskii_online_2017,nuttin_potential_2005}. 
+Nevertheless, most of these efforts considered only simplified unit-cell 
+geometry because depletion computations for a many-year fuel cycle are 
+computationally expensive even for simple models. 
 
 Nuttin \emph{et al.} broke up reactor core geometry into three \gls{MCNP} cells: 
 one for salt channels, one for the salt plena above and below the core and the 
@@ -130,11 +139,11 @@ approximated by one region with averaged fuel/moderator ratio
 \cite{nuttin_potential_2005}.  A similar approach was used by Powers \emph{et 
 al.}, Betzler \emph{et al.}, and Jeong \emph{et al.} 
 \cite{powers_new_2013,powers_inventory_2014,betzler_modeling_2016, 
-betzler_molten_2017, jeong_development_2014, jeong_equilibrium_2016}. This 
-approach misrepresents the two-region breeder reactor concept. The unit-cell or 
-one-region models may produce reliable results for homogeneous reactor cores 
-(i.e. \gls{MSFR}, \gls{MOSART}) or for one-region single-fluid reactor designs 
-(i.e. \gls{MSRE}). However, a two-region \gls{MSBR} must be simulated using a whole-core 
+betzler_molten_2017, jeong_development_2014, jeong_equilibrium_2016}. This approach 
+misrepresents the two-region breeder reactor concept. The unit-cell or one-region 
+models may produce reliable results for homogeneous reactor cores (i.e. 
+\gls{MSFR}, \gls{MOSART}) or for one-region single-fluid reactor designs (i.e. 
+\gls{MSRE}). However, a two-region \gls{MSBR} must be simulated using a whole-core 
 model to capture different neutron transport characteristics in the inner and 
 outer regions of the core. In particular, most fissions happens in the inner 
 region while breeding occurs in the outer zone.  
@@ -165,7 +174,8 @@ is to compare predicted operational and safety parameters of the \gls{MSBR} at
 both the initial and equilibrium states. Finally, $^{232}$Th feed rate will be 
 determined and \gls{MSBR} fuel cycle performance will be analyzed.
 
-The complex \gls{MSBR} geometry is challenging to describe in software input, and, 
+The complex \gls{MSBR} geometry is challenging to describe in software input, 
+and, 
 usually, researchers make significant geometric simplifications to model it 
 \cite{park_whole_2015}. This study leverages extensive computational 
 resources to avoid these geometric approximations in order to accurately capture 

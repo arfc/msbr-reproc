@@ -1,14 +1,10 @@
 \section{Methods}
 
-Liquid-fueled system modeling with contemporary reactor physics codes is 
-difficult because most of these codes were developed for analyzing solid-fueled 
-reactors. In fact, world-wide commercial reactors fleet today is represented by 
-systems with solid fuel. Liquid-fueled systems ability to continuously remove 
-fission products and add fissile and/or fertile elements is sthe main challenge 
-for depletion simulations. SaltProc takes into account online separations and 
-feeds using the SERPENT 2 continuous-energy Monte Carlo neutron transport and 
-depletion code.  All calculations presented in this study were performed using 
-SERPENT 2 version 2.1.30 on Blue Waters’ XE6 nodes. 
+The ability of liquid-fueled systems to continuously remove fission products and add 
+fissile and/or fertile elements is the main challenge for depletion simulations. 
+The python package introduced in this work, SaltProc, takes into account online 
+separations and feeds using the SERPENT 2 continuous-energy Monte Carlo neutron 
+transport and depletion code.
 
 \subsection{Molten Salt Breeder Reactor design and model description}
 The \gls{MSBR} vessel has a diameter of 680 cm and a height of 610 cm. It 
@@ -242,10 +238,6 @@ separations \cite{robertson_conceptual_1971}.
                 3435 days \\ Protactinium & $^{233}$Pa & 3 days \\ Higher 
                 nuclides & $^{237}$Np, $^{242}$Pu & 16 years \\  \hline
         \end{tabularx}
-        %\footnotetext{Chemical processing plant and gas separation system 
-        %removing chemical elements (not isotopes) only. Isotopes instead of 
-        %elements listed because other isotopes are short-lived and might be 
-        %ignored.}
         \label{tab:reprocessing_list}
 \end{table}
 Th removal rates vary among nuclides in this reactor concept which dictate the 
