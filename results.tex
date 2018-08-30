@@ -39,10 +39,10 @@ online reprocessing strategy.
 
 First, SERPENT calculates the effective multiplication factor for the beginning 
 of cycle time (fresh fuel composition for the first step). Next, it computes 
-the new fuel salt composition for the end of a 3-day depletion step. The 
+the new fuel salt composition at the end of a 3-day depletion step. The 
 corresponding effective multiplication factor is much smaller than the previous 
 one. Finally, SERPENT calculates $k_{eff}$ for the depleted composition after 
-applying feeds and removals. $K_{eff}$ this increases accordingly since major reactor 
+applying feeds and removals. This $K_{eff}$ increases accordingly since major reactor 
 poisons (e.g. Xe, Kr) are removed, while fresh fissile material ($^{233}$U) 
 from the protactinium decay tank is added.  
 
@@ -112,8 +112,8 @@ is from 10$^{-4}$ to 10$^{-2}$ MeV. Therefore, the moderator-to-fuel ratio for z
 II was chosen to shift the neutron energy spectrum in this range. Furthermore, in the 
 central core region (zone I), the neutron energy spectrum shifts to a harder spectrum 
 over 20 years of reactor operation. Meanwhile, in the outer core region (zone II) a 
-similar spectral shift takes place at a reduced scale. This results is in a good 
-agreement with original ORNL report \cite{robertson_conceptual_1971} and most recent 
+similar spectral shift takes place at a reduced scale. These results are in a good 
+agreement with original ORNL report \cite{robertson_conceptual_1971} and the most recent 
 whole-core steady-state study \cite{park_whole_2015}.
 
 It is important to obtain the epithermal and thermal spectra to produce $^{233}$U from 
@@ -131,7 +131,7 @@ unit lethargy for the initial and equilibrium fuel salt composition.}
 
 \subsection{Neutron flux}
 Figure~\ref{fig:radial_flux} shows the radial distribution of fast and thermal 
-neutron flux for both initial and equilibrium composition. The neutron flux has 
+neutron flux for the both initial and equilibrium composition. The neutron flux has 
 the same shape for both compositions but the equilibrium case has a harder 
 spectrum. A significant spectral shift was observed for the central region of 
 the core (zone I) when for the outer region (zone II) it is negligible for fast 
@@ -147,7 +147,7 @@ studied for designing the reactivity control system.
 
 \subsection{Power and breeding distribution}
 Table~\ref{tab:powgen_fraction} shows the power fraction in each zone for 
-initial and equilibrium fuel composition. Figure~\ref{fig:pow_den} reflects the 
+initial and equilibrium fuel compositions. Figure~\ref{fig:pow_den} reflects the 
 normalized power distribution of the \gls{MSBR} quarter core which is the same 
 at both the initial and equilibrium states. For both the initial and equilibrium compositions, fission 
 primarily occurs in the center of the core, namely zone I. The spectral shift 
@@ -245,7 +245,7 @@ Table~\ref{tab:rod_worth} summarizes the reactivity control system worth.
 During normal operation the control (graphite) rods are fully inserted, and the 
 safety (B$_4$C) rods are fully withdrawn. To insert negative reactivity into 
 the core, the graphite rods are gradually withdrawn from the core. In an 
-accident, the safety rods would fall down into the core. The integral rod 
+accident, the safety rods would be dropped down into the core. The integral rod 
 worths were calculated for various positions to separately estimate control 
 graphite moderator rods\footnote{In \cite{robertson_conceptual_1971}, the 
 graphite rods are referred to as ``control'' rods.}, safety (B$_4$C) rod, and 
@@ -339,27 +339,27 @@ with a recent online reprocessing study by \gls{ORNL}
 \subsection{The effect of removing fission product from fuel salt}
 Loading initial fuel salt composition into the \gls{MSBR} core leads to 
 supercritical configuration (Figure ~\ref{fig:fp_removal}). After reactor 
-startup the effective multiplication factor for the case with volatile gases 
+startup, the effective multiplication factor for the case with volatile gases 
 and noble metals removal is approximately 7500 pcm  higher than for case with 
-no fission products removal. This significant impact on the reactor core 
+no fission products removal. This significant impact on the reactor core is
 achieved due to immediate removal (20 sec cycle time) and high absorption cross 
 section of Xe, Kr, Mo, and other noble metals removed. The effect of rare earth 
-element removal considerable after few month from startup and achieves 
+element removal is considerable after few month from startup and achieves 
 approximately 5500 pcm after 10 years of operation. The rare earth elements are 
-removed with slower rate (50 days cycle time). Moreover, 
+removed with a slower rate (50 days cycle time). Moreover, 
 Figure~\ref{fig:fp_removal} demonstrates that batch-wise removal every 3-day 
 step even strong absorbers did not necessarily leads to fluctuation in results 
-but rare earth elements removal every 50 days causes approximately 600 pcm jump 
+but rare earth elements removal every 50 days causes an approximately 600 pcm jump 
 in reactivity.
 
 The effective multiplication factor of the core reduces gradually over 
 operation time because the fissile material ($^{233}$U) continuously depletes 
 from the fuel salt due to fission and, at the same time, fission products 
-accumulates in the fuel salt.	Eventually, without fission products removal, 
+accumulate in the fuel salt.	Eventually, without fission products removal, 
 the reactivity decreases to the subcritical state after approximately 500 and 
 1300 days of operation for cases with no removal and volatile gases \& noble 
 metals removal, respectively. The time when the simulated core reaches 
-subcriticality ($k_{eff}<$1.0) for full-core model) called the core lifetime. 
+subcriticality ($k_{eff}<$1.0) for full-core model) is called the core lifetime. 
 Therefore, removing fission products provides with significant neutronic benefit 
 and enables a longer core lifetime.
 \begin{figure}[ht!] % replace 't' with 'b' to force it to 

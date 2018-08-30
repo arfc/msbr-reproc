@@ -57,7 +57,7 @@ one of which is illustrated in Figure~\ref{fig:serpent_zoneII}. The holes in
 the centers are for the core lifting rods used during the core replacement 
 operations. These holes also allow a portion of the fuel salt to flow to the 
 top of the vessel for cooling the top head and axial reflector. 
-Figure~\ref{fig:serpent_zoneII} also shows :w
+Figure~\ref{fig:serpent_zoneII} also shows
 the 5.08-cm-wide annular 
 space between the removable core graphite in zone II-B and the permanently 
 mounted reflector graphite. This annulus consists entirely of fuel salt, 
@@ -276,11 +276,11 @@ as the
 $^{233}$Pa tank in the \gls{MSBR}. The user can define the reprocessing 
 parameters, such as the reprocessing interval and removal efficiency.  In 
 addition, SaltProc provides a set of functions for each stream: read and write 
-isotopic data in/from database, separate out specific isotopes from stream with 
+isotopic data in/from database, separate out specific elements from stream with 
 defined efficiency, feed in specific isotopes to stream, and maintain constant 
 number density of specific nuclide in the core. These attributes and functions 
 are crucial to simulating the operation of a complex, multi-zone, multi-fluid 
-\gls{MSR} and sufficiently general to represent myriad reactor systems.
+\gls{MSR} and are sufficiently general to represent myriad reactor systems.
 
 SaltProc, currently in active development in Github (https://github.com/ 
 arfc/saltproc), leverages unit tests and continuous integration for 
@@ -289,8 +289,7 @@ generated through Sphinx document generator for ease of use. In future
 releases, we plan to 
 implement
 support for entirely user-customized reprocessing strategies, two-region \gls{MSR} modeling 
-capabilities,
-and decay modeling.
+capabilities, and decay modeling in tanks.
 
 Figure~\ref{fig:saltproc_flow} illustrates the  online reprocessing simulation 
 algorithm coupling SaltProc and SERPENT 2. To perform a depletion step, 
