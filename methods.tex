@@ -4,7 +4,8 @@ The ability of liquid-fueled systems to continuously remove fission products and
 fissile and/or fertile elements is the main challenge for depletion simulations. 
 The python package introduced in this work, SaltProc, takes into account online 
 separations and feeds using the SERPENT 2 continuous-energy Monte Carlo neutron 
-transport and depletion code.
+transport and depletion code. In this work, all figures of the core model
+were generated using the built-in SERPENT 2 plotter. 
 
 \subsection{Molten Salt Breeder Reactor design and model description}
 The \gls{MSBR} vessel has a diameter of 680 cm and a height of 610 cm. It 
@@ -48,8 +49,8 @@ injection and flow of molten salt.
 
 Since reactor graphite experiences significant dimensional changes due to 
 neutron irradiation, the reactor core was designed for periodic replacement. 
-Based on the experimental irradiation data from \gls{MSRE}, the core graphite 
-lifetime is about 4 years and reflector graphite lifetime is 30 years 
+Based on the experimental irradiation data from the \gls{MSRE}, the core graphite 
+lifetime is about 4 years and the reflector graphite lifetime is 30 years 
 \cite{robertson_conceptual_1971}.
 
 There are eight symmetric graphite slabs with a width of 15.24 cm in zone II, 
@@ -63,9 +64,7 @@ space between the removable core graphite in zone II-B and the permanently
 mounted reflector graphite. This annulus consists entirely of fuel salt, 
 provides space for moving the core assembly, helps compensate for the elliptical 
 dimensions of the reactor vessel, and serves to reduce the damaging flux at the 
-surface of the graphite reflector blocks. In this work, all figures of the core 
-were generated using the built-in SERPENT 2 plotter. 
-
+surface of the graphite reflector blocks. 
 
 \subsubsection{Core zone I}
 The central region of the core, called zone I, is made up of graphite elements, 
@@ -92,7 +91,7 @@ elevation and plan views of graphite elements of zone I
 \end{figure}
 
 \subsubsection{Core zone II}
-Zone II which is undermoderated, surrounds zone I. Combined with the bounding 
+Zone II, which is undermoderated, surrounds zone I. Combined with the bounding 
 radial reflector, zone II serves to diminish neutron leakage. Two kinds of 
 elements form this zone: large-diameter fuel channels (zone II-A) and 
 radial graphite slats (zone II-B). 
@@ -120,7 +119,7 @@ These graphite elements were simplified into right-circular cylindrical shapes
 with central channels. Figure~\ref{fig:serpent_zoneII} illustrates this core 
 region in the SERPENT model. The volume of fuel salt in zone II was kept 
 exactly 37\%, so that this simplification did not considerably change the core 
-neutronics. Simplyfying the eight edge channels was te only simplification made 
+neutronics. Simplyfying the eight edge channels was the only simplification made 
 to the \gls{MSBR} geometry in this work. 
 
 \begin{figure}[ht!] % replace 't' with 'b' to \centering
@@ -133,14 +132,14 @@ to the \gls{MSBR} geometry in this work.
 
 \subsubsection{Material composition and normalization parameters}
 The fuel salt, reactor graphite, and modified Hastelloy-N\footnote{ 
-Hastelloy-N is very common in reactors now but have been studied and developed 
+Hastelloy-N is very common in reactors now but has been studied and developed 
 at \gls{ORNL} in a program that started in 1950s.} 
 are all materials created at \gls{ORNL} specifically for the \gls{MSBR}.
 The initial fuel salt used the same 
 density (3.35 g/cm$^3$) and composition LiF-BeF$_2$-ThF$_4$-$^{233}$UF$_4$ 
 (71.75-16-12-0.25 mole \%) as the \gls{MSBR} design 
 \cite{robertson_conceptual_1971}. The lithium in the molten salt fuel is fully 
-enriched in $^{7}$Li because $^{6}$Li is a very strong neutron poison and 
+enriched to 100\% $^{7}$Li because $^{6}$Li is a very strong neutron poison and 
 becomes tritium upon neutron capture. 
 
 The JEFF-3.1.2 neutron library provided cross section generation, 
@@ -157,7 +156,7 @@ a summary of the major \gls{MSBR} parameters used by this model
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{table}[h!]
         %\centering
-        \caption{Summary of principal data for MSBR 
+        \caption{•} of principal data for MSBR 
         \cite{robertson_conceptual_1971}.}
         \begin{tabularx}{\textwidth}{ s  s}
         \hline
@@ -192,7 +191,7 @@ from the fuel salt during routine reactor operation and must be captured.
 Additional systems might be used to enhance removal of those elements. Most 
 designs also call for the removal of noble and rare earth metals from the core 
 since these metals act as neutron poisons. Some designs suggest a more complex 
-list of elements to process (figure ~\ref{fig:periodic_tab}), including the 
+list of elements to process (figure~\ref{fig:periodic_tab}), including the 
 temporary removal of protactinium or other regulation of the 
 actinide inventory \cite{ahmad_neutronics_2015}.
 
@@ -240,7 +239,7 @@ separations \cite{robertson_conceptual_1971}.
         \end{tabularx}
         \label{tab:reprocessing_list}
 \end{table}
-Th removal rates vary among nuclides in this reactor concept which dictate the 
+The removal rates vary among nuclides in this reactor concept which dictate the 
 necessary resolution of depletion calculations. If the depletion time intervals 
 are very short, an enormous number of depletion steps are required to obtain 
 the equilibrium composition. On the other hand, if the depletion  calculation 
@@ -266,14 +265,11 @@ developed in \gls{ORNL} for SCALE \cite{powers_new_2013}. SaltProc is coupled
 with the Monte Carlo SERPENT 2
 software to simulate online reprocessing for irregular full-core 
 geometry with high fidelity.  The primary function of SaltProc is to 
-manage material streams while
-SERPENT 2 performs the computationally heavy work, namely neutron 
-transport and depletion
-calculations. Saltproc is defined as a python class, where each material stream 
-is defined as a isotopic atomic density
+manage material streams while SERPENT 2 performs the neutron 
+transport and depletioncalculations. Saltproc is defined as a python class, where 
+each material stream is defined as a isotopic atomic density
 vector variable. This allows tracking of time-sensitive material streams such 
-as the
-$^{233}$Pa tank in the \gls{MSBR}. The user can define the reprocessing 
+as the 	$^{233}$Pa tank in the \gls{MSBR}. The user can define the reprocessing 
 parameters, such as the reprocessing interval and removal efficiency.  In 
 addition, SaltProc provides a set of functions for each stream: read and write 
 isotopic data in/from database, separate out specific elements from stream with 
@@ -282,7 +278,7 @@ number density of specific nuclide in the core. These attributes and functions
 are crucial to simulating the operation of a complex, multi-zone, multi-fluid 
 \gls{MSR} and are sufficiently general to represent myriad reactor systems.
 
-SaltProc, currently in active development in Github (https://github.com/ 
+SaltProc, currently in active development on Github (https://github.com/ 
 arfc/saltproc), leverages unit tests and continuous integration for 
 sustainable development. There is also documentation
 generated through Sphinx document generator for ease of use. In future 
@@ -312,14 +308,14 @@ and computational intensity.
   \label{fig:saltproc_flow}
 \end{figure}
 SaltProc can manage as many material streams as desired. It also may work with 
-multiple depletion materials. At the end of a each depletion step, SaltProc 
+multiple depletion materials. At the end of each depletion step, SaltProc 
 reads the depleted compositions and tracks each material stream individually. 
 Following this, it applies chemical separation functions to fuel stream 
 vectors. These vectors then form a matrix (isotopics x timesteps) which 
 SaltProc stores in an HDF5 database and prints into the SERPENT 2 composition 
 file for the next depletion calculation.
 
-Saltproc datasets are timseries, meaning that every value is recorded every 
+Saltproc datasets are time-series, meaning that every value is recorded every 
 timestep. The datasets SaltProc produces are listed below,
 where the values inside the parenthesis are the dataset sizes:
 

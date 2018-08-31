@@ -3,7 +3,7 @@
 % a detailed literature survey or a summary of the results.
 The \gls{MSR} is an advanced nuclear reactor which was developed at \gls{ORNL} 
 in the 1950s and was operated in the 1960s. More recently, the \gls{GIF}  
-included \glspl{MSR} among the six advanced reactor concepts promising for 
+included \glspl{MSR} among the six most promising advanced reactor concepts for 
 further research and development. 
 \glspl{MSR} offer significant improvements ``in the four broad areas of 
 sustainability, economics, safety and reliability, and proliferation resistance 
@@ -21,14 +21,14 @@ relatively high coolant temperature, outstanding neutron economy, improved
 safety parameters, reduced fuel preprocessing, and the ability to continuously 
 remove fission products and add fissile and/or fertile elements 
 \cite{leblanc_molten_2010}. The thorium-fueled \gls{MSBR} was developed in the 
-early 1970s by \gls{ORNL} specifically to explore the promise of the thorium 
+early 1970s by \gls{ORNL} to explore specifically the promise of the thorium 
 fuel cycle, which uses natural thorium instead of enriched uranium. With 
 continuous fuel reprocessing, the \gls{MSBR} realizes the advantages of the 
 thorium fuel cycle because the $^{233}$U bred from 
-$^{232}$Th is almost instantly \footnote{\space $^{232}$Th transmutes into 
+$^{232}$Th is almost instantly\footnote{\space $^{232}$Th transmutes into 
 $^{233}$Th after capturing a neutron. Next, this isotope decays to $^{233}$Pa 
 ($\tau_{1/2}$=21.83m), which finally decays to $^{233}$U 
-($\tau_{1/2}$=26.967d).} recycled back to the core 
+($\tau_{1/2}$=26.967d).} recycled back into the core 
 \cite{betzler_modeling_2016}. The chosen fuel salt, LiF-BeF$_2$-ThF$_4$-UF$_4$, has a 
 melting point of $499^\circ$C, a low vapor pressure at operating temperatures, 
 and good flow and heat transfer properties \cite{robertson_conceptual_1971}. In 
@@ -38,18 +38,15 @@ Finally, the \gls{MSR} also could be employed as a converter reactor for
 transmutation of spent fuel from current \glspl{LWR}.
 
 Liquid-fueled systems present a challenge to existing neutron transport and
-depletion tools which are typically designed to simulate solid-fueled reactors. 
+depletion tools, which are typically designed to simulate solid-fueled reactors. 
 To handle the material flows and potential online removal and feed of 
 liquid-fueled systems, early \gls{MSR} simulation methods at \gls{ORNL} 
 integrated neutronics and fuel cycle codes (i.e., \gls{ROD} 
 \cite{bauman_rod:_1971}) into operational plant tools (i.e., \gls{MRPP}
 \cite{kee_mrpp:_1976}) for \gls{MSR} and reprocessing system design.  Based on 
 this approach, recent tools from universities and research institutions can
-approximate online refueling \cite{serp_molten_2014}.  Recent research efforts 
-in Europe and Asia mainly focus on fast spectrum reactor fuel cycle analysis.
-These  couple external tools to neutron transport while depletion codes take into
-account continuous feeds and removals in \glspl{MSR}. A summary of recent
-efforts are listed in table~\ref{tab:fs_codes}.
+approximate online refueling \cite{serp_molten_2014}. A summary of recent
+efforts is listed in table~\ref{tab:fs_codes}.
 
 \begin{table}[ht!]
 \caption{Tools and methods for fast spectrum system fuel cycle analysis.}
@@ -89,10 +86,6 @@ thermal\\
   \label{tab:fs_codes}
 \end{table}
 \FloatBarrier
-
-Most of these methods are also applicable to thermal spectrum \glspl{MSR}. 
-Additional tools developed specifically for thermal \gls{MSR} applications are 
-also listed in table~\ref{tab:fs_codes}.
 
 References 
 \cite{doligez_coupled_2014,heuer_towards_2014,sheu_depletion_2013,aufiero_extended_2013} 
@@ -134,7 +127,7 @@ computationally expensive even for simple models.
 
 Nuttin \emph{et al.} broke up reactor core geometry into three \gls{MCNP} cells: 
 one for salt channels, one for the salt plena above and below the core and the 
-last cell for the annulus, consequently, the two-region reactor core was 
+last cell for the annulus. Consequently, the two-region reactor core was 
 approximated by one region with averaged fuel/moderator ratio 
 \cite{nuttin_potential_2005}.  A similar approach was used by Powers \emph{et 
 al.}, Betzler \emph{et al.}, and Jeong \emph{et al.} 
@@ -175,8 +168,7 @@ both the initial and equilibrium states. Finally, $^{232}$Th feed rate will be
 determined and \gls{MSBR} fuel cycle performance will be analyzed.
 
 The complex \gls{MSBR} geometry is challenging to describe in software input, 
-and, 
-usually, researchers make significant geometric simplifications to model it 
+and usually researchers make significant geometric simplifications to model it 
 \cite{park_whole_2015}. This study leverages extensive computational 
 resources to avoid these geometric approximations in order to accurately capture 
 breeding behavior. 
