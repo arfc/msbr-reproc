@@ -20,7 +20,7 @@ approximately 9,900 node-hours (18 core-years.)
 
 \subsection{Effective multiplication factor}
 Figure~\ref{fig:keff} shows the effective multiplication factors 
-obtained using SaltProc and SERPENT 2. The effective multiplication factors are 
+obtained using SaltProc and SERPENT 2. The effective multiplication factors were 
 calculated after removing fission products listed in 
 Table~\ref{tab:reprocessing_list} and adding the fertile material at the end of 
 cycle time\footnote{ The \gls{MSBR} program defined a ``cycle time" as the 
@@ -38,48 +38,47 @@ online reprocessing strategy.
 \end{figure}
 
 First, SERPENT calculates the effective multiplication factor for the beginning 
-of cycle time (there is fresh fuel composition at the first step). Next, it 
+of the cycle (there is fresh fuel composition at the first step). Next, it 
 computes the new fuel salt composition at the end of a 3-day depletion. The 
 corresponding effective multiplication factor is much smaller than the previous 
 one. Finally, SERPENT calculates $k_{eff}$ for the depleted composition after 
-applying feeds and removals. $K_{eff}$ increases accordingly since major reactor 
+applying feeds and removals. The $K_{eff}$ increases accordingly since major reactor 
 poisons (e.g. Xe, Kr) are removed, while fresh fissile material ($^{233}$U) 
 from the protactinium decay tank is added.  
 
 Additionally, the presence of rubidium, strontium, cesium, and barium in the 
-core are disadvantageous to reactor physics. In fact, removal of these elements 
+core are disadvantageous to reactor physics. In fact, the removal of these elements 
 every 3435 days causes the multiplication factor to jump by approximately 450 
-pcm, and limits using the batch approach for online reprocessing simulation. 
+pcm, and limits using the batch approach for online reprocessing simulations. 
 Overall, the effective multiplication factor gradually decreases from 1.075 to 
-$k_{eff} \approx 1.02$ at equilibrium after approximately 6 years of 
-irradiation. 
+$\approx$1.02 at equilibrium after approximately 6 years of irradiation. 
 
 \subsection{Fuel salt composition dynamics}
 The analysis of the fuel salt composition evolution provides more comprehensive 
-information about the equilibrium state. Figure~\ref{fig:adens_eq} shows number 
-density of major nuclides which have a strong influence on the reactor core 
+information about the equilibrium state. Figure~\ref{fig:adens_eq} shows the number 
+densities of major nuclides which have a strong influence on the reactor core 
 physics. The concentration of $^{233}$U, $^{232}$Th, $^{233}$Pa, and $^{232}$Pa in 
 the fuel salt change insignificantly after approximately 2500 days of operation. 
-In particular, the $^{233}$U number density fluctuates less than 0.8\% between
+In particular, the $^{233}$U number density fluctuates by less than 0.8\% between
  16 and 20 years of operation. Hence, a quasi-equilibrium state was 
 achieved after 16 years of reactor operation.
 \begin{figure}[ht!] % replace 't' with 'b' to 
   \centering
-  \includegraphics[width=\textwidth]{major_isotopes_adens.png}
+  \includegraphics[scale=•]{•}=\textwidth]{major_isotopes_adens.png}
   \caption{Number density of major nuclides during 60 years of reactor 
   operation.}
   \label{fig:adens_eq}
 \end{figure}
 In contrast, a wide variety of nuclides, including fissile isotopes (e.g. 
-$^{235}$U) and non-fissile strong absorbers (e.g. $^{234}$U), keep accumulating 
+$^{235}$U) and non-fissile strong absorbers (e.g. $^{234}$U), kept accumulating 
 in the core. Figure~\ref{fig:fissile_short} demonstrates production of fissile 
 isotopes in the core. In the end of the considered operational time, the core 
-contains significant amount of $^{235}$U ($\approx10^{-5}$ atom/b-cm), $^{239}$Pu 
+contained significant amount of $^{235}$U ($\approx10^{-5}$ atom/b-cm), $^{239}$Pu 
 ($\approx5\times10^{-7}$ atom/b-cm), and $^{241}$Pu ($\approx 5\times10^{-7}$ 
 atom/b-cm). Meanwhile, the equilibrium number density of the target fissile 
 isotope $^{233}$U was approximately 7.97$\times10^{-5}$ atom/b-cm. Thus, 
-production of new fissile materials in the core as well as $^{233}$U breeding 
-make it possible to compensate for negative effects of strong absorber 
+production of new fissile materials in the core, as well as $^{233}$U breeding, 
+made it possible to compensate for negative effects of strong absorber 
 accumulation and keep the reactor critical.
 \begin{figure}[htp!] % replace 't' with 'b' to 
   \centering
@@ -104,14 +103,14 @@ the core during reactor operation.
 \end{figure}
 
 Figure~\ref{fig:spectrum_zones} shows that zone I produced more thermal neutrons 
-than zone II, corresponding to a majority of fissions occuring in the central part 
-of the core. In the undermoderated zone II, the neutron energy spectrum is harder 
-which leads to more capture of neutrons by $^{232}$Th and helps a achieve relatively 
+than zone II, corresponding to a majority of fissions occurring in the central part 
+of the core. In the undermoderated zone II, the neutron energy spectrum is harder, 
+which leads to more neutrons capture by $^{232}$Th and helps achieve relatively 
 high breeding ratio. Moreover, the (n,$\gamma$) resonance energy range in $^{232}$Th 
 is from 10$^{-4}$ to 10$^{-2}$ MeV. Therefore, the moderator-to-fuel ratio for zone 
 II was chosen to shift the neutron energy spectrum in this range. Furthermore, in the 
 central core region (zone I), the neutron energy spectrum shifts to a harder spectrum 
-over 20 years of reactor operation. Meanwhile, in the outer core region (zone II) a 
+over 20 years of reactor operation. Meanwhile, in the outer core region (zone II), a 
 similar spectral shift takes place at a reduced scale. These results are in a good 
 agreement with original ORNL report \cite{robertson_conceptual_1971} and the most recent 
 whole-core steady-state study \cite{park_whole_2015}.
@@ -119,7 +118,7 @@ whole-core steady-state study \cite{park_whole_2015}.
 It is important to obtain the epithermal and thermal spectra to produce $^{233}$U from 
 $^{232}$Th because the radiative capture cross section of thorium decreases monotonically 
 from $10^{-10}$ MeV to $10^{-5}$ MeV. Hardening the spectrum tends to significantly 
-increase resonance absorption in thorium and decrease the absorptions in fissile and 
+increase resonance absorption in thorium and decrease absorptions in fissile and 
 construction materials. 
 \begin{figure}[ht!] % replace 't' with 'b' to force it to 
   \centering
@@ -131,14 +130,14 @@ unit lethargy for the initial and equilibrium fuel salt composition.}
 
 \subsection{Neutron flux}
 Figure~\ref{fig:radial_flux} shows the radial distribution of fast and thermal 
-neutron flux for the both initial and equilibrium composition. The neutron flux has 
-the same shape for both compositions but the equilibrium case has a harder 
-spectrum. A significant spectral shift was observed for the central region of 
-the core (zone I) when for the outer region (zone II) it is negligible for fast 
-but notable for thermal neutrons. This neutron flux radial distribution is in 
+neutron flux for the both initial and equilibrium composition. The neutron fluxes
+have similar shapes for both compositions but the equilibrium case has a harder 
+spectrum. A significant spectral shift was observed in the central region of 
+the core (zone I), while for the outer region (zone II), it is negligible for fast 
+but notable for thermal neutrons. These neutron flux radial distributions is in 
 good agreement with original ORNL report \cite{robertson_conceptual_1971}. 
 Overall, spectrum hardening during \gls{MSBR} operation should be carefully 
-studied for designing the reactivity control system.
+studied when designing the reactivity control system.
 \begin{figure}[ht!] % replace 't' with 'b' to force it to \centering
   \includegraphics[width=\textwidth]{radial_flux.png} \caption{Radial neutron 
   flux distribution for initial and equilibrium fuel salt composition.}
@@ -148,7 +147,7 @@ studied for designing the reactivity control system.
 \subsection{Power and breeding distribution}
 Table~\ref{tab:powgen_fraction}	 shows the power fraction in each zone for 
 initial and equilibrium fuel compositions. Figure~\ref{fig:pow_den} reflects the 
-normalized power distribution of the \gls{MSBR} quarter core which is the same 
+normalized power distribution of the \gls{MSBR} quarter core, which is the same 
 at both the initial and equilibrium states. For both the initial and equilibrium compositions, fission 
 primarily occurs in the center of the core, namely zone I. The spectral shift 
 during reactor operation results in different power fractions at startup and 
@@ -170,7 +169,7 @@ Figure~\ref{fig:breeding_den} shows the neutron capture reaction rate
 distribution for $^{232}$Th normalized by the total neutron flux for initial 
 and equilibrium states. The distribution reflects the spatial distribution of 
 $^{233}$Th production in the core. The thorium-232 then $\beta$-decays to 
-$^{233}$Pa which is the precursor for $^{233}$U production. Accordingly, this 
+$^{233}$Pa, which is the precursor for $^{233}$U production. Accordingly, this 
 characteristic represents the breeding distribution in the \gls{MSBR} core. 
 Spectral shift does not cause significant changes in power nor in breeding 
 distribution. Even after 20 years of operation, most of the power is still 
@@ -190,16 +189,16 @@ produced in zone II.
 \end{figure}
 \subsection{Temperature coefficient of reactivity}
 Table~\ref{tab:tcoef} summarizes temperature effects on reactivity calculated 
-in this work for both initial and equilibrium fuel composition, and compared 
-with original \gls{ORNL} report data \cite{robertson_conceptual_1971}. 
+in this work for both initial and equilibrium fuel compositions, compared 
+with the original \gls{ORNL} report data \cite{robertson_conceptual_1971}. 
 Uncertainty for each temperature coefficient also appears in 
 Table~\ref{tab:tcoef}. The main physical principle underlying the reactor 
 temperature feedback is an expansion of material that is heated. When the fuel 
 salt temperature increases, the density of the salt decreases, but at the same 
 time, the total volume of fuel salt in the core remains constant because it is 
 bounded by the graphite. When the graphite temperature increases, the density 
-of graphite decreases creating additional space for fuel salt. To determine 
-temperature coefficients, the cross section temperatures for the fuel and 
+of graphite decreases, creating additional space for fuel salt. To determine 
+the temperature coefficients, the cross section temperatures for the fuel and 
 moderator were changed from 900K to 1000K. Three different cases were considered:
 \begin{enumerate}
   \item Temperature of fuel salt rising from 900K to 1000K.
@@ -230,10 +229,10 @@ coefficient of 1.3$\times10^{-6}$1/K \cite{robertson_conceptual_1971}. A new
 geometry input was created based on this information.
 
 The fuel temperature coefficient (FTC) is negative for both initial and 
-equilibrium fuel composition due to thermal Doppler broadening of the resonance 
+equilibrium fuel compositions due to thermal Doppler broadening of the resonance 
 capture cross sections in the thorium. This is in good agreement with earlier 
 research \cite{robertson_conceptual_1971,park_whole_2015}. The moderator 
-temperature coefficient (MTC) is positive for startup composition and decreases 
+temperature coefficient (MTC) is positive for the startup composition and decreases 
 during reactor operation because of spectrum hardening with fuel depletion. 
 Finally, the total temperature coefficient of reactivity is negative for both 
 cases, but decreases during reactor operation due to spectral shift. In 
@@ -243,14 +242,14 @@ positive MTC, and affords excellent reactor stability and control.
 
 \subsection{Reactivity control system rod worth}
 Table~\ref{tab:rod_worth} summarizes the reactivity control system worth. 
-During normal operation the control (graphite) rods are fully inserted, and the 
+During normal operation, the control (graphite) rods are fully inserted, and the 
 safety (B$_4$C) rods are fully withdrawn. To insert negative reactivity into 
 the core, the graphite rods are gradually withdrawn from the core. In an 
 accident, the safety rods would be dropped down into the core. The integral rod 
-worths were calculated for various positions to separately estimate control 
-graphite moderator rods\footnote{In \cite{robertson_conceptual_1971}, the 
-graphite rods are referred to as ``control'' rods.}, safety (B$_4$C) rods, and 
-the whole reactivity control system worth. Control rod integral worth is 
+worths were calculated for various positions to separately estimate the worth
+of the control graphite rods\footnote{In \cite{robertson_conceptual_1971}, the 
+graphite rods are referred to as ``control'' rods.}, the safety (B$_4$C) rods, 
+and the whole reactivity control system. Control rod integral worth is 
 approximately 28 cents and stays almost constant during reactor operation. The 
 safety rod integral worth decreases by  16.2\% during 20 years of operation 
 because of neutron spectrum hardening and absorber accumulation in proximity to 
@@ -275,7 +274,7 @@ Total reactivity control system worth               & $505.8\pm0.7$    &
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Six Factor Analysis}
-The effective multiplication factor could be expressed using formula:
+The effective multiplication factor can be expressed using next formula:
 \begin{align*}
 k_{eff} = k_{inf} P_f  P_t = \eta \epsilon p f P_f P_t
 \end{align*}
@@ -286,9 +285,9 @@ and thermal neutrons does not change during reactor operation because these
 values are not largely affected by the neutron spectrum shift. In contrast, 
 neutron reproduction factor ($\eta$), resonance escape probability (p), and 
 fast fission factor ($\epsilon$) are considerably different between startup and 
-equilibrium. As indicated in Figure~\ref{fig:spectrum} the neutron spectrum is 
+equilibrium. As indicated in Figure~\ref{fig:spectrum}, the neutron spectrum is 
 softer at the beginning of reactor life. Neutron spectrum hardening causes the fast 
-fission to increase through the core lifetime. The opposite is true for the 
+fission factor to increase through the core lifetime. The opposite is true for the 
 resonance escape probability. Finally, the neutron reproduction factor 
 decreases during reactor operation due to accumulation of fissile plutonium 
 isotopes.
@@ -315,7 +314,7 @@ Thermal non-leakage probability (P$_t$)  & $0.9894\pm.000005$     &
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Thorium refill rate}
-In a \gls{MSBR} reprocessing scheme the only external feed material flow  is 
+In a \gls{MSBR} reprocessing scheme, the only external feed material flow  is 
 $^{232}$Th. Figure~\ref{fig:th_refill} shows the $^{232}$Th feed rate 
 calculated for 60 years of reactor operation. The $^{232}$Th feed rate 
 fluctuates significantly as a result of the batch-wise nature of this online 
@@ -330,7 +329,7 @@ intensification leads to additional $^{232}$Th consumption.
   \label{fig:th_refill}
 \end{figure}
 
-The average thorium feed rate increases during the first 500 days of operation 
+The average thorium feed rate increases during the first 500 days of operation, 
 and steadily decreases due to spectrum hardening and accumulation of 
 absorbers in the core. As a result, the average $^{232}$Th feed rate over 60 
 years of operation is about 2.40 kg/day. This thorium consumption rate is in 
@@ -345,8 +344,8 @@ and noble metals removal is approximately 7500 pcm  higher than for case with
 no fission products removal. This significant impact on the reactor core is
 achieved due to immediate removal (20 sec cycle time) and high absorption cross 
 section of Xe, Kr, Mo, and other noble metals removed. The effect of rare earth 
-element removal is considerable a few months after startup and achieves 
-approximately 5500 pcm after 10 years of operation. The rare earth elements are 
+element removal is considerable a few months after startup and reached 
+approximately 5500 pcm after 10 years of operation. The rare earth elements were 
 removed at a slower rate (50-day cycle time). Moreover, 
 Figure~\ref{fig:fp_removal} demonstrates that batch-wise removal of strong 
 absorbers every 3 days did not necessarily leads to fluctuation in results 
@@ -355,7 +354,7 @@ in reactivity.
 
 The effective multiplication factor of the core reduces gradually over 
 operation time because the fissile material ($^{233}$U) continuously depletes 
-from the fuel salt due to fission and, while, fission products 
+from the fuel salt due to fission while fission products 
 accumulate in the fuel salt simultaneously. Eventually, without fission products removal, 
 the reactivity decreases to the subcritical state after approximately 500 and 
 1300 days of operation for cases with no removal and volatile gases \& noble 

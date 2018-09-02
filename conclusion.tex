@@ -9,41 +9,41 @@ removal rates, and the ability to specify removal efficiency. The main goal of
 this work has 
 been to demonstrate SaltProc's capability to find the equilibrium fuel salt 
 composition (where equilibrium is defined as when the number densities of major 
-isotopes vary less than 1\% over several years). A secondary goal has been to 
+isotopes vary by less than 1\% over several years). A secondary goal has been to 
 compare predicted operational and safety parameters (e.g., neutron energy 
 spectrum, power and breeding distribution, temperature coefficients of 
 reactivity) of the \gls{MSBR} at startup and equilibrium state. A tertiary goal 
 has been to demonstrate benefits of continuous fission products removal for 
 thermal \gls{MSR} design.
 
-Toward these goals, a full-core high-fidelity benchmark model of the \gls{MSBR} 
-was implemented in SERPENT 2. The purpose of the full-core model instead of 
+To achieve these goals, a full-core high-fidelity benchmark model of the \gls{MSBR} 
+was implemented in SERPENT 2. The full-core model was used instead of the 
 the simplified single-cell model \cite{betzler_molten_2017, 
-rykhlevskii_online_2017, betzler_fuel_2018} was to precisely describe the 
+rykhlevskii_online_2017, betzler_fuel_2018} to precisely describe the 
 two-region \gls{MSBR} concept design sufficiently to accurately represent 
 breeding in the outer core zone. When running depletion calculations, the most 
 important fission products and $^{233}$Pa are removed while fertile and fissile 
 materials are added to the fuel salt every 3 days.  Meanwhile, the removal 
-interval for the rare earths, volatile fluorides, and seminoble metals was more 
-than month which caused effective multiplication factor fluctuation. 
+interval for the rare earths, volatile fluorides, and seminoble metals was greater 
+than month a (50 days), which caused effective multiplication factor fluctuation. 
 
 \subsection{Equilibrium state search}
 The results of this study indicate that the effective multiplication factor 
 slowly decreases from 1.075 and reaches 1.02 at equilibrium after approximately 
-6 years of operation. At the same time, the concentration of $^{233}$U, $^{232}$Th, 
-$^{233}$Pa, $^{232}$Pa stabilizes after approximately 2500 days of operation. 
+6 years of operation. At the same time, the concentrations of $^{233}$U, $^{232}$Th, 
+$^{233}$Pa, $^{232}$Pa stabilized after approximately 2500 days of operation. 
 Particularly, $^{233}$U number density equilibrates\footnote{fluctuates less 
 than 0.8\%} after 16 years of operation. Consequently, the core reaches the quasi-equilibrium state 
 after 16 years of operation. However, a wide variety of nuclides, 
 including fissile isotopes (e.g. $^{233}$U, $^{239}$Pu) and non-fissile strong 
 absorbers (e.g. $^{234}$U), continue accumulating in the core. The current work results 
-show that a true equilibrium composition cannot exist but the balance
+show that a true equilibrium composition cannot exist but balance
 between strong absorber accumulation and new fissile material 
 production can be achieved to keep the reactor critical.
 
 \subsection{Spectral shift}
-We also found that the neutron energy spectrum grows harder as equilibrium 
-approaches because significant heavy fission products accumulate in 
+We also found that the neutron energy spectrum grew harder as the core  
+approaches equilibrium because significant heavy fission products accumulated in 
 the \gls{MSBR} core. Moreover, the neutron energy spectrum in the central core 
 region is much softer than in the outer core region due to lower 
 moderator-to-fuel ratio in the outer zone, and this distribution remains stable 
