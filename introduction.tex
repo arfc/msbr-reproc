@@ -33,8 +33,8 @@ $^{233}$Th after capturing a neutron. Next, this isotope decays to $^{233}$Pa
 ($\tau_{1/2}$=26.967d).} recycled back into the core 
 \cite{betzler_modeling_2016}. The chosen fuel salt, LiF-BeF$_2$-ThF$_4$-UF$_4$, has a 
 melting point of $499^\circ$C, a low vapor pressure at operating temperatures, 
-and good flow and heat transfer properties \cite{robertson_conceptual_1971}. In 
-the matter of nuclear fuel cycle, the thorium cycle produces a reduced quantity 
+and good flow and heat transfer properties \cite{robertson_conceptual_1971}. 
+With regard to the nuclear fuel cycle, the thorium cycle produces a reduced quantity 
 of plutonium and \glspl{MA} compared to the traditional uranium fuel cycle. 
 Finally, the \gls{MSR} also could be employed as a converter reactor for 
 transmutation of spent fuel from current \glspl{LWR}.
@@ -109,7 +109,7 @@ SCALE/TRITON depletion simulation over small time steps to simulate continuous
 reprocessing and deplete the fuel salt \cite{powers_new_2013}. Methods listed in 
 references \cite{fiorina_investigation_2013,sheu_depletion_2013,park_whole_2015, 
 jeong_equilibrium_2016,powers_inventory_2014,betzler_molten_2017,rykhlevskii_online_2017} 
-as well as the current work employ a batch-wise approach.
+as well as the current work similarly employ a batch-wise approach.
 
 Accounting for continuous removal or addition presents a greater challenge since it 
 requires adding a term to the Bateman equations. In SCALE 
@@ -127,14 +127,15 @@ Nevertheless, most of these efforts considered only simplified unit-cell
 geometry because depletion computations for a many-year fuel cycle are 
 computationally expensive even for simple models. 
 
-Nuttin \emph{et al.} broke up reactor core geometry into three \gls{MCNP} cells: 
-one for salt channels, one for the salt plena above and below the core and the 
-last cell for the annulus. Consequently, the two-region reactor core was 
+Nuttin \emph{et al.} broke up the reactor core geometry into three \gls{MCNP} cells: 
+one for salt channels, one for the salt plena above and below the core, and a 
+third cell for the annulus. Consequently, the two-region reactor core was 
 approximated by one region with averaged fuel/moderator ratio 
-\cite{nuttin_potential_2005}.  A similar approach was used by Powers \emph{et 
+\cite{nuttin_potential_2005}.  Powers \emph{et 
 al.}, Betzler \emph{et al.}, and Jeong \emph{et al.} 
 \cite{powers_new_2013,powers_inventory_2014,betzler_modeling_2016, 
-betzler_molten_2017, jeong_development_2014, jeong_equilibrium_2016}. This approach 
+betzler_molten_2017, jeong_development_2014, jeong_equilibrium_2016} used a 
+similar approach. This approach 
 misrepresents the two-region breeder reactor concept. The unit-cell or one-region 
 models may produce reliable results for homogeneous reactor cores (i.e. 
 \gls{MSFR}, \gls{MOSART}) or for one-region single-fluid reactor designs (i.e. 
