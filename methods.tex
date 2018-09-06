@@ -118,7 +118,7 @@ irregularly-shaped graphite elements as well as dozens of salt channels.
 These graphite elements were simplified into right-circular cylindrical shapes  
 with central channels. Figure~\ref{fig:serpent_zoneII} illustrates this core 
 region in the SERPENT model. The volume of fuel salt in zone II was kept 
-exactly 37\%, so that this simplification did not considerably change the core 
+exactly at 37\%, so that this simplification did not considerably change the core 
 neutronics. Simplyfying the eight edge channels was the only simplification made 
 to the \gls{MSBR} geometry in this work. 
 
@@ -142,7 +142,7 @@ density (3.35 g/cm$^3$) and composition LiF-BeF$_2$-ThF$_4$-$^{233}$UF$_4$
 enriched to 100\% $^{7}$Li because $^{6}$Li is a very strong neutron poison and 
 becomes tritium upon neutron capture. 
 
-The JEFF-3.1.2 neutron library provided cross section generation, 
+The JEFF-3.1.2 neutron library provided cross section generation 
 \cite{oecd/nea_data_bank_jeff-3.1.2_2014}. 
 The specific temperature was fixed 
 for each material to correctly model the Doppler-broadening of resonance peaks 
@@ -293,7 +293,7 @@ SaltProc reads a user-defined SERPENT 2 template file. This file contains input
 cards with parameters such as geometry, material, isotopic composition, neutron 
 population, criticality cycles, total heating power, and boundary conditions.  
 After the depletion calculation, SaltProc reads the depleted fuel composition 
-file (\texttt{ .bumat1}) and stores the depleted composition isotopic vector in 
+file and stores the depleted composition isotopic vector in 
 an HDF5 database. 
 
 SaltProc only stores and edits the isotopic composition of 
