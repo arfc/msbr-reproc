@@ -141,11 +141,12 @@ models may produce reliable results for homogeneous reactor cores (i.e.
 \gls{MSFR}, \gls{MOSART}) or for one-region single-fluid reactor designs (i.e. 
 \gls{MSRE}). However, a two-region \gls{MSBR} must be simulated using a whole-core 
 model to capture different neutron transport characteristics in the inner and 
-outer regions of the core. In particular, most fissions happens in the inner 
+outer regions of the core. In particular, most fissions happen in the inner 
 region while breeding occurs in the outer zone.  
 
 Aufiero \emph{et al.} extended the Monte Carlo burnup code SERPENT 2 and 
-employed it to study the material isotopic evolution of the \gls{MSFR}. The 
+employed it to study the material isotopic evolution of the 
+\gls{MSFR}\cite{aufiero_extended_2013}. The 
 developed extension directly accounts for the effects of online fuel 
 reprocessing on depletion calculations and features a reactivity control 
 algorithm. The extended version of SERPENT 2 was assessed against a dedicated 
@@ -156,7 +157,7 @@ unit-cell geometry of thermal spectrum thorium-fueled \gls{MSBR} and obtained
 results which contradict existing \gls{MSBR} depletion simulations 
 \cite{jeong_equilibrium_2016}.
 
-The present work introduces the online reprocessing simulation code, SaltProc, 
+The present work introduces the online reprocessing simulation package, SaltProc, 
 which expands the capability of the continuous-energy Monte Carlo Burnup 
 calculation code, SERPENT 2 \cite{leppanen_serpent_2015-1}, for simulation 
 liquid-fueled \gls{MSR} operation 
@@ -164,11 +165,12 @@ liquid-fueled \gls{MSR} operation
 application of the coupled SaltProc-SERPENT 2 system to the \gls{MSBR}, an 
 extension of the work presented in 
 \cite{rykhlevskii_full-core_2017, rykhlevskii_online_2017}. In this work, we 
-analyze \gls{MSBR} neutronics and fuel cycle to find 
-the equilibrium core composition. The additional objective 
-is to compare predicted operational and safety parameters of the \gls{MSBR} at 
-both the initial and equilibrium states. Finally, $^{232}$Th feed rate will be 
-determined and \gls{MSBR} fuel cycle performance will be analyzed.
+analyzed \gls{MSBR} neutronics and fuel cycle to establish its equilibrium core 
+composition. Additionally, we compared predicted operational and safety parameters of the \gls{MSBR} at 
+both the initial and equilibrium states to characterize the evolution of its 
+safety case over time. Finally, these simulations determined the appropriate $^{232}$Th feed rate  
+for maintaining criticality and enabled analysis of the overall \gls{MSBR} fuel 
+cycle performance.
 
 The complex \gls{MSBR} geometry is challenging to describe in software input, 
 and usually researchers make significant geometric simplifications to model it 
