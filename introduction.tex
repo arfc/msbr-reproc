@@ -109,15 +109,16 @@ SCALE/TRITON depletion simulation over small time steps to simulate continuous
 reprocessing and deplete the fuel salt \cite{powers_new_2013}. Methods listed in 
 references \cite{fiorina_investigation_2013,sheu_depletion_2013,park_whole_2015, 
 jeong_equilibrium_2016,powers_inventory_2014,betzler_molten_2017,rykhlevskii_online_2017} 
-as well as the current work similarly employ a batch-wise approach.
+as well as the current work also employ a batch-wise approach.
 
 Accounting for continuous removal or addition presents a greater challenge since it 
-requires adding a term to the Bateman equations. In SCALE 
-\cite{bowman_scale_2011}, ORIGEN \cite{gauld_isotopic_2011} solves a set of 
-Bateman equations using spectrum-averaged fluxes and cross sections generated 
-from a deterministic transport calculation. Meanwhile, approaches listed in references 
-\cite{doligez_coupled_2014,heuer_towards_2014,aufiero_extended_2013,nuttin_potential_2005} 
-model true continuous feeds and removals. 
+requires adding a term to the Bateman equations. Aufiero \emph{et al.} explicitly
+introduced online fuel reprocessing in the system of equations by adding effective 
+decay and transmutation terms for the different nuclides. In his work SERPENT was 
+used for solution of the matrix exponential derived from the system of the Bateman 
+equations \cite{aufiero_extended_2013}. Similar approach is adopted to model true 
+continuous feeds and removals using MCNP transport code listed in references 
+\cite{doligez_coupled_2014,heuer_towards_2014,nuttin_potential_2005}.
 
 Thorium-fueled \gls{MSBR}-like reactors similar to the one in this work are 
 described in \cite{park_whole_2015, 
