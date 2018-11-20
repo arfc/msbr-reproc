@@ -1,0 +1,676 @@
+%        File: revise.tex
+%     Created: Wed Oct 27 02:00 PM 2018 P
+% Last Change: Wed Oct 27 02:00 PM 2018 P
+%
+
+%
+% Copyright 2007, 2008, 2009 Elsevier Ltd
+%
+% This file is part of the 'Elsarticle Bundle'.
+% ---------------------------------------------
+%
+% It may be distributed under the conditions of the LaTeX Project Public
+% License, either version 1.2 of this license or (at your option) any
+% later version.  The latest version of this license is in
+%    http://www.latex-project.org/lppl.txt
+% and version 1.2 or later is part of all distributions of LaTeX
+% version 1999/12/01 or later.
+%
+% The list of all files belonging to the 'Elsarticle Bundle' is
+% given in the file `manifest.txt'.
+%
+
+% Template article for Elsevier's document class `elsarticle'
+% with numbered style bibliographic references
+% SP 2008/03/01
+%
+%
+%
+% $Id: elsarticle-template-num.tex 4 2009-10-24 08:22:58Z rishi $
+%
+%
+%\documentclass[preprint,12pt]{elsarticle}
+\documentclass[answers,11pt]{exam}
+
+% \documentclass[preprint,review,12pt]{elsarticle}
+
+% Use the options 1p,twocolumn; 3p; 3p,twocolumn; 5p; or 5p,twocolumn
+% for a journal layout:
+% \documentclass[final,1p,times]{elsarticle}
+% \documentclass[final,1p,times,twocolumn]{elsarticle}
+% \documentclass[final,3p,times]{elsarticle}
+% \documentclass[final,3p,times,twocolumn]{elsarticle}
+% \documentclass[final,5p,times]{elsarticle}
+% \documentclass[final,5p,times,twocolumn]{elsarticle}
+
+% if you use PostScript figures in your article
+% use the graphics package for simple commands
+% \usepackage{graphics}
+% or use the graphicx package for more complicated commands
+\usepackage{graphicx}
+% or use the epsfig package if you prefer to use the old commands
+% \usepackage{epsfig}
+
+% The amssymb package provides various useful mathematical symbols
+\usepackage{amssymb}
+% The amsthm package provides extended theorem environments
+% \usepackage{amsthm}
+\usepackage{amsmath}
+
+% The lineno packages adds line numbers. Start line numbering with
+% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+% for the whole article with \linenumbers after \end{frontmatter}.
+\usepackage{lineno}
+
+% I like to be in control
+\usepackage{placeins}
+
+% natbib.sty is loaded by default. However, natbib options can be
+% provided with \biboptions{...} command. Following options are
+% valid:
+
+%   round  -  round parentheses are used (default)
+%   square -  square brackets are used   [option]
+%   curly  -  curly braces are used      {option}
+%   angle  -  angle brackets are used    <option>
+%   semicolon  -  multiple citations separated by semi-colon
+%   colon  - same as semicolon, an earlier confusion
+%   comma  -  separated by comma
+%   numbers-  selects numerical citations
+%   super  -  numerical citations as superscripts
+%   sort   -  sorts multiple citations according to order in ref. list
+%   sort&compress   -  like sort, but also compresses numerical citations
+%   compress - compresses without sorting
+%
+% \biboptions{comma,round}
+
+% \biboptions{}
+
+
+% Katy Huff addtions
+\usepackage{xspace}
+\usepackage{color}
+
+\usepackage{multirow}
+\usepackage[hyphens]{url}
+
+
+\usepackage[acronym,toc]{glossaries}
+\include{acros}
+
+\makeglossaries
+
+%\journal{Annals of Nuclear Energy}
+
+\begin{document}
+
+%\begin{frontmatter}
+
+% Title, authors and addresses
+
+% use the tnoteref command within \title for footnotes;
+% use the tnotetext command for the associated footnote;
+% use the fnref command within \author or \address for footnotes;
+% use the fntext command for the associated footnote;
+% use the corref command within \author for corresponding author footnotes;
+% use the cortext command for the associated footnote;
+% use the ead command for the email address,
+% and the form \ead[url] for the home page:
+%
+% \title{Title\tnoteref{label1}}
+% \tnotetext[label1]{}
+% \author{Name\corref{cor1}\fnref{label2}}
+% \ead{email address}
+% \ead[url]{home page}
+% \fntext[label2]{}
+% \cortext[cor1]{}
+% \address{Address\fnref{label3}}
+% \fntext[label3]{}
+
+\title{Modeling and Simulation of Online Reprocessing in the Thorium-Fueled 
+        Molten Salt Breeder Reactor\\
+\large Response to Review Comments}
+\author{Andrei Rykhlevskii, Jin Whan Bae, Kathryn D. Huff}
+
+% use optional labels to link authors explicitly to addresses:
+% \author[label1,label2]{<author name>}
+% \address[label1]{<address>}
+% \address[label2]{<address>}
+
+
+%\author[uiuc]{Kathryn Huff}
+%        \ead{kdhuff@illinois.edu}
+%  \address[uiuc]{Department of Nuclear, Plasma, and Radiological Engineering,
+%        118 Talbot Laboratory, MC 234, Universicy of Illinois at
+%        Urbana-Champaign, Urbana, IL 61801}
+%
+% \end{frontmatter}
+\maketitle
+\section*{Review General Response}
+We would like to thank the reviewers for their detailed assessment of
+this paper. Your comments have resulted in changes which certainly improved the 
+paper.
+
+
+\begin{questions}
+        \section*{Reviewer 1}
+        %---------------------------------------------------------------------
+        \question <++> 
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+
+        \question Overall, a well written article in a topic area of interest 
+        to a number of audiences. Technically very good, well written in the 
+        description and analysis.  Well done authors! 
+
+
+        A few minor comments/suggestions/clarifications as follows:
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+
+        \question  Abstract: Given the recent announcement about TransAtomic 
+        Power, you may want to remove them from your list?
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question  Table 1, page 3: SCALE/TRITON is fast as well as thermal 
+        reactor capable.  
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question  Page 4, Line 48: Should read ``...and refill using a single 
+        or multiple unit cell ....''
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question  Page 4, Line 55. Also worth noting that the latest SCALE 
+        release will have the same functionality using continuous removal (B. 
+        R. Betzler, J. J. Powers, N. R. Brown, and B. T. Rearden, ``Molten Salt 
+        Reactor Neutronics Tools in SCALE,'' Proc. M\&C 2017 - International 
+        Conference on Mathematics \& Computational Methods Applied to Nuclear 
+        Science and Engineering, Jeju, Korea, Apr. 16-20 (2017).)
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question  Page 8, Fig 2: Appears the image is cut off at the top?
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question  Page 13, line 209: The description of the Pa removal, 
+        although correct, isn't quite fully correct. The reason the Pa is 
+        removed from the core and hence flux is to then enable the Pa to decay 
+        to U233. If it was left in the core, it would transmute further and 
+        hence not be able to produce the U233 that is necessary for this 
+        breeding cycle to work.
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question  Table 3: ``cycle time'' is not defined in the paper. Please 
+        add.
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question  Page 14, line 224. The 3 day time step as the ``optimum'' for 
+        Th fuel cycles in an MSR was first described and concluded by Powers et 
+        al. Please add a reference to their initial work.
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question  Page 14, line 234 onwards: Doesn't SERPENT already have an 
+        MSR removal capability? If so, what is different about using SaltProc 
+        with SERPENT?
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question  Page 18, Figure 7: The figure is hard to interpret or see 
+        clearly what is going on. Could an additional figure or a zoomed in 
+        portion be added to show what the swing in k is over a much shorter 
+        time interval? k seems to be swinging dramatically but over what time 
+        period and how would this be controlled in reality? The graph almost 
+        suggests that the core is unstable??
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question  Page 18, line 327: Are those elements removed every 3435 
+        days, or is it that the entire salt core is discharged?
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question  Page 19, Figure 8 (and same for Fig 9): y-axis in grams/kgs 
+        or mass units would be better for the reader.
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question  Page 20, Fig 9: What are the wiggles and dips , especially 
+        seen for Np235?
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question  Page 20, line 351: It is more than just the Pu isotopes that 
+        makes the spectrum harder? What about the other MAs etc?
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question  Fig 12: units on y-axis?
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question  Page 24, line 389: Should that be ``233U'' and not ``233Th''?
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question  Table 5: Please provide some comments on the uncertainties - 
+        where do they come from? Also, the ``reference'' results need to state 
+        whether ``initial'' or ``equilibrium''
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question  Page 26, line 425: ``Relatively large'' compared with what? 
+        Perhaps results for an LWR case would be a good basis for comparison?
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question  Page 27, section 3.8: It needs to be made more clear that 
+        these results were calculated, and that they are taken from the code 
+        output.
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question  Page 29, Figure 15: Similar comment to above regarding Fig 7 
+        - the results are difficult to see and interpret with such notable 
+        swings.
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+
+
+
+
+        \section*{Reviewer 2}
+
+        %---------------------------------------------------------------------
+        \question The paper presents a python script (SaltProc) that can 
+        complement the Serpent 2 code capabilities in terms of fuel cycle 
+        analysis of MSRs. The paper is well written and the tool might be 
+        useful for the nuclear engineering community. However, before 
+        publishing the paper, I recommend some revisions.
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+
+        \question The most critical point of the work is that the built-in 
+        capabilities for online reprocessing of Serpent 2 have not been used. 
+        Their use is mentioned in the future work, but it is not clear why 
+        these capabilities have not been used in the current work. To the 
+        author's knowledge, they have been available in Serpent 2 since quite a 
+        while. The authors should clarify this point at the beginning of the 
+        paper, and not only in the ``Future work'' section. Even though the 
+        technical work was done without using these capabilities, they should 
+        highlight what  SaltProc adds to the built-in Serpent capabilities, and 
+        they should at least try to extrapolate on the potential advantages of 
+        combining  SaltProc and Serpent capabilities. Based on this, they 
+        should slightly restructure the paper in order to prove the claimed 
+        advantages over Serpent 2.
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+
+        \question In addition to this major point, I would suggest a few other 
+        revisions.
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+
+        \question Abstract:
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        - Considering the scope of the journal, mentioning the names of 
+        companies and start-up is not appropriate. I would suggest removing 
+        them.
+
+        \question Introduction:
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        - The sentence ``Immediate advantages over traditional, solid-fueled, 
+        reactors include near-atmospheric pressure in the 15 primary loop, 
+        relatively high coolant temperature, outstanding neutron economy, 
+        improved safety parameters,'' may suggest improved neutron economy vs 
+        solid-fuel fast reactors. This is rarely the case, especially vs 
+        Pu-based SFRs. I would suggest reformulating.
+
+        \question The sentence ``With regard to the nuclear fuel cycle, the 
+        thorium cycle produces a reduced quantity of plutonium and minor 
+        actinides (MAs) compared to the traditional uranium fuel cycle'' is 
+        correct, but the fact that this is an advantage is questionable. The 
+        pros\&cons of thorium cycle have been long debated and there is no 
+        consensus on its advantage in terms of exposure of workers, exposure of 
+        public, geological repository, etc. I would suggest removing the 
+        sentence.
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+
+
+        \question ``Methods listed in references [14, 17, 24, 25, 28, 29, 30] 
+        as well as the current work also employ a batch-wise approach''. As a 
+        matter of fact, the work in [14]  allows for continuous reprocessing 
+        via introduction of ``reprocessing'' time constants. The work from  
+        Aufiero (mentioned in the following paragraph) actually used the 
+        methodology previously developed in [14]  for verification purposes.
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+
+        \question Table 3. It is not clear what ``effective cycle times'' are. 
+        Please clarify.
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+
+        \question The removal of fission products is made batch wise in the 
+        described algorithms. However it is not clear how the fission products 
+        with the longest ``effective cycle times'' are removed. Part of them at 
+        every batch? Or all of them at the end of the  ``effective cycle 
+        times''.  Please clarify. And please clarify the relation between 
+        ``effective cycle times'', batches and the average time spent by a 
+        fission product in the reactor.
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+
+        \question The oscillatory behavior shown in Fig. 7 on the time scale of 
+        months/years is hard to explain. Is this because the fission product 
+        with longer residence time are batch-wise removed at their ``effective 
+        cycle time''? In case, why not to remove part of them at every depletion 
+        step?  
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+
+        \question Can the proposed tool adjust reactivity?
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+
+        \question ``The main physical principle underlying the reactor 
+        temperature feedback is an expansion of material that is heated''. This 
+        sentence would deserve some support data. Can you please calculate 
+        separately the effect of temperature (Doppler in fuel and spectral 
+        shift in graphite) and density?
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+
+        \question How uncertainties have been calculated in Table 5? Is this 
+        just statistical uncertainty from Serpent calculations? Please clarify
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+
+        \question For calculating the coefficients in table 5, are you only 
+        changing densities, or also dimensions? Please clarify and provide a 
+        justification.  
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+
+        \question ``The fuel temperature coefficient (FTC) is negative for both 
+        initial and equilibrium fuel compositions due to thermal Doppler 
+        broadening of the resonance capture cross sections in the thorium.'' 
+        What is the effect of density?
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+
+        \question ``This thorium consumption rate is in good agreement with a 
+        recent online reprocessing study by ORNL [29].'' Please notice that in a 
+        reactor with only Th as feed, and near equilibrium, the Th consumption 
+        rate is  exclusively determined by the reactor power and by the energy 
+        released per fission.  
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+
+        \question Are you considering the effect of the gradual poisoning of 
+        the graphite with fission products? If not, it would be worthwhile 
+        briefly discussing its effect.
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+
+        \question In the manuscript it is not always clear when the authors 
+        refer to numerical approximations of physical situations. For instance, 
+        the authors write ``Figure 16 demonstrates that batch-wise removal of 
+        strong absorbers every 3 days did not necessarily leads to fluctuation 
+        in results but rare earth elements 480 removal every 50 days causes an 
+        approximately 600 pcm jump in reactivity.'' These 600 pcm are an effect 
+        of a numerical approximation, but the way things are presented can be 
+        confusing to the reader. Please try to explicitly separate physical and 
+        numerical effects. And try to related numerical effects to physical 
+        effects. For instance, how does these numerical ``jumps'' affect the 
+        results?  In this sense, why the batch-wise removal of strong absorbers 
+        every 3 days  was not done? And why a fraction of rare earths  is not 
+        removed every three days?
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+
+
+
+        \question ``The current work results show that a true equilibrium 
+        composition cannot exist but balance between strong absorber 
+        accumulation and new fissile material production can be achieved to 
+        keep the reactor critical.'' Not clear. Do you mean that the equilibrium 
+        composition cannot be achieved in a lifetime of the reactor? Please 
+        clarify
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %---------------------------------------------------------------------
+
+
+
+
+
+
+        \section*{Reviewer 3}
+
+        \question This paper presents a SaltProc-Serpent2 coupled code system 
+        to simulate the depletion and online reprocessing process by directly 
+        changing the isotropic composition of fuel salt. The Molten Salt 
+        Breeder Reactor (MSBR) was analyzed to demonstrate the simulation 
+        capability of the developed code system. However, large number of 
+        similar works have been done and published on this topic. In 
+        particular, this work is similar with that done by Park et al. with the 
+        title of ``Whole core analysis of molten salt breeder reactor with 
+        online fuel reprocessing'' published on ``International Journal of Energy 
+        Research''. The authors need to prove the uniqueness and innovation 
+        within their work.
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %--------------------------------------------------------------------
+
+        \question  What are the main differences of this work with the previous 
+        works, especially with the work published by Park at al. in ``Whole core 
+        analysis of molten salt breeder reactor with online fuel reprocessing''?
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %--------------------------------------------------------------------
+        \question  How did the authors verify the coupled SaltProc and Serpent 
+        code system?  \begin{solution}
+                <++>
+        \end{solution}
+
+        %--------------------------------------------------------------------
+        \question  In Page 3, the title of ``Table 1'' should not only contain 
+        the ``fast spectrum system''. The work published by Zhou and Yang et al. 
+        with the title of ``Fuel cycle analysis of molten salt reactors based on 
+        coupled neutronics and thermal-hydraulics calculations'' needs to be 
+        included in Table 1 for completeness.
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %--------------------------------------------------------------------
+        \question  In Page 5, the following sentence needs to be explained. ``We 
+        employed this extended SERPENT 2 for a simplified unit-cell geometry of 
+        thermal spectrum thorium-fueled MSBR and obtained results which 
+        contradict existing MSBR depletion simulations.''
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %--------------------------------------------------------------------
+        \question  In Page 10, ``SERPENT generates the problem-dependent nuclear 
+        data library'', how did SERPENT generate the problem-dependent nuclear 
+        data library? What kind of nuclear data library did SERPENT generate?
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %--------------------------------------------------------------------
+        \question  In Page 14, ``depletioncalculations'' should be ``depletion 
+        calculations''.
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %--------------------------------------------------------------------
+        \question  In Page 21, it looks like the neutron spectrum is not 
+        normalized in Figure 10. It is recommended to normalize the neutron 
+        spectrum for comparison.
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %--------------------------------------------------------------------
+        \question  In Page 22, ``Figure 13 reflects the normalized power 
+        distribution of the MSBR quarter core, which is the same at both the 
+        initial and equilibrium states'' contradicts the following statement of 
+        ``The spectral shift during reactor operation results in different power 
+        fractions at startup and equilibrium''.
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %--------------------------------------------------------------------
+        \question  In Page 24, it is hard to agree with the statement that ``the 
+        majority of 233Th is produced in zone II.''. How did the authors draw 
+        this conclusion?
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %--------------------------------------------------------------------
+        \question  In Page 24 and 25, why did the normalized power density 
+        distribution and the 232Th neutron capture reaction rate distribution 
+        share the same figure for both initial and equilibrium fuel salt 
+        compositions?
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %--------------------------------------------------------------------
+        \question  Too much background information was contained in the 
+        abstract, which deteriorates the readability of the abstract.
+        \begin{solution}
+                <++>
+        \end{solution}
+
+        %--------------------------------------------------------------------
+\end{questions}
+%\bibliographystyle{unsrt}
+%\bibliography{review-responses}
+\end{document}
+
+%
+% End of file `elsarticle-template-num.tex'.
