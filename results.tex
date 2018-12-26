@@ -175,7 +175,8 @@ Zone II          & 2.09\%       & 1.88\%   \\ \hline
 Figure~\ref{fig:breeding_den} shows the neutron capture reaction rate 
 distribution for $^{232}$Th normalized by the total neutron flux for initial 
 and equilibrium states. The distribution reflects the spatial distribution of 
-$^{233}$Th production in the core. The thorium-232 then $\beta$-decays to 
+$^{233}$U production in the core. The thorium-233 produced after $^{232}$Th 
+captured neutron then $\beta$-decays to 
 $^{233}$Pa, which is the precursor for $^{233}$U production. Accordingly, this 
 characteristic represents the breeding distribution in the \gls{MSBR} core. 
 Spectral shift does not cause significant changes in power nor in breeding 
@@ -198,7 +199,9 @@ produced in zone II.
 Table~\ref{tab:tcoef} summarizes temperature effects on reactivity calculated 
 in this work for both initial and equilibrium fuel compositions, compared 
 with the original \gls{ORNL} report data \cite{robertson_conceptual_1971}. 
-Uncertainty for each temperature coefficient also appears in 
+Uncertainty for each temperature coefficient was obtain by propagating statistical 
+ error for effective multiplication factor calculation (confidence interval for K$_{eff}$
+ is $\pm$1.9 pcm) provided by SERPENT2 and also appears in 
 Table~\ref{tab:tcoef}. The main physical principle underlying the reactor 
 temperature feedback is an expansion of material that is heated. When the fuel 
 salt temperature increases, the density of the salt decreases, but at the same 
@@ -217,8 +220,8 @@ moderator were changed from 900K to 1000K. Three different cases were considered
   \centering
   \caption{Temperature coefficients of reactivity for initial and equilibrium 
   state.}
-\begin{tabularx}{\textwidth}{ m | s | s | x } \hline
-   Reactivity coefficient [pcm/K]  & Initial      & Equilibrium  & Reference 
+\begin{tabularx}{\textwidth}{ s | s | s | s } \hline
+   Reactivity coefficient [pcm/K]  & Initial      & Equilibrium  & Reference \qquad (initial)
         \cite{robertson_conceptual_1971} \\  \hline
 Fuel salt        & $-3.22\pm0.044$ & $-1.53\pm0.046$ & $-3.22$  \\
 Moderator        & $+1.61\pm0.044$ & $+0.97\pm0.046$ & $+2.35$  \\
@@ -244,8 +247,7 @@ during reactor operation because of spectrum hardening with fuel depletion.
 Finally, the total temperature coefficient of reactivity is negative for both 
 cases, but decreases during reactor operation due to spectral shift. In 
 summary, even after 20 years of operation the total temperature coefficient of 
-reactivity is relatively large and negative during reactor operation, despite 
-positive MTC, and affords excellent reactor stability and control.
+reactivity is relatively large and negative during reactor operation (comparing with conventional PWR which temperature coefficient about -1.71 pcm/$^\circ$F $\approx$ -3.08 pcm/K \cite{forget_integral_2018}), despite positive MTC, and affords excellent reactor stability and control.
 
 \subsection{Reactivity control system rod worth}
 Table~\ref{tab:rod_worth} summarizes the reactivity control system worth. 
