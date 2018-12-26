@@ -208,15 +208,19 @@ which then decays into the fissile $^{233}$U. Furthermore, the \gls{MSBR}
 design requires online reprocessing to remove all poisons (e.g. $^{135}$Xe), 
 noble metals, and gases (e.g. $^{75}$Se, $^{85}$Kr) every 20 seconds. 
 Protactinium presents a challenge, since it has a large absorption cross 
-section in the thermal energy spectrum. Accordingly, $^{233}$Pa is continuously 
+section in the thermal energy spectrum. Moreover, $^{233}$Pa left in the core
+ would produce $^{234}$Pa and $^{234}$U, which both are not useful as fuel, 
+and smaller amount of $^{233}$Pa would decays into the fissile $^{233}$U.
+Accordingly, $^{233}$Pa is continuously 
 removed from the fuel salt into a protactinium decay tank to allow $^{233}$Pa 
-to decay to $^{233}$U without poisoning the reactor. The reactor reprocessing 
-system must separate $^{233}$Pa from the molten-salt fuel over 3 
+to decay to $^{233}$U without negative impact on neutronics. The reactor 
+reprocessing system must separate $^{233}$Pa from the molten-salt fuel over 3 
 days, hold it while $^{233}$Pa decays into $^{233}$U, and return it back to the 
 primary loop. This feature allows the reactor to avoid neutron losses to 
 protactinium, lowers in-core fission product inventory, and increases the 
 efficiency of $^{233}$U breeding. Table~\ref{tab:reprocessing_list} summarizes 
-full list of nuclides and the cycle times used for modeling salt treatment and 
+full list of nuclides and the ``cycle times''\footnote{ The \gls{MSBR} program defined a ``cycle time" as the amount of time required to remove 100\% of a target nuclide from a fuel 
+salt \cite{robertson_conceptual_1971}.} used for modeling salt treatment and 
 separations \cite{robertson_conceptual_1971}. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -248,7 +252,7 @@ $^{233}$Pa and $^{232}$Th was continuously added to maintain the initial mass
 fraction of $^{232}$Th.
 
 \subsubsection{The SaltProc modeling and simulation code}
-The SaltProc tool \cite{andrei_rykhlevskii_arfc/saltproc:_2018} is designed to 
+The SaltProc tool \cite{rykhlevskii_arfc/saltproc:_2018} is designed to 
 expand SERPENT 2
  depletion capabilities for modeling liquid-fueled \gls{MSR} for continuous 
  reprocessing.
