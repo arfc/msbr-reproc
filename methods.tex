@@ -235,8 +235,9 @@ separations \cite{robertson_conceptual_1971}.
                 Nb, Mo, Tc, Ru, Rh, Pd, Ag, Sb, Te & 20 sec \\
         Seminoble metals & Zr, Cd, In, Sn & 200 days \\
         Gases & Kr, Xe & 20 sec \\ Volatile fluorides & Br, I & 60 days \\
-        Discard & Rb, Sr, Cs, Ba & 3435 days \\ Salt discard & Th, Li, Be, F & 
-                3435 days \\ Protactinium & $^{233}$Pa & 3 days \\ Higher 
+        Discard & Rb, Sr, Cs, Ba & 3435 days \\ 
+        %Salt discard & Th, Li, Be, F & 3435 days \\ 
+        Protactinium & $^{233}$Pa & 3 days \\ Higher 
                 nuclides & $^{237}$Np, $^{242}$Pu & 16 years \\  \hline
         \end{tabularx}
         \label{tab:reprocessing_list}
@@ -247,7 +248,7 @@ are very short, an enormous number of depletion steps are required to obtain
 the equilibrium composition. On the other hand, if the depletion  calculation 
 time interval is too long, the impact of short-lived fission products is not 
 captured. To compromise, the time interval for depletion calculations in this 
-model was selected as 3 days to correlate with the removal interval of 
+model was selected as 3 days\footnote{ Optimal depletion time step of 3 days for \gls{MSR} batch-wise depletion simulation was first described and concluded by Powers \emph{et al.} \cite{powers_new_2013}.} to correlate with the removal interval of 
 $^{233}$Pa and $^{232}$Th was continuously added to maintain the initial mass 
 fraction of $^{232}$Th.
 
@@ -268,7 +269,7 @@ with the Monte Carlo SERPENT 2
 software to simulate online reprocessing for irregular full-core 
 geometry with high fidelity.  The primary function of SaltProc is to 
 manage material streams while SERPENT 2 performs the neutron 
-transport and depletioncalculations. Saltproc is defined as a python class, where 
+transport and depletion calculations. Saltproc is defined as a python class, where 
 each material stream is defined as a isotopic atomic density
 vector variable. This allows tracking of time-sensitive material streams such 
 as the 	$^{233}$Pa tank in the \gls{MSBR}. The user can define the reprocessing 

@@ -45,9 +45,14 @@ poisons (e.g. Xe, Kr) are removed, while fresh fissile material ($^{233}$U)
 from the protactinium decay tank is added.  
 
 Additionally, the presence of rubidium, strontium, cesium, and barium in the 
-core are disadvantageous to reactor physics. In fact, the removal of these elements 
-every 3435 days causes the multiplication factor to jump by approximately 450 
+core are disadvantageous to reactor physics. In fact, SaltProc fully removes all these elements every 3435 days (not a small mass fraction every 3 days) 
+which causes the multiplication factor to jump by approximately 450 
 pcm, and limits using the batch approach for online reprocessing simulations. 
+In future versions of SaltProc this drawback will be eliminated by removing 
+elements with longer cycle times (seminoble metals, volatile fluorides, Rb, Sr,
+ Cs, Ba, Eu) using different approach. Only mass fraction (calculated 
+ separately for each reprocessing group) will be removed every depletion step 
+ (e.g. 3 days) instead of removing 100\% of element atoms after cycle time.
 Overall, the effective multiplication factor gradually decreases from 1.075 to 
 $\approx$1.02 at equilibrium after approximately 6 years of irradiation. 
 
@@ -74,7 +79,11 @@ isotopes in the core. In the end of the considered operational time, the core
 contained significant $^{235}$U ($\approx10^{-5}$ atom/b-cm), $^{239}$Pu 
 ($\approx5\times10^{-7}$ atom/b-cm), and $^{241}$Pu ($\approx 5\times10^{-7}$ 
 atom/b-cm). Meanwhile, the equilibrium number density of the target fissile 
-isotope $^{233}$U was approximately 7.97$\times10^{-5}$ atom/b-cm. Thus, 
+isotope $^{233}$U was approximately 7.97$\times10^{-5}$ atom/b-cm. Small dips 
+in neptunium and plutonium number density every 16 years are caused by removing
+$^{237}$Np, $^{242}$Pu (included in Processing group ``Higher nuclides'', see
+ Table~\ref{tab:reprocessing_list}) which decays into $^{235}$Np, $^{239}$Pu, 
+ respectively. Thus, 
 production of new fissile materials in the core, as well as $^{233}$U breeding, 
 made it possible to compensate for negative effects of strong absorber 
 accumulation and keep the reactor critical.
@@ -90,8 +99,8 @@ accumulation and keep the reactor critical.
 Figure~\ref{fig:spectrum} shows the normalized neutron flux spectrum for the 
 full-core \gls{MSBR} model in the energy range from $10^{-8}$ to $10$ MeV. The 
 neutron energy spectrum at equilibrium is harder than at startup due to 
-$^{238}$Pu, $^{239}$Pu, $^{240}$Pu, $^{241}$Pu, and $^{242}$Pu accumulation in 
-the core during reactor operation.  
+plutonium and other strong absorbers accumulation in the core during reactor 
+operation.  
 \begin{figure}[ht!] % replace 't' with 'b'         to force it to 
   \centering
   \includegraphics[width=\textwidth]{spectrum.png} \caption{Neutron flux energy 
