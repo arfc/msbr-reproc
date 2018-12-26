@@ -77,7 +77,7 @@ thermal\\
 \hline
 SCALE/TRITON \cite{bowman_scale_2011,powers_new_2013}    & Powers \emph{et al.}, 
 2014; Betzler \emph{et al.}, 2017 
-\cite{powers_new_2013,powers_inventory_2014,betzler_molten_2017}& thermal\\
+\cite{powers_new_2013,powers_inventory_2014,betzler_molten_2017}& thermal/fast\\
 \hline
 SERPENT 2     & Rykhlevskii \emph{et al.}, 2017 \cite{rykhlevskii_online_2017} & 
 thermal\\
@@ -103,7 +103,8 @@ material moves to and from the core continuously or at specific time steps
 time and restarts with a new liquid fuel composition (after removal of discarded 
 materials and addition of fissile/fertile materials). \gls{ORNL} researchers 
 have developed ChemTriton, a Python-based script for SCALE/TRITON which uses the 
-batch-wise approach to simulate a continuous reprocessing. ChemTriton models salt 
+batch-wise approach to simulate a continuous reprocessing and refill using a single 
+or multiple unit cell. ChemTriton models salt 
 treatment, separations, discharge, and refill using a unit-cell \gls{MSR} 
 SCALE/TRITON depletion simulation over small time steps to simulate continuous 
 reprocessing and deplete the fuel salt \cite{powers_new_2013}. Methods listed in 
@@ -114,7 +115,7 @@ as well as the current work also employ a batch-wise approach.
 Accounting for continuous removal or addition presents a greater challenge since it 
 requires adding a term to the Bateman equations. Aufiero \emph{et al.} explicitly
 introduced online fuel reprocessing in the system of equations by adding effective 
-decay and transmutation terms for the different nuclides. In his work SERPENT was 
+decay and transmutation terms for the different nuclides. The latest SCALE release will also have the same functionality using truly continuous removals \cite{betzler_implementation_2017}. In his work SERPENT was 
 used for solution of the matrix exponential derived from the system of the Bateman 
 equations \cite{aufiero_extended_2013}. Similar approach is adopted to model true 
 continuous feeds and removals using MCNP transport code listed in references 
