@@ -301,7 +301,14 @@ paper.
         where do they come from? Also, the ``reference'' results need to state 
         whether ``initial'' or ``equilibrium''
         \begin{solution}
-                <++>
+                In the Table 5 added information that reference column contains data for initial 					fuel salt composition. Details about uncertainties have been added:
+                
+                 Uncertainty for each temperature coefficient was obtain by 
+                 propagating statistical error of effective multiplication factor 
+                 calculation provided by SERPENT2 and also appears in Table 5. 
+                 Other sources of uncertainty, such as cross section libraries 
+				 uncertainty, error in salt and graphite density correlations, 
+				 are not treated here.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -468,7 +475,14 @@ paper.
         separately the effect of temperature (Doppler in fuel and spectral 
         shift in graphite) and density?
         \begin{solution}
-                <++>
+                Thank you for the excellent recommendation. Effects of temperature
+                 and density have been calculated separately and added in Table 5.
+                 Moreover, during these simulations we have discovered mistake in 
+                 fuel salt and graphite density correlations and completely 
+                 recalculated temperature coefficients of reactivity with lower 
+                 statistical error. Now initial total temperature coefficient is 
+                 closer to the reference and statistical uncertainty was reduced 
+                 from 0.046 to 0.038 pcm/K.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -476,7 +490,16 @@ paper.
         \question How uncertainties have been calculated in Table 5? Is this 
         just statistical uncertainty from Serpent calculations? Please clarify
         \begin{solution}
-                <++>
+                Yes, uncertainties were determined from statistical error 
+                from SERPENT output. Following passage has been added to clarify
+                 this point:
+                 
+                 Uncertainty for each temperature coefficient was obtain by 
+                 propagating statistical error of effective multiplication factor 
+                 calculation provided by SERPENT2 and also appears in Table 5. 
+                 Other sources of uncertainty, such as cross section libraries 
+				 uncertainty, error in salt and graphite density correlations, 
+				 are not treated here.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -485,7 +508,16 @@ paper.
         changing densities, or also dimensions? Please clarify and provide a 
         justification.  
         \begin{solution}
-                <++>
+        		We have changed both densities and dimensions. This passage 
+        		has been modified to read:
+        		
+                A new geometry input for SERPENT2, which takes into account 
+                displacement of graphite surfaces, was created based on this information.
+                 For the displacements calculation it was assumed that the interface 
+                 between graphite reflector and vessel did not move, and the vessel 
+                 temperature did not change. This is the most reasonable assumption for
+				 the short-term reactivity effects because inlet salt is cooling graphite 
+				 reflector and inner surface of the vessel.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -495,7 +527,14 @@ paper.
         broadening of the resonance capture cross sections in the thorium.'' 
         What is the effect of density?
         \begin{solution}
-                <++>
+                This passage has been modified to illuminate the effect of density:
+                
+				The fuel temperature coefficient (FTC) is negative for both initial and 
+				equilibrium fuel compositions due to thermal Doppler broadening of the 
+				resonance capture cross sections in the thorium. Small positive effect 
+				of fuel density on reactivity is increasing from +1.21 pcm/K for the 
+				reactor startup to +1.66 pcm/K for equilibrium fuel composition which 
+				has negative effect on FTC magnitude during the reactor operation. 
         \end{solution}
 
         %---------------------------------------------------------------------
