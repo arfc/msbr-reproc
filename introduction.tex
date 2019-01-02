@@ -15,7 +15,7 @@ In the thermal spectrum \gls{MSR}, fluorides of fissile and/or fertile
 materials (i.e. UF$_4$, ThF$_4$,  PuF$_3$, TRU\footnote{ Transuranic 
 elements}F$_3$) combine with carrier salts to form a liquid fuel that 
 circulates in a loop-type primary circuit \cite{haubenreich_experience_1970}. 
-Immediate advantages over traditional, solid-fueled, reactors include 
+Immediate advantages over traditional light water reactors include 
 near-atmospheric pressure in the primary loop, 
 relatively high coolant temperature, outstanding neutron economy, improved 
 safety parameters, reduced fuel preprocessing, and the ability to continuously 
@@ -33,9 +33,7 @@ $^{233}$Th after capturing a neutron. Next, this isotope decays to $^{233}$Pa
 ($\tau_{1/2}$=26.967d).} recycled back into the core 
 \cite{betzler_modeling_2016}. The chosen fuel salt, LiF-BeF$_2$-ThF$_4$-UF$_4$, has a 
 melting point of $499^\circ$C, a low vapor pressure at operating temperatures, 
-and good flow and heat transfer properties \cite{robertson_conceptual_1971}. 
-With regard to the nuclear fuel cycle, the thorium cycle produces a reduced quantity 
-of plutonium and \glspl{MA} compared to the traditional uranium fuel cycle. 
+and good flow and heat transfer properties \cite{robertson_conceptual_1971}.  
 Finally, the \gls{MSR} also could be employed as a converter reactor for 
 transmutation of spent fuel from current \glspl{LWR}.
 
@@ -67,6 +65,9 @@ KENO-IV/ORIGEN \cite{goluoglu_monte_2011,gauld_isotopic_2011}     & Sheu
 \hline
 SERPENT 2 \cite{leppanen_serpent_2015-1}  & Aufiero \emph{et al.}, 2013 
 \cite{aufiero_extended_2013} & fast \\
+\hline
+DIF3D \cite{derstine_dif3d:_1984} & Zhou \emph{et al.}, 2018 
+\cite{zhou_fuel_2018} & thermal/ fast \\
 \hline
 MCODE/ORIGEN2 \cite{xu_mcode_2008,croff_users_1980}      & Ahmad \emph{et al.}, 
 2015 \cite{ahmad_neutronics_2015}   & thermal  \\
@@ -107,14 +108,17 @@ batch-wise approach to simulate a continuous reprocessing. ChemTriton models sal
 treatment, separations, discharge, and refill using a unit-cell \gls{MSR} 
 SCALE/TRITON depletion simulation over small time steps to simulate continuous 
 reprocessing and deplete the fuel salt \cite{powers_new_2013}. Methods listed in 
-references \cite{fiorina_investigation_2013,sheu_depletion_2013,park_whole_2015, 
+references \cite{zhou_fuel_2018,sheu_depletion_2013,park_whole_2015, 
 jeong_equilibrium_2016,powers_inventory_2014,betzler_molten_2017,rykhlevskii_online_2017} 
 as well as the current work also employ a batch-wise approach.
 
 Accounting for continuous removal or addition presents a greater challenge since it 
-requires adding a term to the Bateman equations. Aufiero \emph{et al.} explicitly
-introduced online fuel reprocessing in the system of equations by adding effective 
-decay and transmutation terms for the different nuclides. In his work SERPENT was 
+requires adding a term to the Bateman equations. Fiorina \emph{et al.} simulated 
+\gls{MSFR} depletion with continuous fuel salt reprocessing via introducing 
+``reprocessing'' time constants into ERANOS transport code \cite{fiorina_investigation_2013}. Aufiero \emph{et al.} improved SERPENT2 using similar methodology by explicitly introducing 
+continuous reprocessing in the system of Bateman equations by adding effective decay and transmutation terms for the different nuclides \cite{aufiero_extended_2013}. 
+
+The latest SCALE release will also have the same functionality using truly continuous removals \cite{betzler_implementation_2017}. In his work SERPENT was 
 used for solution of the matrix exponential derived from the system of the Bateman 
 equations \cite{aufiero_extended_2013}. Similar approach is adopted to model true 
 continuous feeds and removals using MCNP transport code listed in references 

@@ -335,16 +335,6 @@ paper.
         \section*{Reviewer 2}
 
         %---------------------------------------------------------------------
-        \question The paper presents a python script (SaltProc) that can 
-        complement the Serpent 2 code capabilities in terms of fuel cycle 
-        analysis of MSRs. The paper is well written and the tool might be 
-        useful for the nuclear engineering community. However, before 
-        publishing the paper, I recommend some revisions.
-        \begin{solution}
-                <++>
-        \end{solution}
-
-        %---------------------------------------------------------------------
 
         \question The most critical point of the work is that the built-in 
         capabilities for online reprocessing of Serpent 2 have not been used. 
@@ -365,36 +355,30 @@ paper.
 
         %---------------------------------------------------------------------
 
-        \question In addition to this major point, I would suggest a few other 
-        revisions.
-        \begin{solution}
-                <++>
-        \end{solution}
-
-        %---------------------------------------------------------------------
-
-        \question Abstract:
-        \begin{solution}
-                <++>
-        \end{solution}
-
-        %---------------------------------------------------------------------
-        - Considering the scope of the journal, mentioning the names of 
+        \question Considering the scope of the journal, mentioning the names of 
         companies and start-up is not appropriate. I would suggest removing 
         them.
-
-        \question Introduction:
         \begin{solution}
-                <++>
+                The names of companies have been removed.
         \end{solution}
 
         %---------------------------------------------------------------------
-        - The sentence ``Immediate advantages over traditional, solid-fueled, 
+        
+        \question The sentence ``Immediate advantages over traditional, solid-fueled, 
         reactors include near-atmospheric pressure in the 15 primary loop, 
         relatively high coolant temperature, outstanding neutron economy, 
         improved safety parameters,'' may suggest improved neutron economy vs 
         solid-fuel fast reactors. This is rarely the case, especially vs 
         Pu-based SFRs. I would suggest reformulating.
+        \begin{solution}
+                Thank you for the exceptional recommendation. The sentence has been 
+                changed as follows:
+                
+                ``Immediate advantages over traditional light water reactors 
+                include\dots''
+        \end{solution}
+
+        %---------------------------------------------------------------------
 
         \question The sentence ``With regard to the nuclear fuel cycle, the 
         thorium cycle produces a reduced quantity of plutonium and minor 
@@ -405,7 +389,7 @@ paper.
         public, geological repository, etc. I would suggest removing the 
         sentence.
         \begin{solution}
-                <++>
+                Thanks for your kind comment. The sentence has been removed.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -418,7 +402,18 @@ paper.
         Aufiero (mentioned in the following paragraph) actually used the 
         methodology previously developed in [14]  for verification purposes.
         \begin{solution}
-                <++>
+                Thank you for the information. [14] has been removed from the 
+                sentence, and following paragraph has been modified to read:
+                
+                Accounting for continuous removal or addition presents a greater 
+                challenge since it requires adding a term to the Bateman equations. 
+                Fiorina \emph{et al.} simulated MSFR depletion with continuous
+                 fuel salt reprocessing via introducing ``reprocessing'' time 
+                constants into ERANOS transport code \cite{fiorina_investigation_2013}. 
+                Aufiero \emph{et al.} improved SERPENT2 using similar methodology by 
+                explicitly introducing continuous reprocessing in the system of Bateman 
+                equations by adding effective decay and transmutation terms for the 
+                different nuclides \cite{aufiero_extended_2013}. 
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -439,7 +434,23 @@ paper.
         ``effective cycle times'', batches and the average time spent by a 
         fission product in the reactor.
         \begin{solution}
-                <++>
+                All of them at the end of the cycle time, and we agree that it
+                 was not best solution. To clarify this following paragraph has 
+                been added:
+                 
+				Current version of SaltProc only allows separate out 100\% of 
+				specific elements or group of elements (e.g. Processing Groups 
+				as described in Table 3 at the end
+				 of the specific cycle time. This approach works well for 
+				fast-removing elements (gases, noble metals, protactinium) which 
+				should be removed each depletion step. Unfortunately, for the 
+				elements with longer cycle time (i.e. rare earths should be removed 
+				every 50 days) this simplified approach leads to oscillatory 
+				behavior of all major parameters. In future releases of SaltProc
+				 this drawback will be eliminated by removing elements with longer 
+				cycle times using different method: only mass fraction (calculated 
+				separately for each reprocessing group) will be removed each 
+				depletion step (e.g. 3 days).	
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -450,7 +461,21 @@ paper.
         cycle time''? In case, why not to remove part of them at every depletion 
         step?  
         \begin{solution}
-                <++>
+                Yes, the oscillation happened because the fission products 
+        		with longer residence time are removed at the end of cycle time. We are 
+                definitely will take your advice and improve the code in future 
+                releases. Following text has been added to clarify this issue:
+                
+                In fact, SaltProc fully removes all these elements every 3435 days 
+                (not a small mass fraction every 3 days) which causes the 
+                multiplication factor to jump by approximately 450 pcm, and limits 
+                using the batch approach for online reprocessing simulations. In 
+                future versions of SaltProc this drawback will be eliminated by 
+                removing elements with longer residence time (seminoble metals, 
+                volatile fluorides, Rb, Sr, Cs, Ba, Eu) using different approach. 
+                Only mass fraction (calculated separately for each reprocessing 
+                group) will be removed every depletion step (e.g. 3 days) instead 
+                of removing 100\% of element atoms after cycle time.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -506,7 +531,13 @@ paper.
         rate is  exclusively determined by the reactor power and by the energy 
         released per fission.  
         \begin{solution}
-                <++>
+                Thank you for the recommendation. Following sentence has been 
+                added:
+                
+                It must be noted that for the reactor with only thorium feed, 
+                at near equilibrium state, the thorium consumption rate is 
+				determined by the reactor power, the energy released per fission, 
+				and neutron energy spectrum.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -515,7 +546,16 @@ paper.
         the graphite with fission products? If not, it would be worthwhile 
         briefly discussing its effect.
         \begin{solution}
-                <++>
+                This passage has been added:
+				
+				$^{135}$Xe is a strong poison to the reactor, and some 
+				fraction of this gas is absorbed by graphite during \gls{MSBR} 
+				operation. ORNL calculations shown that for unsealed commercial 
+				graphite with helium permeability 10$^{-5}$ cm$^2$/s the 
+				calculated poison fraction is less than 2\% \cite{robertson_conceptual_1971}. 
+				This parameter can be improved by using experimental graphites 
+				or by applying sealing technology. The effect of the gradual 
+				poisoning of the core graphite with xenon is not treated here.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -548,7 +588,7 @@ paper.
         composition cannot be achieved in a lifetime of the reactor? Please 
         clarify
         \begin{solution}
-                <++>
+                This statement has been removed completely.
         \end{solution}
 
         %---------------------------------------------------------------------
