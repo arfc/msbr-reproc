@@ -51,7 +51,7 @@ approximate online refueling \cite{serp_molten_2014}. A summary of recent
 efforts is listed in table~\ref{tab:fs_codes}.
 
 \begin{table}[ht!]
-\caption{Tools and methods for fast spectrum system fuel cycle analysis.}
+\caption{Tools and methods for \glspl{MSR} fuel cycle analysis.}
 \begin{tabularx}{\textwidth}{ m | b | x } 
 \hline Neutronic code    & \qquad Authors & Spectrum   \\
 \hline
@@ -68,6 +68,9 @@ KENO-IV/ORIGEN \cite{goluoglu_monte_2011,gauld_isotopic_2011}     & Sheu
 SERPENT 2 \cite{leppanen_serpent_2015}  & Aufiero \emph{et al.}, 2013 
 \cite{aufiero_extended_2013} & fast \\
 \hline
+DIF3D \cite{derstine_dif3d:_1984} & Zhou \emph{et al.}, 2018 
+\cite{zhou_fuel_2018} & fast \\
+\hline
 MCODE/ORIGEN2 \cite{xu_mcode_2008,croff_users_1980}      & Ahmad \emph{et al.}, 
 2015 \cite{ahmad_neutronics_2015}   & thermal  \\
 \hline
@@ -77,7 +80,7 @@ thermal\\
 \hline
 SCALE/TRITON \cite{bowman_scale_2011,powers_new_2013}    & Powers \emph{et al.}, 
 2014; Betzler \emph{et al.}, 2017 
-\cite{powers_new_2013,powers_inventory_2014,betzler_molten_2017}& thermal/fast\\
+\cite{powers_new_2013,powers_inventory_2014,betzler_molten_2017}& thermal/ fast\\
 \hline
 SERPENT 2     & Rykhlevskii \emph{et al.}, 2017 \cite{rykhlevskii_online_2017} & 
 thermal\\
@@ -173,6 +176,21 @@ both the initial and equilibrium states to characterize the evolution of its
 safety case over time. Finally, these simulations determined the appropriate $^{232}$Th feed rate  
 for maintaining criticality and enabled analysis of the overall \gls{MSBR} fuel 
 cycle performance.
+
+The works described in \cite{park_whole_2015} and \cite{jeong_equilibrium_2016} 
+are most similar to the work presented in this paper. However, few major differences 
+worse to be mentioned: (1) Park \emph{et al.} employed MCNP6 for depletion 
+simulations while SERPENT2 was used in this work (SERPENT2 seems to be much faster in 
+massively parallel simulations involving more than 1000 cores); (2) full-core reactor 
+model herein is more detailed and has no major approximation comparing with Park 
+\emph{et al.} (detailed full-core models comparison might be found elsewhere
+\cite{rykhlevskii_full-core_2017}); (3) Park \emph{et al.} and Jeong \emph{et al.} 
+both considered volatile gases, noble metals removal and $^{233}$Pa separation while 
+in the current work we are implemented detailed reprocessing scheme described in 
+conceptual \gls{MSBR} design \cite{robertson_conceptual_1971}; (4) $^{232}$Th neutron 
+capture reaction rate has been investigated to prove advantages of two-region core 
+design; (5) the effect of removing fission product removal from fuel salt has been 
+studied. 
 
 The complex \gls{MSBR} geometry is challenging to describe in software input, 
 and usually researchers make significant geometric simplifications to model it 

@@ -320,7 +320,9 @@ paper.
         where do they come from? Also, the ``reference'' results need to state 
         whether ``initial'' or ``equilibrium''
         \begin{solution}
-                In the Table 5 added information that reference column contains data for initial 					fuel salt composition. Details about uncertainties have been added:
+                In the Table 5 was added information that reference column contains 
+                data for initial fuel salt composition. Details about uncertainties
+                 have been added:
                 
                  Uncertainty for each temperature coefficient was obtain by 
                  propagating statistical error of effective multiplication factor 
@@ -461,7 +463,7 @@ paper.
         \question Table 3. It is not clear what ``effective cycle times'' are. 
         Please clarify.
         \begin{solution}
-                <++>
+                The ``cycle time'' definition has been added in a first appearance in text.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -492,7 +494,7 @@ paper.
 
         \question Can the proposed tool adjust reactivity?
         \begin{solution}
-                <++>
+                No, and we do not plan to add this capability.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -627,28 +629,31 @@ paper.
 
         \section*{Reviewer 3}
 
-        \question This paper presents a SaltProc-Serpent2 coupled code system 
-        to simulate the depletion and online reprocessing process by directly 
-        changing the isotropic composition of fuel salt. The Molten Salt 
-        Breeder Reactor (MSBR) was analyzed to demonstrate the simulation 
-        capability of the developed code system. However, large number of 
-        similar works have been done and published on this topic. In 
-        particular, this work is similar with that done by Park et al. with the 
-        title of ``Whole core analysis of molten salt breeder reactor with 
-        online fuel reprocessing'' published on ``International Journal of Energy 
-        Research''. The authors need to prove the uniqueness and innovation 
-        within their work.
-        \begin{solution}
-                <++>
-        \end{solution}
-
         %--------------------------------------------------------------------
 
         \question  What are the main differences of this work with the previous 
         works, especially with the work published by Park at al. in ``Whole core 
         analysis of molten salt breeder reactor with online fuel reprocessing''?
         \begin{solution}
-                <++>
+                Thank you for your question. The new paragraph has been added:
+                
+                The works described in \cite{park_whole_2015} and 
+                \cite{jeong_equilibrium_2016} are most similar to the work 
+                presented in this paper. However, few major differences worse to 
+                be mentioned: (1) Park \emph{et al.} employed MCNP6 for depletion 
+				simulations while SERPENT2 was used in this work (SERPENT2 seems 
+				to be much faster in massively parallel simulations involving more 
+				than 1000 cores); (2) full-core reactor model herein is more 
+				detailed and has no major approximation comparing with Park \emph{et al.}
+				(detailed full-core models comparison might be found elsewhere
+				\cite{rykhlevskii_full-core_2017}); (3) Park \emph{et al.} and 
+				Jeong \emph{et al.} both considered volatile gases, noble metals 
+				removal and $^{233}$Pa separation while in the current work we are 
+				implemented detailed reprocessing scheme described in conceptual 
+				MSBR design \cite{robertson_conceptual_1971}; (4) $^{232}$Th 
+				neutron capture reaction rate has been investigated to prove 
+				advantages of two-region core design; (5) the effect of removing 
+				fission product removal from fuel salt has been studied. 
         \end{solution}
 
         %--------------------------------------------------------------------
@@ -664,7 +669,8 @@ paper.
         coupled neutronics and thermal-hydraulics calculations'' needs to be 
         included in Table 1 for completeness.
         \begin{solution}
-                <++>
+                Thank you for your excellent recommendations. The table has been 
+                enriched as requested.
         \end{solution}
 
         %--------------------------------------------------------------------
@@ -681,14 +687,19 @@ paper.
         data library'', how did SERPENT generate the problem-dependent nuclear 
         data library? What kind of nuclear data library did SERPENT generate?
         \begin{solution}
-                <++>
+                Thank you for your kind review. The statement has been removed
+		        entirely and we emphasized that temperature of each material is 
+		        assumed to be constant over 60 years:
+		        
+		        The specific temperature was fixed for each material and did 
+		        not change during the reactor operation. 
         \end{solution}
 
         %--------------------------------------------------------------------
         \question  In Page 14, ``depletioncalculations'' should be ``depletion 
         calculations''.
         \begin{solution}
-                <++>
+                Thanks for catching this, fixed.
         \end{solution}
 
         %--------------------------------------------------------------------
@@ -706,7 +717,22 @@ paper.
         ``The spectral shift during reactor operation results in different power 
         fractions at startup and equilibrium''.
         \begin{solution}
-                <++>
+                Thanks for catching this. The difference between power fraction
+                 is very small that could be seen from Table 4. It is impossible
+                  to see the difference in a contour plot that is why we left only 
+                 equilibrium composition on Figures 13 and 14. The paragraph has 
+                 been modified as follows:
+                 
+                 Table 4 shows the power fraction in each zone for initial and 
+                 equilibrium fuel compositions. Figure 13 reflects the normalized 
+                 power distribution of the MSBR quarter core for equilibrium 
+                 fuel salt composition. For both the initial and equilibrium 
+                 compositions, fission primarily occurs in the center of the core, 
+                 namely zone I. The spectral shift during reactor operation results 
+                 in slightly different power fractions at startup and equilibrium, 
+                 but most of the power is still generated in zone I at equilibrium 
+				 (table 4).                  
+                   
         \end{solution}
 
         %--------------------------------------------------------------------
@@ -714,7 +740,7 @@ paper.
         majority of 233Th is produced in zone II.''. How did the authors draw 
         this conclusion?
         \begin{solution}
-                <++>
+                The statement has been removed entirely.
         \end{solution}
 
         %--------------------------------------------------------------------
@@ -723,7 +749,8 @@ paper.
         share the same figure for both initial and equilibrium fuel salt 
         compositions?
         \begin{solution}
-                <++>
+                Thanks for catching this, it is a typo. Figure 13 and 14 are plotted 
+                for equilibrium composition only.            	    
         \end{solution}
 
         %--------------------------------------------------------------------
