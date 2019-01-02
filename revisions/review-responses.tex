@@ -698,8 +698,14 @@ paper.
 
         %--------------------------------------------------------------------
         \question  How did the authors verify the coupled SaltProc and Serpent 
-        code system?  \begin{solution}
-                <++>
+        code system?  
+        \begin{solution}
+                We have compared few parameters (multiplication factor, Th refill 
+                rate, neutron energy spectrum) with Betzler \emph{et al.} 											\cite{betzler_molten_2017} and mentioned it in the Result section. 
+                We also compared neutron energy spectrum and temperature coefficients
+                 for equilibrium composition with Park \emph{et al.} \cite{park_whole_2015}.
+                In a future SaltProc release suite of unit tests will be added 
+                to make sure that results are consistent with our test cases.
         \end{solution}
 
         %--------------------------------------------------------------------
