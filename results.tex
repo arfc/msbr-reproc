@@ -49,7 +49,7 @@ core are disadvantageous to reactor physics. In fact, SaltProc fully removes all
 which causes the multiplication factor to jump by approximately 450 
 pcm, and limits using the batch approach for online reprocessing simulations. 
 In future versions of SaltProc this drawback will be eliminated by removing 
-elements with longer cycle times (seminoble metals, volatile fluorides, Rb, Sr,
+elements with longer residence times (seminoble metals, volatile fluorides, Rb, Sr,
  Cs, Ba, Eu) using different approach. Only mass fraction (calculated 
  separately for each reprocessing group) will be removed every depletion step 
  (e.g. 3 days) instead of removing 100\% of element atoms after cycle time.
@@ -362,7 +362,10 @@ and steadily decreases due to spectrum hardening and accumulation of
 absorbers in the core. As a result, the average $^{232}$Th feed rate over 60 
 years of operation is about 2.40 kg/day. This thorium consumption rate is in 
 good agreement with a recent online reprocessing study by \gls{ORNL} 
-\cite{betzler_molten_2017}.
+\cite{betzler_molten_2017}. It must be noted that for the reactor with only 
+thorium feed, at near equilibrium state, the thorium consumption rate is 
+determined by the reactor power, the energy released per fission, and 
+neutron energy spectrum.
 
 \subsection{The effect of removing fission product from fuel salt}
 Loading initial fuel salt composition into the \gls{MSBR} core leads to a 
