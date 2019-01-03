@@ -343,8 +343,8 @@ paper.
                 Sentence has been extended as follows:
                 
                 ...the total temperature coefficient of reactivity is relatively large and
-                 negative during reactor operation (comparing with conventional PWR which 							temperature coefficient about -1.71 pcm/$^\circ$F $\approx$ -3.08 pcm/K 							\cite{forget_integral_2018}), despite positive MTC, and affords excellent 
-                 reactor stability and control.
+                 negative during reactor operation (comparing with conventional PWR which 									temperature coefficient about -1.71 pcm/$^\circ$F $\approx$ -3.08 pcm/K 									\cite{forget_integral_2018}), despite positive MTC, and affords excellent 
+                reactor stability and control.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -516,8 +516,12 @@ paper.
                  
 				Current version of SaltProc only allows separate out 100\% of 
 				specific elements or group of elements (e.g. Processing Groups 
-				as described in Table 3 at the end
-				 of the specific cycle time. This approach works well for 
+				as described in Table 3) at the end
+				 of the specific cycle time which means the average time spent 
+				by a fission product in the core is equal cycle time. That is 
+				simplification because in reality fuel salt resides approximately 
+				1/2 of total time in the core and rest of the time in the primary 
+				loop pipes and the heat exchanger. This approach works well for 
 				fast-removing elements (gases, noble metals, protactinium) which 
 				should be removed each depletion step. Unfortunately, for the 
 				elements with longer cycle time (i.e. rare earths should be removed 
@@ -526,7 +530,8 @@ paper.
 				 this drawback will be eliminated by removing elements with longer 
 				cycle times using different method: only mass fraction (calculated 
 				separately for each reprocessing group) will be removed each 
-				depletion step (e.g. 3 days).	
+				depletion step or batch (e.g. in the current work it was chosen 
+				3 days).	
         \end{solution}
 
         %---------------------------------------------------------------------
