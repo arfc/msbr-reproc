@@ -201,19 +201,15 @@ for maintaining criticality and enabled analysis of the overall \gls{MSBR} fuel
 cycle performance.
 
 The works described in \cite{park_whole_2015} and \cite{jeong_equilibrium_2016} 
-are most similar to the work presented in this paper. However, few major differences 
-worse to be mentioned: (1) Park \emph{et al.} employed MCNP6 for depletion 
-simulations while SERPENT2 was used in this work (SERPENT2 seems to be much faster in 
-massively parallel simulations involving more than 1000 cores); (2) full-core reactor 
-model herein is more detailed and has no major approximation comparing with Park 
-\emph{et al.} (detailed full-core models comparison might be found elsewhere
-\cite{rykhlevskii_full-core_2017}); (3) Park \emph{et al.} and Jeong \emph{et al.} 
-both considered volatile gases, noble metals removal and $^{233}$Pa separation while 
-in the current work we are implemented detailed reprocessing scheme described in 
-conceptual \gls{MSBR} design \cite{robertson_conceptual_1971}; (4) $^{232}$Th neutron 
+are most similar to the work presented in this paper. However, a few major 
+differences follow: (1) Park \emph{et al.} employed MCNP6 for depletion 
+simulations while this work used SERPENT2; (2) the full-core reactor 
+geometry herein is more detailed \cite{rykhlevskii_full-core_2017}; (3) Park \emph{et al.} and Jeong \emph{et al.} 
+both only considered volatile gas removal, noble metal removal, and $^{233}$Pa separation while 
+the current work implemented the more detailed reprocessing scheme specified in 
+the conceptual \gls{MSBR} design \cite{robertson_conceptual_1971}; (4) the $^{232}$Th neutron 
 capture reaction rate has been investigated to prove advantages of two-region core 
-design; (5) the effect of removing fission product removal from fuel salt has been 
-studied. 
+design; (5) the current work explicitly examines the independent impacts of removing specific fission product groups. 
 
 The complex \gls{MSBR} geometry is challenging to describe in software input, 
 and usually researchers make significant geometric simplifications to model it 
