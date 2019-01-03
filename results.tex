@@ -19,13 +19,14 @@ total computational time for calculating the equilibrium composition was
 approximately 9,900 node-hours (18 core-years.)
 
 \subsection{Effective multiplication factor}
-Figure~\ref{fig:keff} shows the effective multiplication factors 
+Figures~\ref{fig:keff}, \ref{fig:keff_zoomed} show the effective multiplication factors 
 obtained using SaltProc and SERPENT 2. The effective multiplication factors were 
 calculated after removing fission products listed in 
 Table~\ref{tab:reprocessing_list} and adding the fertile material at the end of 
 cycle time (3 days for this work). The effective multiplication 
 factor fluctuates significantly as a result of the batch-wise nature of this 
-online reprocessing strategy. 
+online reprocessing strategy. Figure~\ref{fig:keff_zoomed} shows how different 
+reprocessing groups imposed on effective multiplication factor.
 
 \begin{figure}[ht!] 
   \centering
@@ -33,6 +34,12 @@ online reprocessing strategy.
   \caption{Effective multiplication factor dynamics for full-core \gls{MSBR} 
   model over a 60-year reactor operation lifetime.}
   \label{fig:keff}
+\end{figure}
+\begin{figure}[ht!] 
+  \centering
+  \includegraphics[width=\textwidth]{keff_zoomed.png}
+  \caption{Effective multiplication factor for 150-EFPD time-frame.}
+  \label{fig:keff_zoomed}
 \end{figure}
 
 First, SERPENT calculates the effective multiplication factor for the beginning 
