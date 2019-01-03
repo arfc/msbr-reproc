@@ -63,8 +63,8 @@ ERANOS \cite{ruggieri_eranos_2006}  & Fiorina \emph{et al.}, 2013
 KENO-IV/ORIGEN \cite{goluoglu_monte_2011,gauld_isotopic_2011}     & Sheu 
 \emph{et al.}, 2013 \cite{sheu_depletion_2013} & fast \\
 \hline
-SERPENT 2 \cite{leppanen_serpent_2015}  & Aufiero \emph{et al.}, 2013 
-\cite{aufiero_extended_2013} & fast \\
+SERPENT2 \cite{leppanen_serpent_2015}  & Aufiero \emph{et al.}, 2013 
+\cite{aufiero_extended_2013}; Ashraf \emph{et al.}, 2018 \cite{ashraf_nuclear_2018} & fast \\
 \hline
 DIF3D \cite{derstine_dif3d:_1984} & Zhou \emph{et al.}, 2018 
 \cite{zhou_fuel_2018} & thermal/ fast \\
@@ -80,7 +80,7 @@ SCALE/TRITON \cite{bowman_scale_2011,powers_new_2013}    & Powers \emph{et al.},
 2014; Betzler \emph{et al.}, 2017 
 \cite{powers_new_2013,powers_inventory_2014,betzler_molten_2017}& thermal/ fast\\
 \hline
-SERPENT 2     & Rykhlevskii \emph{et al.}, 2017 \cite{rykhlevskii_online_2017} & 
+SERPENT2     & Rykhlevskii \emph{et al.}, 2017 \cite{rykhlevskii_online_2017} & 
 thermal\\
 \hline
 \gls{MCNP}/REM  & Nuttin \emph{et al.} \cite{nuttin_potential_2005}&thermal  \\ 
@@ -150,25 +150,46 @@ model to capture different neutron transport characteristics in the inner and
 outer regions of the core. In particular, most fissions happen in the inner 
 region while breeding occurs in the outer zone.  
 
-Aufiero \emph{et al.} extended the Monte Carlo burnup code SERPENT 2 and 
+Aufiero \emph{et al.} extended the Monte Carlo burnup code SERPENT2 and 
 employed it to study the material isotopic evolution of the 
 \gls{MSFR}\cite{aufiero_extended_2013}. The 
 developed extension directly accounts for the effects of online fuel 
 reprocessing on depletion calculations and features a reactivity control 
-algorithm. The extended version of SERPENT 2 was assessed against a dedicated 
+algorithm. The extended version of SERPENT2 was assessed against a dedicated 
 version of the deterministic ERANOS-based EQL3D procedure 
-\cite{ruggieri_eranos_2006} and adopted to analyze the \gls{MSFR} fuel salt 
-isotopic evolution. We employed this extended SERPENT 2 for a simplified 
-unit-cell geometry of thermal spectrum thorium-fueled \gls{MSBR} and obtained 
-results which contradict existing \gls{MSBR} depletion simulations 
-\cite{jeong_equilibrium_2016}.
+\cite{ruggieri_eranos_2006, fiorina_investigation_2013} and adopted to analyze 
+the \gls{MSFR} fuel salt isotopic evolution. 
+
+We employed this extended SERPENT2 for a simplified unit-cell geometry of 
+thermal spectrum thorium-fueled \gls{MSBR} and have had following problems: (1) 
+lack of documentation describing how to use this built-in SERPENT2 online 
+reprocessing capabilities\footnote{ Some challenges in no particular order: 
+mass conservation is hard to achieve; not clear when use mflow card type 0, 1 or 2; 
+difference between CRAM and TTA results; etc.} 
+(Discussion forum for SERPENT users is only useful 
+source of information at the moment); (2) reactivity control module described in Aufiero \emph{et al.} is 
+not available in the latest SERPENT 2.1.30 release; (3) infinite multiplication 
+factor behavior for simplified unit-cell model obtained using SERPENT2 built-in 
+capabilities \cite{rykhlevskii_online_2017} does not match with exist MCNP6/Python-script
+ results for the similar model by Jeong and Park\footnote{ In our 
+study k$_{\infty}$ drops from 1.05 to 1.005 during a 1200 days of depletion simulation 
+while in Jeong and Park work this parameter decreasing slowly from 1.065 to 1.05 for the 
+similar time-frame.} \cite{jeong_equilibrium_2016}; (4) only few publication \cite{aufiero_extended_2013, 
+ashraf_nuclear_2018} using these capabilities are available 
+which is indicative of lack of reproducibility. Nevertheless, truly continuous 
+online reprocessing capabilities of SERPENT2 is desirable feature for our 
+future research. However, these capabilities should be carefully verified against 
+ChemTriton/SCALE or proposed SaltProc/SERPENT2 package, and could be employed 
+for removal of fission products with shorter residence time (e.g., Xe, Kr) which 
+have a strong negative impact on core lifetime and breeding efficiency which 
+we intent to do in the nearest future.
 
 The present work introduces the online reprocessing simulation package, SaltProc, 
 which expands the capability of the continuous-energy Monte Carlo Burnup 
-calculation code, SERPENT 2 \cite{leppanen_serpent_2015}, for simulation 
+calculation code, SERPENT2 \cite{leppanen_serpent_2015}, for simulation 
 liquid-fueled \gls{MSR} operation 
 \cite{rykhlevskii_arfc/saltproc:_2018}. It also reports the 
-application of the coupled SaltProc-SERPENT 2 system to the \gls{MSBR}, an 
+application of the coupled SaltProc-SERPENT2 system to the \gls{MSBR}, an 
 extension of the work presented in 
 \cite{rykhlevskii_full-core_2017, rykhlevskii_online_2017}. In this work, we 
 analyzed \gls{MSBR} neutronics and fuel cycle to establish its equilibrium core 
