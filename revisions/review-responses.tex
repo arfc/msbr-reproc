@@ -95,10 +95,10 @@
 \usepackage[hyphens]{url}
 
 
-%\usepackage[acronym,toc]{glossaries}
-%\include{acros}
+\usepackage[acronym,toc]{glossaries}
+\include{acros}
 
-%\makeglossaries
+\makeglossaries
 
 %\journal{Annals of Nuclear Energy}
 
@@ -238,9 +238,7 @@ paper.
         MSR removal capability? If so, what is different about using SaltProc 
         with SERPENT?
         \begin{solution}
-                It does. We tried use it before but these capabilities needs 
-                to be verified. Additional text to clarify this point has 
-                been add to solution for question 21.                
+                <++>
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -251,7 +249,8 @@ paper.
         period and how would this be controlled in reality? The graph almost 
         suggests that the core is unstable??
         \begin{solution}
-                <++>
+                Zoomed portion for 150 EFPD interval has been added. We also 
+                added notes on a plot to explain swing in multiplication factor.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -292,7 +291,7 @@ paper.
         
 		         Small dips in neptunium and plutonium number density every 16 years are 
 		         caused by removing $^{237}$Np, $^{242}$Pu (included in Processing group 
-		         ``Higher nuclides'', see Table 3) which decays
+		         ``Higher nuclides'', see Table~\ref{tab:reprocessing_list}) which decays
         		  into $^{235}$Np, $^{239}$Pu, respectively. 
         \end{solution}
 
@@ -343,8 +342,8 @@ paper.
                 Sentence has been extended as follows:
                 
                 ...the total temperature coefficient of reactivity is relatively large and
-                 negative during reactor operation (comparing with conventional PWR which 									temperature coefficient about -1.71 pcm/$^\circ$F $\approx$ -3.08 pcm/K 									\cite{forget_integral_2018}), despite positive MTC, and affords excellent 
-                reactor stability and control.
+                 negative during reactor operation (comparing with conventional PWR which 							temperature coefficient about -1.71 pcm/$^\circ$F $\approx$ -3.08 pcm/K 							\cite{forget_integral_2018}), despite positive MTC, and affords excellent 
+                 reactor stability and control.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -391,42 +390,7 @@ paper.
         should slightly restructure the paper in order to prove the claimed 
         advantages over Serpent 2.
         \begin{solution}
-                Thank you for your kind review. We tried to use these capabilities 
-                \cite{rykhlevskii_online_2017} but have had number of issues which 
-                are hard to resolve due to lack of documentation and publications 
-                involving this feature. Following paragraph has been added to 
-                clarify why these capabilities have not been used in current work:
-                
-                We employed this extended SERPENT2 for a simplified unit-cell 
-                geometry of thermal spectrum thorium-fueled MSBR and have had 
-                following problems: (1) lack of documentation describing how 
-                to use this built-in SERPENT2 online reprocessing capabilities
-                \footnote{ Some challenges in no particular order: mass 
-                conservation is hard to achieve; not clear when use mflow card 
-                type 0, 1 or 2; difference between CRAM and TTA results; etc.} 
-				(Discussion forum for SERPENT users is only useful 
-				source of information at the moment); (2) reactivity control 
-				module described in Aufiero \emph{et al.} is not available 
-				in the latest SERPENT 2.1.30 release; (3) infinite multiplication 
-				factor behavior for simplified unit-cell model obtained using 
-				SERPENT2 built-in capabilities \cite{rykhlevskii_online_2017} 
-				does not match with exist MCNP6/Python-script results for the 
-				similar model by Jeong and Park\footnote{ In our study 
-				k$_{\infty}$ drops from 1.05 to 1.005 during a 1200 days of 
-				depletion simulation while in Jeong and Park work this parameter 
-				decreasing slowly from 1.065 to 1.05 for the 
-				similar time-frame.} \cite{jeong_equilibrium_2016}; (4) only few 
-				publication \cite{aufiero_extended_2013, ashraf_nuclear_2018} 
-				using these capabilities are available which is indicative of 
-				lack of reproducibility. Nevertheless, truly continuous 
-				online reprocessing capabilities of SERPENT2 is desirable feature 
-				for our future research. However, these capabilities should be 
-				carefully verified against ChemTriton/SCALE or proposed 
-				SaltProc/SERPENT2 package, and could be employed 
-				for removal of fission products with shorter residence time 
-				(e.g., Xe, Kr) which have a strong negative impact on core 
-				lifetime and breeding efficiency which we intent to do in 
-				the nearest future.
+                <++>
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -516,12 +480,8 @@ paper.
                  
 				Current version of SaltProc only allows separate out 100\% of 
 				specific elements or group of elements (e.g. Processing Groups 
-				as described in Table 3) at the end
-				 of the specific cycle time which means the average time spent 
-				by a fission product in the core is equal cycle time. That is 
-				simplification because in reality fuel salt resides approximately 
-				1/2 of total time in the core and rest of the time in the primary 
-				loop pipes and the heat exchanger. This approach works well for 
+				as described in Table 3 at the end
+				 of the specific cycle time. This approach works well for 
 				fast-removing elements (gases, noble metals, protactinium) which 
 				should be removed each depletion step. Unfortunately, for the 
 				elements with longer cycle time (i.e. rare earths should be removed 
@@ -530,8 +490,7 @@ paper.
 				 this drawback will be eliminated by removing elements with longer 
 				cycle times using different method: only mass fraction (calculated 
 				separately for each reprocessing group) will be removed each 
-				depletion step or batch (e.g. in the current work it was chosen 
-				3 days).	
+				depletion step (e.g. 3 days).	
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -769,7 +728,7 @@ paper.
         thermal spectrum thorium-fueled MSBR and obtained results which 
         contradict existing MSBR depletion simulations.''
         \begin{solution}
-                This statement has been significantly extended (see Solution 21).
+                <++>
         \end{solution}
 
         %--------------------------------------------------------------------
