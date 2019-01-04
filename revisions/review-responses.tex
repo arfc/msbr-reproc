@@ -220,16 +220,13 @@ changes which certainly improved the paper.
         hence not be able to produce the U233 that is necessary for this 
         breeding cycle to work.
         \begin{solution}
-        		Thanks for catching this. The following passage has been added:
-        
-		        ``Protactinium presents a challenge, since it has a large absorption cross 
+        		``Protactinium presents a challenge, since it has a large absorption cross 
 				section in the thermal energy spectrum. Moreover, $^{233}$Pa left in the core
-				 would produce $^{234}$Pa and $^{234}$U, which both are not useful as fuel, 
-				and smaller amount of $^{233}$Pa would decays into the fissile $^{233}$U.
-				Accordingly, $^{233}$Pa is continuously 
-				removed from the fuel salt into a protactinium decay tank to allow $^{233}$Pa 
-				to decay to $^{233}$U without negative impact 
-                                on neutronics.''
+				 would produce $^{234}$Pa and $^{234}$U, neither of which are useful as fuel, 
+				 would produce a smaller amount of $^{233}$Pa which decays into the fissile $^{233}$U.
+				Accordingly, $^{233}$Pa is continuously removed from the fuel salt into 
+				a protactinium decay tank to allow $^{233}$Pa to decay to $^{233}$U 
+				without the corresponding negative neutronic impact.''
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -299,7 +296,7 @@ changes which certainly improved the paper.
                         elements with longer residence times (seminoble metals, volatile fluorides, Rb, Sr,
                          Cs, Ba, Eu). In that approach, chemistry models will inform separation
                          efficiencies for each reprocessing group and removal will optionally be spread more
-                         evenly accross the cycle time.''
+                         evenly across the cycle time.''
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -405,7 +402,7 @@ changes which certainly improved the paper.
                 
                 ``Table~7 summarizes the six factors for both initial and 
                 equilibrium fuel salt composition. Using SERPENT2 and SaltProc, 
-                tese factors and their statistical uncertainties have been 
+                these factors and their statistical uncertainties have been 
                 calculated for both initial and equilibrium fuel salt 
                 composition (see Table~2).''
         \end{solution}
@@ -415,8 +412,8 @@ changes which certainly improved the paper.
         - the results are difficult to see and interpret with such notable 
         swings.
         \begin{solution}
-                Zoomed portion for 150 EFPD interval and clarifying 
-                notes has been added.
+                Zoomed portion for 150 EFPD interval has been added along with 
+        clarifying details.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -612,18 +609,21 @@ changes which certainly improved the paper.
                 The current version of SaltProc only allows 100\% separation 
                 efficiency for either specific elements or groups of elements 
                 (e.g. Processing Groups as described in 
-                Table~\ref{tab:reprocessing_list}) at the end of the specific 
-                cycle time.  This approach works well for fast-removing 
-                elements (gases, noble metals, protactinium) which should be 
-                removed each depletion step. Unfortunately, for the elements 
-                with longer cycle times (i.e. rare earths should be removed 
-                every 50 days) this simplified approach leads to oscillatory 
-                behavior of all major parameters. In future releases of 
-                SaltProc, this drawback will be eliminated by removing elements 
-                with longer cycle times using different method: only mass 
-                fraction (calculated separately for each reprocessing group) 
-                will be removed each depletion step (e.g. 3 days).
+				Table~\ref{tab:reprocessing_list}) at the end of the specific 
+				cycle time. This simplification neglects the reality that 
+				the salt spends appreciable time out of the core, in the 
+				primary loop pipes and the heat exchanger.  
 
+				This approach works well for fast-removing elements (gases, 
+				noble metals, protactinium) which should be removed each 
+				depletion step. Unfortunately, for the elements with longer 
+				cycle times (i.e. rare earths should be removed every 50 days) 
+				this simplified approach leads to oscillatory behavior of all
+				major parameters. In future releases of SaltProc, this drawback 
+				will be eliminated by removing elements with longer cycle times 
+				using different method: only mass fraction (calculated separately 
+				for each reprocessing group) will be removed each depletion step 
+				or batch (e.g. 3 days in the current work).
         \end{solution}
 
         %---------------------------------------------------------------------
