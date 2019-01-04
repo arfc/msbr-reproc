@@ -7,7 +7,7 @@ included \glspl{MSR} among the six most promising advanced reactor concepts for
 further research and development. 
 \glspl{MSR} offer significant improvements ``in the four broad areas of 
 sustainability, economics, safety and reliability, and proliferation resistance 
-and physical protection" \cite{doe_technology_2002}. To achieve the goals 
+and physical protection'' \cite{doe_technology_2002}. To achieve the goals 
 formulated by the GIF, \glspl{MSR} attempt to simplify the reactor core and 
 improve inherent safety by using liquid fuel.
 
@@ -15,11 +15,12 @@ In the thermal spectrum \gls{MSR}, fluorides of fissile and/or fertile
 materials (i.e. UF$_4$, ThF$_4$,  PuF$_3$, TRU\footnote{ Transuranic 
 elements}F$_3$) combine with carrier salts to form a liquid fuel that 
 circulates in a loop-type primary circuit \cite{haubenreich_experience_1970}. 
-Immediate advantages over traditional light water reactors include 
+Immediate advantages over traditional commercial reactors include 
 near-atmospheric pressure in the primary loop, 
-relatively high coolant temperature, outstanding neutron economy, improved 
-safety parameters, reduced fuel preprocessing, and the ability to continuously 
-remove fission products and add fissile and/or fertile elements 
+relatively high coolant temperature, outstanding neutron economy, and improved 
+safety parameters. Advantages over solid-fueled reactors in general include 
+reduced fuel preprocessing and the ability to continuously remove fission 
+products and add fissile and/or fertile elements 
 \cite{leblanc_molten_2010}. 
 
 The thorium-fueled \gls{MSBR} was developed in the 
@@ -104,8 +105,8 @@ material moves to and from the core continuously or at specific time steps
 time and restarts with a new liquid fuel composition (after removal of discarded 
 materials and addition of fissile/fertile materials). \gls{ORNL} researchers 
 have developed ChemTriton, a Python-based script for SCALE/TRITON which uses the 
-batch-wise approach to simulate a continuous reprocessing and refill using a single 
-or multiple unit cell. ChemTriton models salt 
+batch-wise approach to simulate a continuous reprocessing and refill for either single 
+or multiple fluid designs. ChemTriton models salt 
 treatment, separations, discharge, and refill using a unit-cell \gls{MSR} 
 SCALE/TRITON depletion simulation over small time steps to simulate continuous 
 reprocessing and deplete the fuel salt \cite{powers_new_2013}. Methods listed in 
@@ -116,14 +117,11 @@ as well as the current work also employ a batch-wise approach.
 Accounting for continuous removal or addition presents a greater challenge since it 
 requires adding a term to the Bateman equations. Fiorina \emph{et al.} simulated 
 \gls{MSFR} depletion with continuous fuel salt reprocessing via introducing 
-``reprocessing'' time constants into ERANOS transport code \cite{fiorina_investigation_2013}. Aufiero \emph{et al.} improved SERPENT2 using similar methodology by explicitly introducing 
-continuous reprocessing in the system of Bateman equations by adding effective decay and transmutation terms for the different nuclides \cite{aufiero_extended_2013}. 
-
-The latest SCALE release will also have the same functionality using truly continuous removals \cite{betzler_implementation_2017}. In his work SERPENT was 
-used for solution of the matrix exponential derived from the system of the Bateman 
-equations \cite{aufiero_extended_2013}. Similar approach is adopted to model true 
-continuous feeds and removals using MCNP transport code listed in references 
-\cite{doligez_coupled_2014,heuer_towards_2014,nuttin_potential_2005}.
+``reprocessing'' time constants into the ERANOS transport code 
+\cite{fiorina_investigation_2013}. 
+The latest SCALE release will also have the same functionality using truly 
+continuous removals \cite{betzler_implementation_2017}. 
+A similar approach is adopted to model true continuous feeds and removals using the MCNP transport code listed in references \cite{doligez_coupled_2014,heuer_towards_2014,nuttin_potential_2005}.
 
 Thorium-fueled \gls{MSBR}-like reactors similar to the one in this work are 
 described in \cite{park_whole_2015, 
@@ -150,39 +148,42 @@ model to capture different neutron transport characteristics in the inner and
 outer regions of the core. In particular, most fissions happen in the inner 
 region while breeding occurs in the outer zone.  
 
-Aufiero \emph{et al.} extended the Monte Carlo burnup code SERPENT2 and 
-employed it to study the material isotopic evolution of the 
-\gls{MSFR}\cite{aufiero_extended_2013}. The 
-developed extension directly accounts for the effects of online fuel 
+Aufiero \emph{et al.} added an undocumented 
+feature to SERPENT2 
+using a similar methodology by explicitly introducing 
+continuous reprocessing in the system of Bateman equations and adding effective 
+decay and transmutation terms for each nuclide 
+\cite{aufiero_extended_2013}. This was employed to study the material isotopic evolution of the 
+\gls{MSFR}\cite{aufiero_extended_2013}. The developed extension directly accounts for the effects of online fuel 
 reprocessing on depletion calculations and features a reactivity control 
 algorithm. The extended version of SERPENT2 was assessed against a dedicated 
-version of the deterministic ERANOS-based EQL3D procedure 
+version of the deterministic ERANOS-based EQL3D procedure in
 \cite{ruggieri_eranos_2006, fiorina_investigation_2013} and adopted to analyze 
 the \gls{MSFR} fuel salt isotopic evolution. 
 
-We employed this extended SERPENT2 for a simplified unit-cell geometry of 
-thermal spectrum thorium-fueled \gls{MSBR} and have had following problems: (1) 
-lack of documentation describing how to use this built-in SERPENT2 online 
-reprocessing capabilities\footnote{ Some challenges in no particular order: 
-mass conservation is hard to achieve; not clear when use mflow card type 0, 1 or 2; 
-difference between CRAM and TTA results; etc.} 
-(Discussion forum for SERPENT users is only useful 
-source of information at the moment); (2) reactivity control module described in Aufiero \emph{et al.} is 
-not available in the latest SERPENT 2.1.30 release; (3) infinite multiplication 
+We employed this built-in SERPENT2 feature for a simplified unit-cell geometry of 
+the thermal spectrum thorium-fueled \gls{MSBR} and found it unusable\footnote{ 
+Some challenges in no particular order: mass conservation is hard to achieve; 
+three types of mflow cards (0, 1 or 2) are indistinguishable in purpose; an 
+unexplained difference between CRAM and TTA results; etc.}. Primarily,
+it is undocumented, and the discussion forum for SERPENT users is the only useful 
+source of information at the moment. Additionally, the reactivity control module described in Aufiero \emph{et al.} is 
+not available in the latest SERPENT 2.1.30 release. Third, the infinite multiplication 
 factor behavior for simplified unit-cell model obtained using SERPENT2 built-in 
 capabilities \cite{rykhlevskii_online_2017} does not match with exist MCNP6/Python-script
  results for the similar model by Jeong and Park\footnote{ In our 
 study k$_{\infty}$ drops from 1.05 to 1.005 during a 1200 days of depletion simulation 
 while in Jeong and Park work this parameter decreasing slowly from 1.065 to 1.05 for the 
-similar time-frame.} \cite{jeong_equilibrium_2016}; (4) only few publication \cite{aufiero_extended_2013, 
-ashraf_nuclear_2018} using these capabilities are available 
-which is indicative of lack of reproducibility. Nevertheless, truly continuous 
-online reprocessing capabilities of SERPENT2 is desirable feature for our 
-future research. However, these capabilities should be carefully verified against 
-ChemTriton/SCALE or proposed SaltProc/SERPENT2 package, and could be employed 
-for removal of fission products with shorter residence time (e.g., Xe, Kr) which 
-have a strong negative impact on core lifetime and breeding efficiency which 
-we intent to do in the nearest future.
+similar time-frame.} \cite{jeong_equilibrium_2016}. Finally, only two publications \cite{aufiero_extended_2013, 
+ashraf_nuclear_2018} using these capabilities are available, reflecting the 
+reproducibility challenge inherent in this feature. 
+
+If these challenges can be overcome through verification against
+ChemTriton/SCALE as well as this work (the SaltProc/SERPENT2 package), we hope to 
+employ this SERPENT2 feature 
+for removal of fission products with shorter residence time (e.g., Xe, Kr), 
+since these have a strong negative impact on core lifetime and breeding 
+efficiency.
 
 The present work introduces the online reprocessing simulation package, SaltProc, 
 which expands the capability of the continuous-energy Monte Carlo Burnup 
@@ -200,19 +201,15 @@ for maintaining criticality and enabled analysis of the overall \gls{MSBR} fuel
 cycle performance.
 
 The works described in \cite{park_whole_2015} and \cite{jeong_equilibrium_2016} 
-are most similar to the work presented in this paper. However, few major differences 
-worse to be mentioned: (1) Park \emph{et al.} employed MCNP6 for depletion 
-simulations while SERPENT2 was used in this work (SERPENT2 seems to be much faster in 
-massively parallel simulations involving more than 1000 cores); (2) full-core reactor 
-model herein is more detailed and has no major approximation comparing with Park 
-\emph{et al.} (detailed full-core models comparison might be found elsewhere
-\cite{rykhlevskii_full-core_2017}); (3) Park \emph{et al.} and Jeong \emph{et al.} 
-both considered volatile gases, noble metals removal and $^{233}$Pa separation while 
-in the current work we are implemented detailed reprocessing scheme described in 
-conceptual \gls{MSBR} design \cite{robertson_conceptual_1971}; (4) $^{232}$Th neutron 
+are most similar to the work presented in this paper. However, a few major 
+differences follow: (1) Park \emph{et al.} employed MCNP6 for depletion 
+simulations while this work used SERPENT2; (2) the full-core reactor 
+geometry herein is more detailed \cite{rykhlevskii_full-core_2017}; (3) Park \emph{et al.} and Jeong \emph{et al.} 
+both only considered volatile gas removal, noble metal removal, and $^{233}$Pa separation while 
+the current work implemented the more detailed reprocessing scheme specified in 
+the conceptual \gls{MSBR} design \cite{robertson_conceptual_1971}; (4) the $^{232}$Th neutron 
 capture reaction rate has been investigated to prove advantages of two-region core 
-design; (5) the effect of removing fission product removal from fuel salt has been 
-studied. 
+design; (5) the current work explicitly examines the independent impacts of removing specific fission product groups. 
 
 The complex \gls{MSBR} geometry is challenging to describe in software input, 
 and usually researchers make significant geometric simplifications to model it 
