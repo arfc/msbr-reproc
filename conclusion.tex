@@ -3,7 +3,7 @@
 This work introduces the open source \gls{MSR} simulation package SaltProc. 
 SaltProc expands the capability of SERPENT 2, the continuous-energy Monte Carlo 
 code to include online reprocessing in liquid-fueled \gls{MSR} operation 
-\cite{andrei_rykhlevskii_arfc/saltproc:_2018}. Benefits of SaltProc include 
+\cite{rykhlevskii_arfc/saltproc:_2018}. Benefits of SaltProc include 
 generic geometry modeling, multi-flow capabilities, time-dependent feed and 
 removal rates, and the ability to specify removal efficiency. The main goal of 
 this work has 
@@ -33,13 +33,12 @@ slowly decreases from 1.075 and reaches 1.02 at equilibrium after approximately
 6 years of operation. At the same time, the concentrations of $^{233}$U, $^{232}$Th, 
 $^{233}$Pa, $^{232}$Pa stabilized after approximately 2500 days of operation. 
 Particularly, $^{233}$U number density equilibrates\footnote{fluctuates less 
-than 0.8\%} after 16 years of operation. Consequently, the core reaches the quasi-equilibrium state 
-after 16 years of operation. However, a wide variety of nuclides, 
+than 0.8\%} after 16 years of operation. Consequently, the core reaches the quasi-equilibrium state after 16 years of operation. However, a wide variety of nuclides, 
 including fissile isotopes (e.g. $^{233}$U, $^{239}$Pu) and non-fissile strong 
-absorbers (e.g. $^{234}$U), continue accumulating in the core. The current work results 
-show that a true equilibrium composition cannot exist but balance
-between strong absorber accumulation and new fissile material 
-production can be achieved to keep the reactor critical.
+absorbers (e.g. $^{234}$U), continue accumulating in the core. %The current work results 
+%show that a true equilibrium composition cannot exist but balance
+%between strong absorber accumulation and new fissile material 
+%production can be achieved to keep the reactor critical.
 
 \subsection{Spectral shift}
 We also found that the neutron energy spectrum grew harder as the core  
@@ -99,7 +98,7 @@ the existing RAVEN optimization framework \cite{alfonsi_raven_2013} might be
 employed for such optimization studies.
 
 Only the batch-wise online reprocessing approach has been treated in this 
-work. However, the SERPENT 2 Monte Carlo code was recently extended for 
+work. However, the SERPENT 2 Monte Carlo code was extended for 
 continuous online fuel reprocessing simulation \cite{aufiero_extended_2013}. 
 This extension must be verified against existing SaltProc/SERPENT or 
 ChemTriton/SCALE packages, and could be employed for immediate removal of 

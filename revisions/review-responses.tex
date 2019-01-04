@@ -155,43 +155,28 @@ paper.
 \begin{questions}
         \section*{Reviewer 1}
         %---------------------------------------------------------------------
-        \question <++> 
-        \begin{solution}
-                <++>
-        \end{solution}
-
-        %---------------------------------------------------------------------
-
-        \question Overall, a well written article in a topic area of interest 
-        to a number of audiences. Technically very good, well written in the 
-        description and analysis.  Well done authors! 
-
-
-        A few minor comments/suggestions/clarifications as follows:
-        \begin{solution}
-                <++>
-        \end{solution}
-
-        %---------------------------------------------------------------------
 
         \question  Abstract: Given the recent announcement about TransAtomic 
         Power, you may want to remove them from your list?
         \begin{solution}
-                <++>
+        		Thank you for your kind review. Current manuscript was submitted before 
+		        announcement that TransAtomic is ceasing operations. It is removed from 
+		        the list of MSR startups.
         \end{solution}
 
         %---------------------------------------------------------------------
         \question  Table 1, page 3: SCALE/TRITON is fast as well as thermal 
         reactor capable.  
         \begin{solution}
-                <++>
+		        Thank you for the recommendation. In Table 1 ``thermal'' has been changed 
+		        to ``thermal/fast''.
         \end{solution}
 
         %---------------------------------------------------------------------
         \question  Page 4, Line 48: Should read ``...and refill using a single 
         or multiple unit cell ....''
         \begin{solution}
-                <++>
+        		That statement has been modified as requested.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -202,13 +187,16 @@ paper.
         Conference on Mathematics \& Computational Methods Applied to Nuclear 
         Science and Engineering, Jeju, Korea, Apr. 16-20 (2017).)
         \begin{solution}
-                <++>
+		        Thank you for the update. This sentence has been added:
+        
+		        The latest SCALE release will also have the same functionality using 
+        		truly continuous removals \cite{betzler_implementation_2017}.
         \end{solution}
 
         %---------------------------------------------------------------------
         \question  Page 8, Fig 2: Appears the image is cut off at the top?
         \begin{solution}
-                <++>
+        The image has been replotted.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -219,14 +207,22 @@ paper.
         hence not be able to produce the U233 that is necessary for this 
         breeding cycle to work.
         \begin{solution}
-                <++>
+        		Thanks for catching this. Following passage has been added:
+        
+		        Protactinium presents a challenge, since it has a large absorption cross 
+				section in the thermal energy spectrum. Moreover, $^{233}$Pa left in the core
+				 would produce $^{234}$Pa and $^{234}$U, which both are not useful as fuel, 
+				and smaller amount of $^{233}$Pa would decays into the fissile $^{233}$U.
+				Accordingly, $^{233}$Pa is continuously 
+				removed from the fuel salt into a protactinium decay tank to allow $^{233}$Pa 
+				to decay to $^{233}$U without negative impact on neutronics.
         \end{solution}
 
         %---------------------------------------------------------------------
         \question  Table 3: ``cycle time'' is not defined in the paper. Please 
         add.
         \begin{solution}
-                <++>
+		        The ``cycle time'' definition has been added in a first appearance in text.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -234,7 +230,7 @@ paper.
         Th fuel cycles in an MSR was first described and concluded by Powers et 
         al. Please add a reference to their initial work.
         \begin{solution}
-                <++>
+        		The reference to \cite{powers_new_2013} has been added.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -253,47 +249,73 @@ paper.
         period and how would this be controlled in reality? The graph almost 
         suggests that the core is unstable??
         \begin{solution}
-                <++>
+                Zoomed portion for 150 EFPD interval has been added. We also 
+                added notes on a plot to explain swing in multiplication factor.
         \end{solution}
 
         %---------------------------------------------------------------------
         \question  Page 18, line 327: Are those elements removed every 3435 
         days, or is it that the entire salt core is discharged?
         \begin{solution}
-                <++>
+		        100 \% of those elements atoms removed every 3435 days. Full salt discard
+		         as it mentioned in Table 3 has not been implemented. More detailed 
+		         explanation of this has been added:
+        
+		        Additionally, the presence of rubidium, strontium, cesium, and barium in
+		         the core are disadvantageous to reactor physics. In fact, SaltProc fully 
+		         removes all these elements every 3435 days (not a small mass fraction 
+		         every 3 days) which causes the multiplication factor to jump by 
+		        approximately 450 pcm, and limits using the batch approach for online 
+		        reprocessing simulations. In future versions of SaltProc this drawback 
+		        will be eliminated by removing elements with longer cycle times (seminoble 
+		        metals, volatile fluorides, Rb, Sr, Cs, Ba, Eu) using different approach. 
+		        Only mass fraction (calculated separately for each reprocessing group) 
+		        will be removed every depletion step (e.g. 3 days) instead of removing 
+		        100\% of element atoms after cycle time. 
         \end{solution}
 
         %---------------------------------------------------------------------
         \question  Page 19, Figure 8 (and same for Fig 9): y-axis in grams/kgs 
         or mass units would be better for the reader.
         \begin{solution}
-                <++>
+                Thank you for the recommendation. Atom density was chosen for publication-to-						publication comparison (e.g. Park \emph{et al.} and Betzler \emph{et al.}
+                \cite{park_whole_2015, betzler_molten_2017}). Although mass would certainly 
+                be more understandable for the reader and will be added in a future releases.
         \end{solution}
 
         %---------------------------------------------------------------------
         \question  Page 20, Fig 9: What are the wiggles and dips , especially 
         seen for Np235?
         \begin{solution}
-                <++>
+		        Explanation of this phenomena has been added as follows:
+        
+		         Small dips in neptunium and plutonium number density every 16 years are 
+		         caused by removing $^{237}$Np, $^{242}$Pu (included in Processing group 
+		         ``Higher nuclides'', see Table~\ref{tab:reprocessing_list}) which decays
+        		  into $^{235}$Np, $^{239}$Pu, respectively. 
         \end{solution}
 
         %---------------------------------------------------------------------
         \question  Page 20, line 351: It is more than just the Pu isotopes that 
         makes the spectrum harder? What about the other MAs etc?
         \begin{solution}
-                <++>
+        		Thank you for the excellent point. The corrected sentence reads thus: 
+        
+		        The neutron energy spectrum at equilibrium is harder than at startup due 
+                to plutonium and other strong absorbers accumulation in the core during 
+		        reactor operation.  
         \end{solution}
 
         %---------------------------------------------------------------------
         \question  Fig 12: units on y-axis?
         \begin{solution}
-                <++>
+                Thanks for catching this. Units $\frac{n}{cm^2 s}$ has been added.
         \end{solution}
 
         %---------------------------------------------------------------------
         \question  Page 24, line 389: Should that be ``233U'' and not ``233Th''?
         \begin{solution}
-                <++>
+                Yes, we meant $^{233}$U production. The typo has been fixed.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -301,14 +323,27 @@ paper.
         where do they come from? Also, the ``reference'' results need to state 
         whether ``initial'' or ``equilibrium''
         \begin{solution}
-                <++>
+                In the Table 5 was added information that reference column contains 
+                data for initial fuel salt composition. Details about uncertainties
+                 have been added:
+                
+                Uncertainty for each temperature coefficient was obtain by 
+                propagating statistical error of effective multiplication factor 
+                calculation provided by SERPENT2 and also appears in Table 5. 
+                Other sources of uncertainty, such as cross section libraries 
+				uncertainty, error in salt and graphite density correlations, 
+				are not treated here.
         \end{solution}
 
         %---------------------------------------------------------------------
         \question  Page 26, line 425: ``Relatively large'' compared with what? 
         Perhaps results for an LWR case would be a good basis for comparison?
         \begin{solution}
-                <++>
+                Sentence has been extended as follows:
+                
+                ...the total temperature coefficient of reactivity is relatively large and
+                 negative during reactor operation (comparing with conventional PWR which 							temperature coefficient about -1.71 pcm/$^\circ$F $\approx$ -3.08 pcm/K 							\cite{forget_integral_2018}), despite positive MTC, and affords excellent 
+                 reactor stability and control.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -316,7 +351,12 @@ paper.
         these results were calculated, and that they are taken from the code 
         output.
         \begin{solution}
-                <++>
+                This has now been clarified in the text:
+                
+                Table 7 summarizes the six factors for both initial and 
+				equilibrium fuel salt composition. These factors and their statistical 								uncertainties have been calculated using SERPENT2 code for initial fuel salt 
+				composition (see Table 2) and for equilibrium salt composition which was 
+				obtained with SaltProc. 
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -333,16 +373,6 @@ paper.
 
 
         \section*{Reviewer 2}
-
-        %---------------------------------------------------------------------
-        \question The paper presents a python script (SaltProc) that can 
-        complement the Serpent 2 code capabilities in terms of fuel cycle 
-        analysis of MSRs. The paper is well written and the tool might be 
-        useful for the nuclear engineering community. However, before 
-        publishing the paper, I recommend some revisions.
-        \begin{solution}
-                <++>
-        \end{solution}
 
         %---------------------------------------------------------------------
 
@@ -365,36 +395,30 @@ paper.
 
         %---------------------------------------------------------------------
 
-        \question In addition to this major point, I would suggest a few other 
-        revisions.
-        \begin{solution}
-                <++>
-        \end{solution}
-
-        %---------------------------------------------------------------------
-
-        \question Abstract:
-        \begin{solution}
-                <++>
-        \end{solution}
-
-        %---------------------------------------------------------------------
-        - Considering the scope of the journal, mentioning the names of 
+        \question Considering the scope of the journal, mentioning the names of 
         companies and start-up is not appropriate. I would suggest removing 
         them.
-
-        \question Introduction:
         \begin{solution}
-                <++>
+                The names of companies have been removed.
         \end{solution}
 
         %---------------------------------------------------------------------
-        - The sentence ``Immediate advantages over traditional, solid-fueled, 
+        
+        \question The sentence ``Immediate advantages over traditional, solid-fueled, 
         reactors include near-atmospheric pressure in the 15 primary loop, 
         relatively high coolant temperature, outstanding neutron economy, 
         improved safety parameters,'' may suggest improved neutron economy vs 
         solid-fuel fast reactors. This is rarely the case, especially vs 
         Pu-based SFRs. I would suggest reformulating.
+        \begin{solution}
+                Thank you for the exceptional recommendation. The sentence has been 
+                changed as follows:
+                
+                ``Immediate advantages over traditional light water reactors 
+                include\dots''
+        \end{solution}
+
+        %---------------------------------------------------------------------
 
         \question The sentence ``With regard to the nuclear fuel cycle, the 
         thorium cycle produces a reduced quantity of plutonium and minor 
@@ -405,7 +429,7 @@ paper.
         public, geological repository, etc. I would suggest removing the 
         sentence.
         \begin{solution}
-                <++>
+                Thanks for your kind comment. The sentence has been removed.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -418,7 +442,18 @@ paper.
         Aufiero (mentioned in the following paragraph) actually used the 
         methodology previously developed in [14]  for verification purposes.
         \begin{solution}
-                <++>
+                Thank you for the information. [14] has been removed from the 
+                sentence, and following paragraph has been modified to read:
+                
+                Accounting for continuous removal or addition presents a greater 
+                challenge since it requires adding a term to the Bateman equations. 
+                Fiorina \emph{et al.} simulated MSFR depletion with continuous
+                 fuel salt reprocessing via introducing ``reprocessing'' time 
+                constants into ERANOS transport code \cite{fiorina_investigation_2013}. 
+                Aufiero \emph{et al.} improved SERPENT2 using similar methodology by 
+                explicitly introducing continuous reprocessing in the system of Bateman 
+                equations by adding effective decay and transmutation terms for the 
+                different nuclides \cite{aufiero_extended_2013}. 
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -426,7 +461,7 @@ paper.
         \question Table 3. It is not clear what ``effective cycle times'' are. 
         Please clarify.
         \begin{solution}
-                <++>
+                The ``cycle time'' definition has been added in a first appearance in text.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -439,7 +474,23 @@ paper.
         ``effective cycle times'', batches and the average time spent by a 
         fission product in the reactor.
         \begin{solution}
-                <++>
+                All of them at the end of the cycle time, and we agree that it
+                 was not best solution. To clarify this following paragraph has 
+                been added:
+                 
+				Current version of SaltProc only allows separate out 100\% of 
+				specific elements or group of elements (e.g. Processing Groups 
+				as described in Table 3 at the end
+				 of the specific cycle time. This approach works well for 
+				fast-removing elements (gases, noble metals, protactinium) which 
+				should be removed each depletion step. Unfortunately, for the 
+				elements with longer cycle time (i.e. rare earths should be removed 
+				every 50 days) this simplified approach leads to oscillatory 
+				behavior of all major parameters. In future releases of SaltProc
+				 this drawback will be eliminated by removing elements with longer 
+				cycle times using different method: only mass fraction (calculated 
+				separately for each reprocessing group) will be removed each 
+				depletion step (e.g. 3 days).	
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -450,14 +501,28 @@ paper.
         cycle time''? In case, why not to remove part of them at every depletion 
         step?  
         \begin{solution}
-                <++>
+                Yes, the oscillation happened because the fission products 
+        		with longer residence time are removed at the end of cycle time. We are 
+                definitely will take your advice and improve the code in future 
+                releases. Following text has been added to clarify this issue:
+                
+                In fact, SaltProc fully removes all these elements every 3435 days 
+                (not a small mass fraction every 3 days) which causes the 
+                multiplication factor to jump by approximately 450 pcm, and limits 
+                using the batch approach for online reprocessing simulations. In 
+                future versions of SaltProc this drawback will be eliminated by 
+                removing elements with longer residence time (seminoble metals, 
+                volatile fluorides, Rb, Sr, Cs, Ba, Eu) using different approach. 
+                Only mass fraction (calculated separately for each reprocessing 
+                group) will be removed every depletion step (e.g. 3 days) instead 
+                of removing 100\% of element atoms after cycle time.
         \end{solution}
 
         %---------------------------------------------------------------------
 
         \question Can the proposed tool adjust reactivity?
         \begin{solution}
-                <++>
+                No, and we do not plan to add this capability.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -468,7 +533,14 @@ paper.
         separately the effect of temperature (Doppler in fuel and spectral 
         shift in graphite) and density?
         \begin{solution}
-                <++>
+                Thank you for the excellent recommendation. Effects of temperature
+                 and density have been calculated separately and added in Table 5.
+                 Moreover, during these simulations we have discovered mistake in 
+                 fuel salt and graphite density correlations and completely 
+                 recalculated temperature coefficients of reactivity with lower 
+                 statistical error. Now initial total temperature coefficient is 
+                 closer to the reference and statistical uncertainty was reduced 
+                 from 0.046 to 0.038 pcm/K.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -476,7 +548,16 @@ paper.
         \question How uncertainties have been calculated in Table 5? Is this 
         just statistical uncertainty from Serpent calculations? Please clarify
         \begin{solution}
-                <++>
+                Yes, uncertainties were determined from statistical error 
+                from SERPENT output. Following passage has been added to clarify
+                 this point:
+                 
+                 Uncertainty for each temperature coefficient was obtain by 
+                 propagating statistical error of effective multiplication factor 
+                 calculation provided by SERPENT2 and also appears in Table 5. 
+                 Other sources of uncertainty, such as cross section libraries 
+				 uncertainty, error in salt and graphite density correlations, 
+				 are not treated here.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -485,7 +566,16 @@ paper.
         changing densities, or also dimensions? Please clarify and provide a 
         justification.  
         \begin{solution}
-                <++>
+        		We have changed both densities and dimensions. This passage 
+        		has been modified to read:
+        		
+                A new geometry input for SERPENT2, which takes into account 
+                displacement of graphite surfaces, was created based on this information. 
+                For the displacements calculation it was assumed that the interface 
+                between graphite reflector and vessel did not move, and the vessel 
+                temperature did not change. This is the most reasonable assumption for 
+				the short-term reactivity effects because inlet salt is cooling graphite 
+				reflector and inner surface of the vessel.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -495,7 +585,14 @@ paper.
         broadening of the resonance capture cross sections in the thorium.'' 
         What is the effect of density?
         \begin{solution}
-                <++>
+                This passage has been modified to illuminate the effect of density:
+                
+				The fuel temperature coefficient (FTC) is negative for both initial and 
+				equilibrium fuel compositions due to thermal Doppler broadening of the 
+				resonance capture cross sections in the thorium. Small positive effect 
+				of fuel density on reactivity is increasing from +1.21 pcm/K for the 
+				reactor startup to +1.66 pcm/K for equilibrium fuel composition which 
+				has negative effect on FTC magnitude during the reactor operation. 
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -506,7 +603,13 @@ paper.
         rate is  exclusively determined by the reactor power and by the energy 
         released per fission.  
         \begin{solution}
-                <++>
+                Thank you for the recommendation. Following sentence has been 
+                added:
+                
+                It must be noted that for the reactor with only thorium feed, 
+                at near equilibrium state, the thorium consumption rate is 
+				determined by the reactor power, the energy released per fission, 
+				and neutron energy spectrum.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -515,7 +618,16 @@ paper.
         the graphite with fission products? If not, it would be worthwhile 
         briefly discussing its effect.
         \begin{solution}
-                <++>
+                This passage has been added:
+				
+				$^{135}$Xe is a strong poison to the reactor, and some 
+				fraction of this gas is absorbed by graphite during MSBR
+				operation. ORNL calculations shown that for unsealed commercial 
+				graphite with helium permeability 10$^{-5}$ cm$^2$/s the 
+				calculated poison fraction is less than 2\% \cite{robertson_conceptual_1971}. 
+				This parameter can be improved by using experimental graphites 
+				or by applying sealing technology. The effect of the gradual 
+				poisoning of the core graphite with xenon is not treated here.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -548,7 +660,7 @@ paper.
         composition cannot be achieved in a lifetime of the reactor? Please 
         clarify
         \begin{solution}
-                <++>
+                This statement has been removed completely.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -560,34 +672,43 @@ paper.
 
         \section*{Reviewer 3}
 
-        \question This paper presents a SaltProc-Serpent2 coupled code system 
-        to simulate the depletion and online reprocessing process by directly 
-        changing the isotropic composition of fuel salt. The Molten Salt 
-        Breeder Reactor (MSBR) was analyzed to demonstrate the simulation 
-        capability of the developed code system. However, large number of 
-        similar works have been done and published on this topic. In 
-        particular, this work is similar with that done by Park et al. with the 
-        title of ``Whole core analysis of molten salt breeder reactor with 
-        online fuel reprocessing'' published on ``International Journal of Energy 
-        Research''. The authors need to prove the uniqueness and innovation 
-        within their work.
-        \begin{solution}
-                <++>
-        \end{solution}
-
         %--------------------------------------------------------------------
 
         \question  What are the main differences of this work with the previous 
         works, especially with the work published by Park at al. in ``Whole core 
         analysis of molten salt breeder reactor with online fuel reprocessing''?
         \begin{solution}
-                <++>
+                Thank you for your question. The new paragraph has been added:
+                
+                The works described in \cite{park_whole_2015} and 
+                \cite{jeong_equilibrium_2016} are most similar to the work 
+                presented in this paper. However, few major differences worse to 
+                be mentioned: (1) Park \emph{et al.} employed MCNP6 for depletion 
+				simulations while SERPENT2 was used in this work (SERPENT2 seems 
+				to be much faster in massively parallel simulations involving more 
+				than 1000 cores); (2) full-core reactor model herein is more 
+				detailed and has no major approximation comparing with Park \emph{et al.}
+				(detailed full-core models comparison might be found elsewhere
+				\cite{rykhlevskii_full-core_2017}); (3) Park \emph{et al.} and 
+				Jeong \emph{et al.} both considered volatile gases, noble metals 
+				removal and $^{233}$Pa separation while in the current work we are 
+				implemented detailed reprocessing scheme described in conceptual 
+				MSBR design \cite{robertson_conceptual_1971}; (4) $^{232}$Th 
+				neutron capture reaction rate has been investigated to prove 
+				advantages of two-region core design; (5) the effect of removing 
+				fission product removal from fuel salt has been studied. 
         \end{solution}
 
         %--------------------------------------------------------------------
         \question  How did the authors verify the coupled SaltProc and Serpent 
-        code system?  \begin{solution}
-                <++>
+        code system?  
+        \begin{solution}
+                We have compared few parameters (multiplication factor, Th refill 
+                rate, neutron energy spectrum) with Betzler \emph{et al.} 											\cite{betzler_molten_2017} and mentioned it in the Result section. 
+                We also compared neutron energy spectrum and temperature coefficients
+                 for equilibrium composition with Park \emph{et al.} \cite{park_whole_2015}.
+                In a future SaltProc release suite of unit tests will be added 
+                to make sure that results are consistent with our test cases.
         \end{solution}
 
         %--------------------------------------------------------------------
@@ -597,7 +718,8 @@ paper.
         coupled neutronics and thermal-hydraulics calculations'' needs to be 
         included in Table 1 for completeness.
         \begin{solution}
-                <++>
+                Thank you for your excellent recommendations. The table has been 
+                enriched as requested.
         \end{solution}
 
         %--------------------------------------------------------------------
@@ -614,14 +736,19 @@ paper.
         data library'', how did SERPENT generate the problem-dependent nuclear 
         data library? What kind of nuclear data library did SERPENT generate?
         \begin{solution}
-                <++>
+                Thank you for your kind review. The statement has been removed
+		        entirely and we emphasized that temperature of each material is 
+		        assumed to be constant over 60 years:
+		        
+		        The specific temperature was fixed for each material and did 
+		        not change during the reactor operation. 
         \end{solution}
 
         %--------------------------------------------------------------------
         \question  In Page 14, ``depletioncalculations'' should be ``depletion 
         calculations''.
         \begin{solution}
-                <++>
+                Thanks for catching this, fixed.
         \end{solution}
 
         %--------------------------------------------------------------------
@@ -629,7 +756,9 @@ paper.
         normalized in Figure 10. It is recommended to normalize the neutron 
         spectrum for comparison.
         \begin{solution}
-                <++>
+                Thank you for the comment. Neutron energy spectrum in Figure 
+                10 and 11 are normalized per unit lethargy and the area under 
+                the curve is normalized to 1.
         \end{solution}
 
         %--------------------------------------------------------------------
@@ -639,7 +768,22 @@ paper.
         ``The spectral shift during reactor operation results in different power 
         fractions at startup and equilibrium''.
         \begin{solution}
-                <++>
+                Thanks for catching this. The difference between power fraction
+                 is very small that could be seen from Table 4. It is impossible
+                  to see the difference in a contour plot that is why we left only 
+                 equilibrium composition on Figures 13 and 14. The paragraph has 
+                 been modified as follows:
+                 
+                 Table 4 shows the power fraction in each zone for initial and 
+                 equilibrium fuel compositions. Figure 13 reflects the normalized 
+                 power distribution of the MSBR quarter core for equilibrium 
+                 fuel salt composition. For both the initial and equilibrium 
+                 compositions, fission primarily occurs in the center of the core, 
+                 namely zone I. The spectral shift during reactor operation results 
+                 in slightly different power fractions at startup and equilibrium, 
+                 but most of the power is still generated in zone I at equilibrium 
+				 (table 4).                  
+                   
         \end{solution}
 
         %--------------------------------------------------------------------
@@ -647,7 +791,7 @@ paper.
         majority of 233Th is produced in zone II.''. How did the authors draw 
         this conclusion?
         \begin{solution}
-                <++>
+                The statement has been removed entirely.
         \end{solution}
 
         %--------------------------------------------------------------------
@@ -656,7 +800,8 @@ paper.
         share the same figure for both initial and equilibrium fuel salt 
         compositions?
         \begin{solution}
-                <++>
+                Thanks for catching this, it is a typo. Figure 13 and 14 are plotted 
+                for equilibrium composition only.            	    
         \end{solution}
 
         %--------------------------------------------------------------------
@@ -668,8 +813,8 @@ paper.
 
         %--------------------------------------------------------------------
 \end{questions}
-%\bibliographystyle{unsrt}
-%\bibliography{review-responses}
+\bibliographystyle{unsrt}
+\bibliography{../2018-msbr-reproc}
 \end{document}
 
 %

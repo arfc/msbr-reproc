@@ -66,6 +66,21 @@ provides space for moving the core assembly, helps compensate for the elliptical
 dimensions of the reactor vessel, and serves to reduce the damaging flux at the 
 surface of the graphite reflector blocks. 
 
+$^{135}$Xe is a strong poison to the reactor, and some fraction of this gas 
+is absorbed by graphite during \gls{MSBR} operation. ORNL calculations shown 
+that for unsealed commercial graphite with helium permeability 10$^{-5}$ cm$^2$/s 
+the calculated poison fraction is less than 2\% \cite{robertson_conceptual_1971}. 
+This parameter can be improved by using experimental graphites or by applying
+sealing technology. The effect of the gradual poisoning of the core graphite 
+with xenon is not treated here.
+% Consequently, minimizing
+% xenon absorption in a graphite is desirable. 
+%ORNL calculations shown 
+%that the graphite must have a gas permeability in the order of 10$^{-8}$ cm$^2$/s 
+%to keep the xenon poisoning about 0.5\%. The best commercially available graphites 
+%have this parameter in the range from 10$^{-3}$ to 10$^{-4}$ cm$^2$/s, hence, 
+%desirable parameters ca be achieved only by sealing the graphite
+
 \subsubsection{Core zone I}
 The central region of the core, called zone I, is made up of graphite elements, 
 each $10.16$cm$\times$10.16cm$\times$396.24cm. Zone I has 4 channels for 
@@ -142,9 +157,8 @@ becomes tritium upon neutron capture.
 
 The JEFF-3.1.2 neutron library provided cross section generation 
 \cite{oecd/nea_data_bank_jeff-3.1.2_2014}. 
-The specific temperature was fixed 
-for each material to correctly model the Doppler-broadening of resonance peaks 
-when SERPENT generates the problem-dependent nuclear data library. The isotopic 
+The specific temperature was fixed for each material and did not change during 
+the reactor operation. The isotopic 
 composition of each material at the initial state was described in detail in 
 the MSBR conceptual design study \cite{robertson_conceptual_1971} and has been 
 applied to the SERPENT model without any modification. Table~\ref{tab:msbr_tab} is 
@@ -208,15 +222,19 @@ which then decays into the fissile $^{233}$U. Furthermore, the \gls{MSBR}
 design requires online reprocessing to remove all poisons (e.g. $^{135}$Xe), 
 noble metals, and gases (e.g. $^{75}$Se, $^{85}$Kr) every 20 seconds. 
 Protactinium presents a challenge, since it has a large absorption cross 
-section in the thermal energy spectrum. Accordingly, $^{233}$Pa is continuously 
+section in the thermal energy spectrum. Moreover, $^{233}$Pa left in the core
+ would produce $^{234}$Pa and $^{234}$U, which both are not useful as fuel, 
+and smaller amount of $^{233}$Pa would decays into the fissile $^{233}$U.
+Accordingly, $^{233}$Pa is continuously 
 removed from the fuel salt into a protactinium decay tank to allow $^{233}$Pa 
-to decay to $^{233}$U without poisoning the reactor. The reactor reprocessing 
-system must separate $^{233}$Pa from the molten-salt fuel over 3 
+to decay to $^{233}$U without negative impact on neutronics. The reactor 
+reprocessing system must separate $^{233}$Pa from the molten-salt fuel over 3 
 days, hold it while $^{233}$Pa decays into $^{233}$U, and return it back to the 
 primary loop. This feature allows the reactor to avoid neutron losses to 
 protactinium, lowers in-core fission product inventory, and increases the 
 efficiency of $^{233}$U breeding. Table~\ref{tab:reprocessing_list} summarizes 
-full list of nuclides and the cycle times used for modeling salt treatment and 
+full list of nuclides and the ``cycle times''\footnote{ The \gls{MSBR} program defined a ``cycle time" as the amount of time required to remove 100\% of a target nuclide from a fuel 
+salt \cite{robertson_conceptual_1971}.} used for modeling salt treatment and 
 separations \cite{robertson_conceptual_1971}. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -231,8 +249,9 @@ separations \cite{robertson_conceptual_1971}.
                 Nb, Mo, Tc, Ru, Rh, Pd, Ag, Sb, Te & 20 sec \\
         Seminoble metals & Zr, Cd, In, Sn & 200 days \\
         Gases & Kr, Xe & 20 sec \\ Volatile fluorides & Br, I & 60 days \\
-        Discard & Rb, Sr, Cs, Ba & 3435 days \\ Salt discard & Th, Li, Be, F & 
-                3435 days \\ Protactinium & $^{233}$Pa & 3 days \\ Higher 
+        Discard & Rb, Sr, Cs, Ba & 3435 days \\ 
+        %Salt discard & Th, Li, Be, F & 3435 days \\ 
+        Protactinium & $^{233}$Pa & 3 days \\ Higher 
                 nuclides & $^{237}$Np, $^{242}$Pu & 16 years \\  \hline
         \end{tabularx}
         \label{tab:reprocessing_list}
@@ -243,12 +262,12 @@ are very short, an enormous number of depletion steps are required to obtain
 the equilibrium composition. On the other hand, if the depletion  calculation 
 time interval is too long, the impact of short-lived fission products is not 
 captured. To compromise, the time interval for depletion calculations in this 
-model was selected as 3 days to correlate with the removal interval of 
+model was selected as 3 days\footnote{ Optimal depletion time step of 3 days for \gls{MSR} batch-wise depletion simulation was first described and concluded by Powers \emph{et al.} \cite{powers_new_2013}.} to correlate with the removal interval of 
 $^{233}$Pa and $^{232}$Th was continuously added to maintain the initial mass 
 fraction of $^{232}$Th.
 
 \subsubsection{The SaltProc modeling and simulation code}
-The SaltProc tool \cite{andrei_rykhlevskii_arfc/saltproc:_2018} is designed to 
+The SaltProc tool \cite{rykhlevskii_arfc/saltproc:_2018} is designed to 
 expand SERPENT 2
  depletion capabilities for modeling liquid-fueled \gls{MSR} for continuous 
  reprocessing.
@@ -264,7 +283,7 @@ with the Monte Carlo SERPENT 2
 software to simulate online reprocessing for irregular full-core 
 geometry with high fidelity.  The primary function of SaltProc is to 
 manage material streams while SERPENT 2 performs the neutron 
-transport and depletioncalculations. Saltproc is defined as a python class, where 
+transport and depletion calculations. Saltproc is defined as a python class, where 
 each material stream is defined as a isotopic atomic density
 vector variable. This allows tracking of time-sensitive material streams such 
 as the 	$^{233}$Pa tank in the \gls{MSBR}. The user can define the reprocessing 
@@ -275,6 +294,20 @@ defined efficiency, feed in specific isotopes to stream, and maintain constant
 number density of specific nuclide in the core. These attributes and functions 
 are crucial to simulating the operation of a complex, multi-zone, multi-fluid 
 \gls{MSR} and are sufficiently general to represent myriad reactor systems.
+	
+Current version of SaltProc only allows separate out 100\% of specific elements 
+or group of elements (e.g. Processing Groups as described in 
+Table~\ref{tab:reprocessing_list}) at the end of the specific cycle time. That is 
+simplification because in reality fuel salt resides approximately 1/2 of total time 
+in the core and rest of the time in the primary loop pipes and the heat exchanger.  
+This approach works well for fast-removing elements (gases, noble metals, 
+protactinium) which should be removed each depletion step. Unfortunately, 
+for the elements with longer cycle time (i.e. rare earths should be removed 
+every 50 days) this simplified approach leads to oscillatory behavior of all
+major parameters. In future releases of SaltProc this drawback will be eliminated 
+by removing elements with longer cycle times using different method: only mass 
+fraction (calculated separately for each reprocessing group) will be removed each
+ depletion step or batch (e.g. in the current work it was chosen 3 days).
 
 SaltProc, currently in active development on Github (https://github.com/ 
 arfc/saltproc), leverages unit tests and continuous integration for 
