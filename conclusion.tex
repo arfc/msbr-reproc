@@ -1,7 +1,7 @@
 \section{Discussion and conclusions}
 
 This work introduces the open source \gls{MSR} simulation package SaltProc. 
-SaltProc expands the capability of SERPENT 2, the continuous-energy Monte Carlo 
+SaltProc expands the capability of SERPENT2, the continuous-energy Monte Carlo 
 code to include online reprocessing in liquid-fueled \gls{MSR} operation 
 \cite{rykhlevskii_arfc/saltproc:_2018}. Benefits of SaltProc include 
 generic geometry modeling, multi-flow capabilities, time-dependent feed and 
@@ -17,7 +17,7 @@ has been to demonstrate benefits of continuous fission products removal for
 thermal \gls{MSR} design.
 
 To achieve these goals, a full-core high-fidelity benchmark model of the \gls{MSBR} 
-was implemented in SERPENT 2. The full-core model was used instead of the 
+was implemented in SERPENT2. The full-core model was used instead of the 
 the simplified single-cell model \cite{betzler_molten_2017, 
 rykhlevskii_online_2017, betzler_fuel_2018} to precisely describe the 
 two-region \gls{MSBR} concept design sufficiently to accurately represent 
@@ -35,10 +35,7 @@ $^{233}$Pa, $^{232}$Pa stabilized after approximately 2500 days of operation.
 Particularly, $^{233}$U number density equilibrates\footnote{fluctuates less 
 than 0.8\%} after 16 years of operation. Consequently, the core reaches the quasi-equilibrium state after 16 years of operation. However, a wide variety of nuclides, 
 including fissile isotopes (e.g. $^{233}$U, $^{239}$Pu) and non-fissile strong 
-absorbers (e.g. $^{234}$U), continue accumulating in the core. %The current work results 
-%show that a true equilibrium composition cannot exist but balance
-%between strong absorber accumulation and new fissile material 
-%production can be achieved to keep the reactor critical.
+absorbers (e.g. $^{234}$U), continue accumulating in the core. 
 
 \subsection{Spectral shift}
 We also found that the neutron energy spectrum grew harder as the core  
@@ -63,7 +60,7 @@ refill rate throughout 60 years of operation is approximately 2.40 kg/day or
 100 g/GWh$_e$.
 
 We compared the safety parameters for the initial fuel loading and 
-equilibrium compositions using the SERPENT 2 Monte Carlo code. 
+equilibrium compositions using the SERPENT2 Monte Carlo code. 
 The total temperature coefficient 
 is large and negative at startup and equilibrium but the magnitude decreases 
 throughout reactor operation from $-3.10$ to $-0.94$ pcm/K as the spectrum 
@@ -98,11 +95,11 @@ the existing RAVEN optimization framework \cite{alfonsi_raven_2013} might be
 employed for such optimization studies.
 
 Only the batch-wise online reprocessing approach has been treated in this 
-work. However, the SERPENT 2 Monte Carlo code was extended for 
+work. However, the SERPENT2 Monte Carlo code was extended for 
 continuous online fuel reprocessing simulation \cite{aufiero_extended_2013}. 
 This extension must be verified against existing SaltProc/SERPENT or 
 ChemTriton/SCALE packages, and could be employed for immediate removal of 
 fission product gases (e.g., Xe, Kr) which have a strong negative impact on 
-core lifetime and breeding efficiency. Finally, using the built-in SERPENT 2 
+core lifetime and breeding efficiency. Finally, using the built-in SERPENT2 
 Monte Carlo code online reprocessing \& refueling material burnup routine would 
 significantly speed up computer-intensive full-core depletion simulations.
